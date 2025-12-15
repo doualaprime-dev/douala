@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Middleware\AdminCheckMiddleware;
@@ -12,6 +13,7 @@ Route::middleware(['auth', AdminCheckMiddleware::class])->group(function () {
             'users' => UserController::class,
             'admins' => AdminController::class,
             'categories' => CategoryController::class,
+            'brands' => BrandController::class,
         ]);
     });
 });
