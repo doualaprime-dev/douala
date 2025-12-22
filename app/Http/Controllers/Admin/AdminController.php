@@ -60,7 +60,7 @@ class AdminController extends Controller
 
     public function store(AdminStoreRequest $request): RedirectResponse
     {
-        $data = $request->only('name', 'username', 'email', 'phone', 'password');
+        $data = $request->only('name', 'email', 'phone', 'password');
 
         if ($request->hasFile('avatar')) {
             $data['avatar'] = ImageUploader::uploadImage($request->file('avatar'), 'admins');
@@ -85,7 +85,7 @@ class AdminController extends Controller
     public function update(AdminUpdateRequest $request, User $admin): RedirectResponse
     {
         // $admin = User::findOrFail($id);
-        $data = $request->only('name', 'username', 'email', 'phone');
+        $data = $request->only('name', 'email', 'phone');
 
         if ($request->hasFile('avatar')) {
             ImageUploader::deleteImage($admin->avatar);

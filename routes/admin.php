@@ -1,18 +1,21 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\BrandController;
-use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\ProductController;
-use App\Http\Controllers\Admin\ProductImageController;
-use App\Http\Controllers\Admin\ProductVariationController;
-use App\Http\Controllers\Admin\ProductVariationTypeController;
-use App\Http\Controllers\Admin\UserController;
 use App\Http\Middleware\AdminCheckMiddleware;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\BrandController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\ProductImageController;
+use App\Http\Controllers\Admin\ProductVariationTypeController;
+use App\Http\Controllers\Admin\ProductVariationController;
+use App\Http\Controllers\Admin\OrderController;
 
 Route::middleware(['auth', AdminCheckMiddleware::class])->group(function () {
     Route::prefix('admin')->name('admin.')->group(function () {
+
+
 
         Route::group(['prefix' => 'products', 'as' => 'products.'], function () {
             Route::controller(ProductImageController::class)->group(function () {
@@ -45,6 +48,7 @@ Route::middleware(['auth', AdminCheckMiddleware::class])->group(function () {
             'categories' => CategoryController::class,
             'brands' => BrandController::class,
             'products' => ProductController::class,
+            'orders' => OrderController::class,
         ]);
     });
 });

@@ -242,7 +242,7 @@ export default function DataTable({
                     <form onSubmit={handleSearch} className="relative flex w-full max-w-md">
                         <input
                             type="text"
-                            placeholder={`Recherche ...`}
+                            placeholder={`Search ...`}
                             className="w-full rounded-lg border border-gray-300 bg-white py-2 pr-4 pl-10 text-gray-700 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
                             value={search}
                             onChange={(e) => setSearch(e.target.value)}
@@ -405,10 +405,10 @@ export default function DataTable({
                 isOpen={showDeleteDialog}
                 onClose={() => setShowDeleteDialog(false)}
                 onConfirm={() => onDelete(itemToDelete?.id)}
-                title="Supprimer l'élément"
-                message="Êtes-vous sûr de vouloir supprimer cet élément ? Cette action est irréversible."
-                confirmButtonText="Supprimer"
-                cancelButtonText="Annuler"
+                title="Delete Item"
+                message="Are you sure you want to delete this item? This action cannot be undone."
+                confirmButtonText="Delete"
+                cancelButtonText="Cancel"
             />
         </div>
     );

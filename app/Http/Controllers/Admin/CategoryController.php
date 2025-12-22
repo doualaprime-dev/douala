@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Helpers\ImageUploader;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\CategoryStoreUpdateRequest;
+use App\Http\Requests\CtaegoryStoreUpdateRequest;
 use Illuminate\Http\Request;
 use Inertia\Response;
 use App\Models\Category;
@@ -63,7 +63,7 @@ class CategoryController extends Controller
         ]);
     }
 
-    public function store(CategoryStoreUpdateRequest $request): RedirectResponse
+    public function store(CtaegoryStoreUpdateRequest $request): RedirectResponse
     {
         $data = $request->only('name', 'description', 'parent_id');
 
@@ -88,7 +88,7 @@ class CategoryController extends Controller
         ]);
     }
 
-    public function update(CategoryStoreUpdateRequest $request, Category $category): RedirectResponse
+    public function update(CtaegoryStoreUpdateRequest $request, Category $category): RedirectResponse
     {
         // $category = Category::findOrFail($id);
         $data = $request->only('name', 'description', 'parent_id');

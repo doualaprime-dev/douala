@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Helpers\ImageUploader;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\BrandStoreUpdateRequest;
+use App\Http\Requests\CtaegoryStoreUpdateRequest;
 use Illuminate\Http\Request;
 use Inertia\Response;
 use App\Models\Brand;

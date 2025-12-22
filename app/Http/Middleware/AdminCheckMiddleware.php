@@ -16,10 +16,10 @@ class AdminCheckMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-       if (Auth::check() && Auth::user()->role == "admin") {
-            return $next($request);
-       }
 
-       return redirect()->route("login")->with("Vous n'êtes pas autorisé à accéder à cette page !");
+        if (Auth::check() && Auth::user()->role == 'admin') {
+            return $next($request);
+        }
+        return redirect()->route('admin.login')->with('error', 'You are not authorized to access this page');
     }
 }

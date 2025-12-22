@@ -23,7 +23,6 @@ class AdminStoreRequest extends FormRequest
     {
         return [
             'name' => 'required|min:3|max:50',
-            'username' => 'required|min:3|max:50',
             'email' => 'required|email|unique:users,email',
             'phone' => 'required',
             'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
