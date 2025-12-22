@@ -12,7 +12,7 @@ import {
 import { dashboard } from '@/routes';
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/react';
-import { LayoutGrid, TagIcon, User, Users } from 'lucide-react';
+import { Diamond, LayoutGrid, TagIcon, User, Users } from 'lucide-react';
 import AppLogo from './app-logo';
 
 const mainNavItems: NavItem[] = [
@@ -31,6 +31,12 @@ const mainNavItems: NavItem[] = [
         title: 'Categories',
         href: '/admin/categories',
         icon: TagIcon,
+    },
+
+    {
+        title: 'Products',
+        href: '/admin/products',
+        icon: Diamond,
     },
 
     {
