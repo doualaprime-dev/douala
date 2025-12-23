@@ -109,7 +109,7 @@ export default function EcommerceHeader() {
                         {/* Conditional Auth Section */}
                         {auth.user ? (
                             <div className="flex items-center space-x-4">
-                                <Link href={route('dashboard')} className="flex items-center space-x-1 text-gray-700 hover:text-indigo-600">
+                                <Link href={route('user.dashboard')} className="flex items-center space-x-1 text-gray-700 hover:text-indigo-600">
                                     <User className="h-5 w-5" />
                                     <span>{auth.user.name}</span>
                                 </Link>

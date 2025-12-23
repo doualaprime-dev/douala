@@ -106,7 +106,7 @@ export default function SpecializationTable({
   }
 
   const formatPrice = (price: any) => {
-    const currency = 'COM'
+    const currency = 'USD'
     const numericPrice = Number(price)
     if (isNaN(numericPrice)) {
       return '0 ' + currency

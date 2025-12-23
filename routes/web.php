@@ -1,10 +1,10 @@
 <?php
 
-use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\UserController;
 use App\Http\Middleware\UserCheckMiddleware;
 
 Route::controller(HomeController::class)->group(function () {
@@ -39,8 +39,11 @@ Route::middleware(['auth', UserCheckMiddleware::class])->group(function () {
     Route::controller(UserController::class)->group(function () {
         Route::group(['prefix' => 'user', 'as' => 'user.'], function () {
             Route::get('/dashboard', 'index')->name('dashboard');
+            Route::get('/orders', 'orders')->name('orders');
+            Route::get('/orders/{id}', 'showOrder')->name('order.show');
             Route::post('/profile', 'update')->name('profile.update');
             Route::get('/profile/edit', 'edit')->name('profile.edit');
+            Route::get('/account-details', 'accountDetails')->name('account.details');
         });
     });
 });
