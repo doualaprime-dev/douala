@@ -9,38 +9,18 @@ export default function UserSideBar() {
         {
             icon: BarChart3,
             label: 'Dashboard',
-            href: '/dashboard',
+            href: '/user/dashboard',
             active: true,
         },
         {
             icon: ShoppingBag,
             label: 'Orders',
-            href: '/orders',
-        },
-        {
-            icon: Download,
-            label: 'Downloads',
-            href: '/downloads',
-        },
-        {
-            icon: MapPin,
-            label: 'Addresses',
-            href: '/addresses',
-        },
-        {
-            icon: CreditCard,
-            label: 'Payment Methods',
-            href: '/payment-methods',
-        },
-        {
-            icon: Heart,
-            label: 'Wihslist',
-            href: '/wihslist',
+            href: '/user/orders',
         },
         {
             icon: User,
             label: 'Account Details',
-            href: '/account-details',
+            href: '/user/account-details',
         },
     ];
 

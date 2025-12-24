@@ -187,9 +187,9 @@ class UserController extends Controller
                 'created_at'=> $user->created_at,
                 'updated_at'=> $user->updated_at,
                 'newsletter_subscription'=> $user->newsletter_subscription ?? true,
-                'marketing_emails'=> $user->marketing_emails?? false,
-                'order_notifications'=> $user->order_notifications?? true,
-                'security_notifications'=> $user->security_notifications?? true,
+                'marketing_emails'=> $user->marketing_emails ?? false,
+                'order_notifications'=> $user->order_notifications ?? true,
+                'security_notifications'=> $user->security_notifications ?? true,
             ],
         ]);
     }

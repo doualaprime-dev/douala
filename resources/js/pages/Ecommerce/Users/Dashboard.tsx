@@ -1,458 +1,262 @@
-import UserLayout from '@/layouts/user-layout'
-import React from 'react'
+import UserLayout from '@/layouts/user-layout';
+import { Link } from '@inertiajs/react';
+import { ArrowRight } from 'lucide-react';
 
-export default function Dashboard() {
-  return (
-    <UserLayout>
-        <div className="bg-white rounded-lg shadow-sm overflow-hidden mb-6">
-            <div className="p-6 border-b">
-              <h2 className="text-lg font-semibold">Dashboard</h2>
-              <p className="text-gray-600 mt-1">
-                Hello John (not John?
-                <a href="#" className="text-indigo-600 hover:text-indigo-800"
-                  >Log out</a>)
-              </p>
-            </div>
-            <div className="p-6">
-              <p className="mb-4">
-                From your account dashboard you can view your
-                <a href="#" className="text-indigo-600 hover:text-indigo-800"
-                  >recent orders</a>, manage your
-                <a href="#" className="text-indigo-600 hover:text-indigo-800"
-                  >shipping and billing addresses</a>, and
-                <a href="#" className="text-indigo-600 hover:text-indigo-800"
-                  >edit your password and account details</a>.
-              </p>
+export default function Dashboard({ dashboardData }: { dashboardData: any }) {
+    const getStatusBadgeClass = (status: string) => {
+        switch (status) {
+            case 'completed':
+                return 'bg-green-100 text-green-800'
+            case 'shipped':
+                return 'bg-blue-100 text-blue-800'
+            case 'pending':
+                return 'bg-yellow-100 text-yellow-800'
+            case 'cancelled':
+                return 'bg-red-100 text-red-800'
+            default:
+                return 'bg-gray-100 text-gray-800'
+        }
+    }
 
-               {/* Dashboard Cards  */}
-              <div
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6"
-              >
-                <div
-                  className="border rounded-lg overflow-hidden hover:shadow-md transition-shadow"
-                >
-                  <div className="p-5 border-b bg-gray-50">
-                    <div className="flex justify-between items-center">
-                      <h3 className="font-medium">Orders</h3>
-                      <span
-                        className="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full"
-                        >5</span
-                      >
-                    </div>
-                  </div>
-                  <div className="p-5">
-                    <p className="text-gray-600 text-sm mb-4">
-                      View and track your orders, download invoices
+    return (
+        <UserLayout>
+            <div className='mb-6 overflow-hidden rounded-lg bg-white shadow-sm'>
+                <div className='border-b p-6'>
+                    <h2 className='text-lg font-semibold'>Dashboard</h2>
+                    <p className='mt-1 text-gray-600'>
+                        Hello {dashboardData.user?.name} (not {dashboardData.user?.name}?
+                            <a href="#" className='text-indigo-600 hover:text-indigo-800'>
+                                Log out
+                            </a>
+                        )
                     </p>
-                    <a
-                      href="#"
-                      className="text-indigo-600 hover:text-indigo-800 text-sm font-medium flex items-center"
-                    >
-                      View Orders
-                      <i className="fas fa-arrow-right ml-2"></i>
-                    </a>
-                  </div>
                 </div>
 
-                <div
-                  className="border rounded-lg overflow-hidden hover:shadow-md transition-shadow"
-                >
-                  <div className="p-5 border-b bg-gray-50">
-                    <div className="flex justify-between items-center">
-                      <h3 className="font-medium">Wishlist</h3>
-                      <span
-                        className="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full"
-                        >3</span
-                      >
-                    </div>
-                  </div>
-                  <div className="p-5">
-                    <p className="text-gray-600 text-sm mb-4">
-                      View saved items and add to cart
+                <div className='p-6'>
+                    <p className='mb-4'>
+                        From your account dashboard you can view your
+                        <Link href="/user/orders" className='text-indigo-600 hover:text-indigo-800'>
+                            recent orders
+                        </Link>
+                        , manage your
+                        <Link href="/user/orders" className='text-indigo-600 hover:text-indigo-800'>
+                            shipping and billing addresses
+                        </Link>
+                        , and
+                        <Link href="/user/orders" className='text-indigo-600 hover:text-indigo-800'>
+                            edit your password and account details
+                        </Link>
+                        ,
                     </p>
-                    <a
-                      href="#"
-                      className="text-indigo-600 hover:text-indigo-800 text-sm font-medium flex items-center"
-                    >
-                      View Wishlist
-                      <i className="fas fa-arrow-right ml-2"></i>
-                    </a>
-                  </div>
-                </div>
 
-                <div
-                  className="border rounded-lg overflow-hidden hover:shadow-md transition-shadow"
-                >
-                  <div className="p-5 border-b bg-gray-50">
-                    <div className="flex justify-between items-center">
-                      <h3 className="font-medium">Addresses</h3>
-                      <i className="fas fa-map-marker-alt text-indigo-600"></i>
+                    {/* Dashboard Cards */}
+                    <div className='mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
+                        <div className='overflow-hidden rounded-lg border transition-shadow hover:shadow-md'>
+                            <div className='border-b bg-gray-50 p-5'>
+                                <div className='flex items-center justify-between'>
+                                    <h3 className='font-medium'>Orders</h3>
+                                    <span className='rounded-full bg-indigo-100 px-2.5 py-0.5 text-xs font-medium text-indigo-800'>
+                                        {dashboardData.orderCount}
+                                    </span>
+                                </div>
+                            </div>
+                            <div className='p-5'>
+                                <p className='mb-4 text-sm text-gray-600'>
+                                    View and track your orders, download invoices
+                                </p>
+                                <Link
+                                    href="/user/orders"
+                                    className='flex items-center text-sm font-medium text-indigo-600 hover:text-indigo-800'
+                                >
+                                    View Orders
+                                    <ArrowRight className='ml-2 h-4 w-4' />
+                                </Link>
+                            </div>
+                        </div>
+
+                        <div className='overflow-hidden rounded-lg border transition-shadow hover:shadow-md'>
+                            <div className='border-b bg-gray-50 p-5'>
+                                <div className='flex items-center justify-between'>
+                                    <h3 className='font-medium'>Wishlist</h3>
+                                    <span className='rounded-full bg-indigo-100 px-2.5 py-0.5 text-xs font-medium text-indigo-800'>
+                                        {dashboardData.wishlistCount}
+                                    </span>
+                                </div>
+                            </div>
+                            <div className='p-5'>
+                                <p className='mb-4 text-sm text-gray-600'>
+                                    View saved items and add to cart
+                                </p>
+                                <Link
+                                    href="/user/wishlist"
+                                    className='flex items-center text-sm font-medium text-indigo-600 hover:text-indigo-800'
+                                >
+                                    View Wishlist
+                                    <ArrowRight className='ml-2 h-4 w-4' />
+                                </Link>
+                            </div>
+                        </div>
+
+                        <div className='overflow-hidden rounded-lg border transition-shadow hover:shadow-md'>
+                            <div className='border-b bg-gray-50 p-5'>
+                                <div className='flex items-center justify-between'>
+                                    <h3 className='font-medium'>Addresses</h3>
+                                    <i className='fas fa-map-marker-alt text-indigo-600'></i>
+                                </div>
+                            </div>
+                            <div className='p-5'>
+                                <p className='mb-4 text-sm text-gray-600'>
+                                    Manage your shipping and billing addresses
+                                </p>
+                                <Link
+                                    href="/user/addresses"
+                                    className='flex items-center text-sm font-medium text-indigo-600 hover:text-indigo-800'
+                                >
+                                    View Addresses
+                                    <ArrowRight className='ml-2 h-4 w-4' />
+                                </Link>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                  <div className="p-5">
-                    <p className="text-gray-600 text-sm mb-4">
-                      Manage your shipping and billing addresses
-                    </p>
-                    <a
-                      href="#"
-                      className="text-indigo-600 hover:text-indigo-800 text-sm font-medium flex items-center"
-                    >
-                      Manage Addresses
-                      <i className="fas fa-arrow-right ml-2"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div>
 
-        {/* Recent Orders */}
-        <div className="bg-white rounded-lg shadow-sm overflow-hidden mb-6">
-        <div className="p-6 border-b">
-            <h2 className="text-lg font-semibold">Recent Orders</h2>
-        </div>
-        <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-200">
-            <thead className="bg-gray-50">
-                <tr>
-                <th
-                    scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
-                    Order
-                </th>
-                <th
-                    scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
-                    Date
-                </th>
-                <th
-                    scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
-                    Status
-                </th>
-                <th
-                    scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
-                    Total
-                </th>
-                <th
-                    scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
-                    Actions
-                </th>
-                </tr>
-            </thead>
-            <tbody className="bg-white divide-y divide-gray-200">
-                <tr>
-                <td
-                    className="px-6 py-4 whitespace-nowrap text-sm font-medium text-indigo-600"
-                >
-                    #SM25042100473
-                </td>
-                <td
-                    className="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                >
-                    April 21, 2025
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap">
-                    <span
-                    className="px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800"
-                    >Completed</span
-                    >
-                </td>
-                <td
-                    className="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                >
-                    $233.18
-                </td>
-                <td
-                    className="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                >
-                    <a href="#" className="text-indigo-600 hover:text-indigo-900"
-                    >View</a
-                    >
-                </td>
-                </tr>
-                <tr>
-                <td
-                    className="px-6 py-4 whitespace-nowrap text-sm font-medium text-indigo-600"
-                >
-                    #SM25040700285
-                </td>
-                <td
-                    className="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                >
-                    April 7, 2025
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap">
-                    <span
-                    className="px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800"
-                    >Shipped</span
-                    >
-                </td>
-                <td
-                    className="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                >
-                    $159.95
-                </td>
-                <td
-                    className="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                >
-                    <a href="#" className="text-indigo-600 hover:text-indigo-900"
-                    >View</a
-                    >
-                </td>
-                </tr>
-                <tr>
-                <td
-                    className="px-6 py-4 whitespace-nowrap text-sm font-medium text-indigo-600"
-                >
-                    #SM25032100142
-                </td>
-                <td
-                    className="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                >
-                    March 21, 2025
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap">
-                    <span
-                    className="px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800"
-                    >Completed</span
-                    >
-                </td>
-                <td
-                    className="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                >
-                    $87.50
-                </td>
-                <td
-                    className="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                >
-                    <a href="#" className="text-indigo-600 hover:text-indigo-900"
-                    >View</a
-                    >
-                </td>
-                </tr>
-            </tbody>
-            </table>
-        </div>
-        <div className="p-4 border-t">
-            <a
-            href="#"
-            className="text-indigo-600 hover:text-indigo-800 text-sm font-medium flex items-center justify-center"
-            >
-            View All Orders
-            <i className="fas fa-arrow-right ml-2"></i>
-            </a>
-        </div>
-        </div>
+                    {/* Recent Orders */}
+                    <div className='mb-6 overflow-hidden rounded-lg bg-white shadow-sm'>
+                        <div className='border-b p-6'>
+                            <h2 className='text-lg font-semibold'>Recent Orders</h2>
+                        </div>
+                        <div className='overflow-x-auto'>
+                            <table className='min-w-full divide-y divide-gray-200'>
+                                <thead className='bg-gray-50'>
+                                    <tr>
+                                        <th
+                                            scope='col'
+                                            className='px-6 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase'
+                                        >
+                                            Order
+                                        </th>
+                                        <th
+                                            scope='col'
+                                            className='px-6 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase'
+                                        >
+                                            Date
+                                        </th>
+                                        <th
+                                            scope='col'
+                                            className='px-6 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase'
+                                        >
+                                            Status
+                                        </th>
+                                        <th
+                                            scope='col'
+                                            className='px-6 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase'
+                                        >
+                                            Total
+                                        </th>
+                                        <th
+                                            scope='col'
+                                            className='px-6 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase'
+                                        >
+                                            Actions
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody className='divide-y divide-gray-200 bg-white'>
+                                    {dashboardData.recentOrders.length === 0 ? (
+                                        <tr>
+                                            <td colSpan={5} className='px-6 py-4 text-center text-gray-500'>
+                                                No recent orders found.
+                                            </td>
+                                        </tr>
+                                    ) : (
+                                        dashboardData.recentOrders.map((order) => (
+                                            <tr key={order.id}>
+                                                <td className='px-4 py-4 text-sm font-medium whitespace-nowrap text-indigo-600'>
+                                                    {order.order_number}
+                                                </td>
+                                                <td className='px-4 py-4 text-sm whitespace-nowrap text-gray-500'>
+                                                    {order.created_at}
+                                                </td>
+                                                <td className='px-4 py-4 *:whitespace-nowrap'>
+                                                    <span
+                                                        className={`rounded-full px-2 py-1 text-xs font-semibold ${getStatusBadgeClass(
+                                                            order.status
+                                                        )}`}
+                                                    >
+                                                        {order.status.charAt(0).toUpperCase() + order.status.slice(1)}
+                                                    </span>
+                                                </td>
+                                                <td className='px-4 py-4 text-sm whitespace-nowrap text-gray-500'>
+                                                    {order.total_price}
+                                                </td>
+                                                <td className='px-4 py-4 text-sm whitespace-nowrap text-gray-500'>
+                                                    <Link
+                                                        href={`/user/orders/${order.id}`}
+                                                        className='text-indigo-600 hover:text-indigo-900'
+                                                    >
+                                                        View
+                                                    </Link>
+                                                </td>
+                                            </tr>
+                                        ))
+                                    )}
+                                </tbody>
+                            </table>
+                        </div>
 
-        {/* Account Details */}
-        <div className="bg-white rounded-lg shadow-sm overflow-hidden mb-6">
-        <div className="p-6 border-b">
-            <h2 className="text-lg font-semibold">Account Details</h2>
-        </div>
-        <div className="p-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-                <h3 className="text-sm font-medium text-gray-500 mb-2">
-                CONTACT INFORMATION
-                </h3>
-                <p className="text-gray-800">John Doe</p>
-                <p className="text-gray-800">johndoe@example.com</p>
-                <p className="text-gray-800">+1 (123) 456-7890</p>
-                <a
-                href="#"
-                className="text-indigo-600 hover:text-indigo-800 text-sm mt-2 inline-block"
-                >Edit</a
-                >
-            </div>
-            <div>
-                <h3 className="text-sm font-medium text-gray-500 mb-2">
-                BILLING ADDRESS
-                </h3>
-                <p className="text-gray-800">John Doe</p>
-                <p className="text-gray-800">1234 Market St</p>
-                <p className="text-gray-800">San Francisco, CA 94103</p>
-                <p className="text-gray-800">United States</p>
-                <a
-                href="#"
-                className="text-indigo-600 hover:text-indigo-800 text-sm mt-2 inline-block"
-                >Edit</a
-                >
-            </div>
-            </div>
-            <div className="mt-6">
-            <h3 className="text-sm font-medium text-gray-500 mb-2">
-                NEWSLETTERS
-            </h3>
-            <p className="text-gray-800">
-                You are currently subscribed to our newsletter.
-            </p>
-            <a
-                href="#"
-                className="text-indigo-600 hover:text-indigo-800 text-sm mt-2 inline-block"
-                >Unsubscribe</a
-            >
-            </div>
-        </div>
-        </div>
-
-        {/* Recently Viewed */}
-        <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-        <div className="p-6 border-b">
-            <h2 className="text-lg font-semibold">Recently Viewed Products</h2>
-        </div>
-        <div className="p-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-             {/* Product 1 */}
-            <div
-                className="border rounded-lg overflow-hidden group hover:shadow-md transition-shadow"
-            >
-                <div className="relative">
-                <img
-                    src="/api/placeholder/300/300"
-                    alt="Smart Watch"
-                    className="w-full h-48 object-cover"
-                />
-                <div className="absolute top-2 right-2">
-                    <button
-                    className="w-8 h-8 rounded-full bg-white shadow flex items-center justify-center hover:bg-indigo-50"
-                    >
-                    <i
-                        className="far fa-heart text-gray-500 group-hover:text-indigo-600"
-                    ></i>
-                    </button>
-                </div>
-                </div>
-                <div className="p-4">
-                <h3 className="font-medium text-gray-800 mb-1">Smart Watch</h3>
-                <div className="flex items-center mb-2">
-                    <div className="flex text-yellow-400">
-                    <i className="fas fa-star text-xs"></i>
-                    <i className="fas fa-star text-xs"></i>
-                    <i className="fas fa-star text-xs"></i>
-                    <i className="fas fa-star text-xs"></i>
-                    <i className="fas fa-star-half-alt text-xs"></i>
+                        <div className='border-t p-4'>
+                            <Link
+                                href="/user/orders"
+                                className='flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-800'
+                            >
+                                View All Orders
+                                <ArrowRight className='ml-2 h-4 w-4' />
+                            </Link>
+                        </div>
                     </div>
-                    <span className="text-xs text-gray-500 ml-1">(24)</span>
-                </div>
-                <div className="flex items-center justify-between">
-                    <span className="font-bold text-indigo-600">$129.99</span>
-                    <button
-                    className="text-xs bg-indigo-600 hover:bg-indigo-700 text-white py-1 px-3 rounded"
-                    >
-                    Add to Cart
-                    </button>
-                </div>
-                </div>
-            </div>
 
-            {/* Product 2  */}
-            <div
-                className="border rounded-lg overflow-hidden group hover:shadow-md transition-shadow"
-            >
-                <div className="relative">
-                <img
-                    src="/api/placeholder/300/300"
-                    alt="Wireless Headphones"
-                    className="w-full h-48 object-cover"
-                />
-                <div className="absolute top-2 right-2">
-                    <button
-                    className="w-8 h-8 rounded-full bg-white shadow flex items-center justify-center hover:bg-indigo-50"
-                    >
-                    <i
-                        className="far fa-heart text-gray-500 group-hover:text-indigo-600"
-                    ></i>
-                    </button>
-                </div>
-                </div>
-                <div className="p-4">
-                <h3 className="font-medium text-gray-800 mb-1">
-                    Wireless Headphones
-                </h3>
-                <div className="flex items-center mb-2">
-                    <div className="flex text-yellow-400">
-                    <i className="fas fa-star text-xs"></i>
-                    <i className="fas fa-star text-xs"></i>
-                    <i className="fas fa-star text-xs"></i>
-                    <i className="fas fa-star text-xs"></i>
-                    <i className="far fa-star text-xs"></i>
-                    </div>
-                    <span className="text-xs text-gray-500 ml-1">(18)</span>
-                </div>
-                <div className="flex items-center justify-between">
-                    <span className="font-bold text-indigo-600">$89.99</span>
-                    <button
-                    className="text-xs bg-indigo-600 hover:bg-indigo-700 text-white py-1 px-3 rounded"
-                    >
-                    Add to Cart
-                    </button>
-                </div>
-                </div>
-            </div>
+                    {/* Account Details */}
+                    <div className='mb-6 overflow-hidden rounded-lg bg-white shadow-sm'>
+                        <div className='border-b p-6'>
+                            <h2 className='text-lg font-semibold'>Account Details</h2>
+                        </div>
+                        <div className='p-6'>
+                            <div className='grid grid-cols-1 gap-6 md:grid-cols-2'>
+                                <div>
+                                    <h3 className='mb-2 text-sm font-medium text-gray-500'>CONTACT INFORMATION</h3>
+                                    <p className='text-gray-800'>{dashboardData.userAddress.name}</p>
+                                    <p className='text-gray-800'>{dashboardData.userAddress.email}</p>
+                                    <p className='text-gray-800'>{dashboardData.userAddress.phone}</p>
+                                    <Link
+                                        href="/user/profile/edit"
+                                        className='mt-2 inline-block text-sm text-indigo-600 hover:text-indigo-800'
+                                    >
+                                        Edit
+                                    </Link>
+                                </div>
+                                <div>
+                                    <h3 className='mb-2 text-sm font-medium text-gray-500'>BILLING ADDRESS</h3>
+                                    <p className='text-gray-800'>{dashboardData.userAddress.name}</p>
+                                    <p className='text-gray-800'>{dashboardData.userAddress.Address || 'N/A'}</p>
+                                    <Link
+                                        href="/user/addresses"
+                                        className='mt-2 inline-block text-sm text-indigo-600 hover:text-indigo-800'
+                                    >
+                                        Edit
+                                    </Link>
+                                </div>
+                            </div>
 
-             {/* Product 3  */}
-            <div
-                className="border rounded-lg overflow-hidden group hover:shadow-md transition-shadow"
-            >
-                <div className="relative">
-                <img
-                    src="/api/placeholder/300/300"
-                    alt="Bluetooth Speaker"
-                    className="w-full h-48 object-cover"
-                />
-                <div className="absolute top-2 right-2">
-                    <button
-                    className="w-8 h-8 rounded-full bg-white shadow flex items-center justify-center hover:bg-indigo-50"
-                    >
-                    <i
-                        className="far fa-heart text-gray-500 group-hover:text-indigo-600"
-                    ></i>
-                    </button>
-                </div>
-                <div className="absolute top-2 left-2">
-                    <span
-                    className="bg-red-500 text-white text-xs px-2 py-1 rounded"
-                    >Sale</span>
-                </div>
-                </div>
-                <div className="p-4">
-                <h3 className="font-medium text-gray-800 mb-1">
-                    Bluetooth Speaker
-                </h3>
-                <div className="flex items-center mb-2">
-                    <div className="flex text-yellow-400">
-                    <i className="fas fa-star text-xs"></i>
-                    <i className="fas fa-star text-xs"></i>
-                    <i className="fas fa-star text-xs"></i>
-                    <i className="fas fa-star text-xs"></i>
-                    <i className="fas fa-star text-xs"></i>
+                            <div className='mt-6'>
+                                <h3 className='mb-2 text-sm font-medium text-gray-500'>NEWSLETTERS</h3>
+                                <p className='text-gray-800'>You are currently subscribed to our newsletter.</p>
+                                <a href="#" className='mt-2 inline-block text-sm text-indigo-600 hover:text-indigo-800'>
+                                    Unsubscribe
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <span className="text-xs text-gray-500 ml-1">(32)</span>
-                </div>
-                <div className="flex items-center justify-between">
-                    <div>
-                    <span className="font-bold text-indigo-600 mr-2">$49.99</span>
-                    <span className="text-xs text-gray-500 line-through">$69.99</span>
-                    </div>
-                    <button
-                    className="text-xs bg-indigo-600 hover:bg-indigo-700 text-white py-1 px-3 rounded"
-                    >
-                    Add to Cart
-                    </button>
-                </div>
                 </div>
             </div>
-            </div>
-        </div>
-        </div>
-    </UserLayout>
-  )
+        </UserLayout>
+    )
 }
