@@ -76,8 +76,8 @@ export default function EcommerceHeader() {
             {/* Main Header */}
             <header className="bg-white py-4 shadow-sm">
                 <div className="container mx-auto flex items-center justify-between px-4">
-                    <Link href="/" className="text-2xl font-bold text-indigo-600">
-                        ShopMart
+                    <Link href="/">
+                        <img src="/images/logo.png" width={100} alt="" />
                     </Link>
 
                     <div className="mx-8 max-w-xl flex-1">

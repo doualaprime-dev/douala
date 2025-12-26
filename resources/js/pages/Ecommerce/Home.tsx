@@ -12,7 +12,7 @@ export default function Home() {
             <BestSeller />
             <SpecialOffer />
             <Brand />
-            <Blog />
+            {/* <Blog /> */}
         </EcomLayout>
     );
 }
