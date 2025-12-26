@@ -176,3 +176,13 @@ header .top-strip {
 .link:hover {
     color: #ff5252;
 }
+
+nav {
+    text-transform: capitalize !important;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+}

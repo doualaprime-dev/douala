@@ -60,6 +60,16 @@ export default function BestSeller() {
                                 delay: 3000,
                                 disableOnInteraction: false,
                             }}
+                            breakpoints={{
+                                344: { slidesPerView: 2 },
+                                360: { slidesPerView: 2 },
+                                375: { slidesPerView: 2 },
+                                385: { slidesPerView: 2 },
+                                430: { slidesPerView: 2 },
+                                720: { slidesPerView: 3 },
+                                1280: { slidesPerView: 5 },
+                                1920: { slidesPerView: 5 }
+                            }}
                             className="swiper-wrapper items-center"
                         >
                             {bestSellingProducts.length > 0 ? (
