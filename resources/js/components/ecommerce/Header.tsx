@@ -75,21 +75,25 @@ export default function EcommerceHeader() {
 
             {/* Main Header */}
             <header className="bg-white py-4 shadow-sm">
-                <div className="container mx-auto flex items-center justify-between px-4">
-                    <Link href="/">
-                        <img src="/images/logo.png" width={100} alt="" />
-                    </Link>
+                <div className="container mx-auto flex flex-wrap items-center justify-between px-4">
+                    <div>
+                        <Link href="/">
+                            <img src="/images/logo.png" width={100} alt="" />
+                        </Link>
+                    </div>
 
-                    <div className="mx-8 max-w-xl flex-1">
+                    <div className="max-w-xl lg:flex-1">
                         <div className="relative">
-                            <input
-                                type="text"
-                                placeholder="Search for products..."
-                                className="w-full rounded-full border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
-                            />
-                            <button className="absolute top-0 right-0 h-full px-4 text-gray-500 hover:text-indigo-600">
-                                <Search className="h-5 w-5" />
+                            <form action={ route('search') } method="get">
+                                <input
+                                    type="text"
+                                    placeholder="Search for products..."
+                                    className="w-full rounded-full border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                                />
+                                <button className="absolute top-0 right-0 h-full px-4 text-gray-500 hover:text-indigo-600">
+                                    <Search className="h-5 w-5" />
                             </button>
+                            </form>
                         </div>
                     </div>
 

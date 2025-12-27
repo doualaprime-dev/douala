@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\ProductListResource;
 use App\Http\Resources\ProductResource;
 use App\Models\Brand;
+use App\Models\Category;
 use App\Models\Product;
 
 class HomeController extends Controller
@@ -47,5 +48,20 @@ class HomeController extends Controller
             'variationOptions' => request('options', []),
             'relatedProducts' => $relatedProducts->resolve(),
         ]);
+    }
+
+    public function byCategory(Category $category)
+    {
+        $products = ProductListResource::collection(Product::where('products.category_id', '=', $category->id)->limit(10)->orderBy('sales', 'desc')->get())->resolve();
+
+        return Inertia::render('Ecommerce/Products', [
+            'products' => $products,
+            'category' => $category,
+        ]);
+    }
+
+    public function search(Request $request, $slug)
+    {
+
     }
 }

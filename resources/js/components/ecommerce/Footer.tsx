@@ -8,8 +8,8 @@ export default function Footer() {
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
                     {/* Logo and Description */}
                     <div>
-                        <Link href="/" className="mb-4 block text-2xl font-bold text-white">
-                            ShopMart
+                        <Link href="/">
+                            <img src="/images/logo.png" width={100} alt="" />
                         </Link>
                         <p className="mb-6 text-gray-400">
                             ShopMart offers a wide range of high-quality products at competitive prices. We're committed to providing an exceptional

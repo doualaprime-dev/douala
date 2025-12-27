@@ -9,7 +9,9 @@ use App\Http\Middleware\UserCheckMiddleware;
 
 Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')->name('home');
+    Route::get('/search', 'search')->name('search');
     Route::get('/product/{slug}', 'productDetail')->name('product.detail');
+    Route::get('/category/{category:slug}','byCategory')->name('by-category');
 });
 
 // Cart routes
