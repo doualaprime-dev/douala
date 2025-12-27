@@ -60,8 +60,27 @@ class HomeController extends Controller
         ]);
     }
 
-    public function search(Request $request, $slug)
+    public function search(Request $request)
     {
+        $products = Product::query();
 
+        if ($request->filled('search')) {
+            $search = $request->search;
+
+            $products->where(fn ($query) =>
+                $query->where('name','like',"%{$search}%")
+                    ->orWhere('description','like',"%{$search}%")
+                    ->orWhere('price','like',"%{$search}%")
+            );
+        }
+
+        $products = $products->latest()->paginate(12)->withQueryString();
+
+        $resultSearch = ProductListResource::collection($products)->resolve();
+
+        return Inertia::render('Ecommerce/Search', [
+            'resultSearch' => $resultSearch,
+            'filters' => $request->only(['search']),
+        ]);
     }
 }

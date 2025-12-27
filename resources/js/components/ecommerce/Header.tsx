@@ -1,4 +1,4 @@
-import { Link, usePage } from '@inertiajs/react';
+import { Link, router, useForm, usePage } from '@inertiajs/react';
 import { ChevronDown, Facebook, Instagram, Menu, Search, ShoppingCart, Twitter, User } from 'lucide-react';
 import { useState } from 'react';
 import CategoryMenuItem from './CategoryMenuItem';
@@ -10,6 +10,22 @@ export default function EcommerceHeader() {
     const [isLanguageOpen, setIsLanguageOpen] = useState(false);
     const [isCategoriesOpen, setIsCategoriesOpen] = useState(false);
     const [isSubCategoriesOpen, setIsSubCategoriesOpen] = useState(false);
+
+    const { data, setData } = useForm({
+        search: '',
+    });
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value;
+        setData('search', value);
+
+        const queryString = value ? { search: value } : {};
+
+        router.get(route('search'), queryString, {
+            preserveState: true,
+            preserveScroll: true,
+        });
+    };
 
     return (
         <>
@@ -84,16 +100,16 @@ export default function EcommerceHeader() {
 
                     <div className="max-w-xl lg:flex-1">
                         <div className="relative">
-                            <form action={ route('search') } method="get">
-                                <input
-                                    type="text"
-                                    placeholder="Search for products..."
-                                    className="w-full rounded-full border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
-                                />
-                                <button className="absolute top-0 right-0 h-full px-4 text-gray-500 hover:text-indigo-600">
-                                    <Search className="h-5 w-5" />
+                            <input
+                                type="text"
+                                value={data.search}
+                                onChange={handleChange}
+                                placeholder="Search for products..."
+                                className="w-full rounded-full border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                            />
+                            <button className="absolute top-0 right-0 h-full px-4 text-gray-500 hover:text-indigo-600">
+                                <Search className="h-5 w-5" />
                             </button>
-                            </form>
                         </div>
                     </div>
 
