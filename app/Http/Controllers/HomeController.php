@@ -19,7 +19,7 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $bestSellingProducts = ProductListResource::collection(Product::query()->limit(10)->orderBy('sales', 'desc')->get())->resolve();
-        $specialOffers = ProductListResource::collection(Product::query()->where('is_special_offer', true)->limit(4)->get())->resolve();
+        $specialOffers = ProductListResource::collection(Product::query()->where('is_special_offer', true)->limit(10)->get())->resolve();
         $brands = Brand::query()->select('id', 'name', 'slug', 'image')->get()->map(function ($brand) {
             $brand->image = asset('storage/' . $brand->image);
             return $brand;
