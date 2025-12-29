@@ -12,15 +12,14 @@ import 'swiper/css/scrollbar';
 export default function Brand() {
     const { brands } = usePage().props as any;
     return (
-        <div className="bg-white py-12">
-            <div className="container mx-auto px-4">
-                <h2 className="mb-8 text-center text-2xl font-bold">Our Brands</h2>
+        <div className="container py-4">
+            <div className='card shadow-lg p-4 mx-auto rounded-md bg-white'>
 
                 <div className="swiper brand-slider">
                     <div className="swiper-wrapper items-center">
                         <Swiper
                             modules={[Navigation, Pagination, Autoplay]}
-                            spaceBetween={0}
+                            spaceBetween={10}
                             slidesPerView={5}
                             // navigation
                             pagination={{ clickable: true }}
@@ -38,10 +37,10 @@ export default function Brand() {
                                 1280: { slidesPerView: 5 },
                                 1920: { slidesPerView: 5 }
                             }}
-                            className="swiper-wrapper items-center"
+                            className="productSlider"
                         >
                             {brands.map((brand: any) => (
-                                <SwiperSlide key={brand.id} className="swiper-slide p-4 text-center">
+                                <SwiperSlide key={brand.id} className="">
                                     <div className="flex h-32 items-center justify-center rounded-lg bg-gray-50 p-6">
                                         <img src={brand.image} alt={brand.name} className="max-h-16" />
                                     </div>

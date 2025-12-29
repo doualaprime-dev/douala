@@ -146,7 +146,7 @@
     --sidebar-accent-foreground: oklch(0.985 0 0);
     --sidebar-border: oklch(0.269 0 0);
     --sidebar-ring: oklch(0.439 0 0);
-}
+} */
 
 @layer base {
     * {
@@ -158,9 +158,12 @@
     }
 }
 
+body {
+    background: var(--muted-foreground);
+}
 
 .container {
-    width: 90%;
+    width: 80%;
     margin: auto;
 }
 
@@ -170,11 +173,11 @@ header .top-strip {
 }
 
 .bg-org {
-    background: #ff5252;
+    background: #FFC533;
 }
 
 .link:hover {
-    color: #ff5252;
+    color: #FFC533;
 }
 
 nav {
@@ -185,4 +188,8 @@ nav {
     nav ul {
         display: none;
     }
+}
+
+.ReactCollapse--collapse {
+    transition: height 300ms;
 }

@@ -49,18 +49,10 @@ const ProductCard = (product: ProductListItem) => {
       </div>
       <div className="p-4" onClick={() => handleDetail(product.slug)}>
         <h3 className="mb-2 text-lg font-medium">{product.name}</h3>
-        <p className="mb-3 text-sm text-gray-600">{product.description}...</p>
         <div className="flex items-center justify-between">
           <div>
             <span className="font-bold text-indigo-600">${product.price}</span>
             {product.isDiscount && <span className="ml-2 text-gray-400 line-through">$119.99</span>}
-          </div>
-          <div className="flex text-yellow-400">
-            <i className="fas fa-star"></i>
-            <i className="fas fa-star"></i>
-            <i className="fas fa-star"></i>
-            <i className="fas fa-star"></i>
-            <i className="fas fa-star-half-alt"></i>
           </div>
         </div>
       </div>

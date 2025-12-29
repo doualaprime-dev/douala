@@ -19,7 +19,7 @@ export default function EcomLayout({ children, title = 'R-Mart' }: EcommerceLayo
                 <meta name="author" content="R-Mart Team" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <div className="min-h-screen bg-gray-50">
+            <div className="min-h-screen bg-gray-100">
                 <Header />
                 <main>{children}</main>
                 <Footer />

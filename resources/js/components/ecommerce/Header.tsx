@@ -1,7 +1,8 @@
 import { Link, router, useForm, usePage } from '@inertiajs/react';
-import { ChevronDown, Facebook, Instagram, Menu, Search, ShoppingCart, Twitter, User } from 'lucide-react';
+import { ChevronDown, Facebook, Instagram, Menu, Rocket, Search, ShoppingCart, Truck, Twitter, User } from 'lucide-react';
 import { useState } from 'react';
 import CategoryMenuItem from './CategoryMenuItem';
+import {Collapse} from 'react-collapse';
 
 export default function EcommerceHeader() {
     const { parentCategories, auth, cartCount = 0 } = usePage().props as any;
@@ -29,141 +30,95 @@ export default function EcommerceHeader() {
 
     return (
         <>
-            {/* Top Header */}
-            <div className="bg-gray-800 py-2 text-white">
-                <div className="container mx-auto flex items-center justify-between px-4">
-                    <div className="flex space-x-4">
-                        <Link href="#" className="hover:text-gray-300">
-                            <Facebook className="h-5 w-5" />
-                        </Link>
-                        <Link href="#" className="hover:text-gray-300">
-                            <Twitter className="h-5 w-5" />
-                        </Link>
-                        <Link href="#" className="hover:text-gray-300">
-                            <Instagram className="h-5 w-5" />
-                        </Link>
-                    </div>
-                    <div className="flex items-center space-x-6">
-                        {/* Currency Dropdown */}
-                        <div className="relative">
-                            <button onClick={() => setIsCurrencyOpen(!isCurrencyOpen)} className="flex items-center space-x-1 hover:text-gray-300">
-                                <span>USD</span>
-                                <ChevronDown className="h-3 w-3" />
-                            </button>
-                            {isCurrencyOpen && (
-                                <div className="absolute right-0 z-50 mt-2 w-40 overflow-hidden rounded-md bg-white text-gray-800 shadow-lg">
-                                    <Link href="#" className="block px-4 py-2 hover:bg-gray-100">
-                                        USD - US Dollar
-                                    </Link>
-                                    <Link href="#" className="block px-4 py-2 hover:bg-gray-100">
-                                        EUR - Euro
-                                    </Link>
-                                    <Link href="#" className="block px-4 py-2 hover:bg-gray-100">
-                                        GBP - British Pound
-                                    </Link>
-                                </div>
-                            )}
-                        </div>
+            <div className='header w-full sticky -top-[40px] z-[100] bg-white shadow-lg'>
+                {/* Top Header */}
+                <div className='top-strip py-2 w-full border-b-[1px] border-[rgba(0,0,0,0.3)]'>
+                    <div className='container flex items-center justify-between'>
+                        <p className='text-[14px] text-gray-800'>
+                            Limited-Time Offers : Mid-Summer Season Sale Live Now - <Link href={"#"} className='link hover:text-[#FFC533]'>Shop Now</Link>
+                        </p>
 
-                        {/* Language Dropdown */}
-                        <div className="relative">
-                            <button onClick={() => setIsLanguageOpen(!isLanguageOpen)} className="flex items-center space-x-1 hover:text-gray-300">
-                                <span>English</span>
-                                <ChevronDown className="h-3 w-3" />
-                            </button>
-                            {isLanguageOpen && (
-                                <div className="absolute right-0 z-50 mt-2 w-40 overflow-hidden rounded-md bg-white text-gray-800 shadow-lg">
-                                    <Link href="#" className="block px-4 py-2 hover:bg-gray-100">
-                                        English
-                                    </Link>
-                                    <Link href="#" className="block px-4 py-2 hover:bg-gray-100">
-                                        Français
-                                    </Link>
-                                    <Link href="#" className="block px-4 py-2 hover:bg-gray-100">
-                                        Español
-                                    </Link>
-                                </div>
-                            )}
-                        </div>
+                        <ul className='flex items-center gap-3'>
+                            <li><Link href={"#"} className='text-[13px] font-[500] text-gray-800 hover:text-[#FFC533]'>Store Locator</Link></li>
+                            <li><Link href={"#"} className='text-[13px] font-[500] text-gray-800 hover:text-[#FFC533]'>Order Tracking</Link></li>
+                        </ul>
                     </div>
                 </div>
-            </div>
 
-            {/* Main Header */}
-            <header className="bg-white py-4 shadow-sm">
-                <div className="container mx-auto flex flex-wrap items-center justify-between px-4">
-                    <div>
-                        <Link href="/">
-                            <img src="/images/logo.png" width={100} alt="" />
-                        </Link>
-                    </div>
+                {/* Main Header */}
+                <header className='py-2 border-b-[1px] border-[rgba(0,0,0,0.3)]'>
+                    <div className='container flex items-center justify-between'>
+                        <div className='logo'>
+                            <Link href={"/"}> <img src="/images/logo.png" width={100} alt="" /> </Link>
+                        </div>
 
-                    <div className="max-w-xl lg:flex-1">
-                        <div className="relative">
+                        <div className='header-search w-[400px] bg-gray-100 rounded-md shadow relative'>
                             <input
                                 type="text"
                                 value={data.search}
                                 onChange={handleChange}
                                 placeholder="Search for products..."
-                                className="w-full rounded-full border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                                className="w-full h-[50px] bg-transparent outline-none px-4"
                             />
-                            <button className="absolute top-0 right-0 h-full px-4 text-gray-500 hover:text-indigo-600">
-                                <Search className="h-5 w-5" />
+                            <button className="!min-w-[40px] !w-[40px !h-[40px] !rounded-full !absolute top-[3px] right-[3px] z-50">
+                                <Search className="h-5 w-5 text-gray-700 hover:text-[#FFC533]" />
                             </button>
                         </div>
-                    </div>
 
-                    <div className="flex items-center space-x-6">
-                        {/* Cart Dropdown */}
-                        <div className="relative">
-                            <Link href={route('cart.index')} className="relative hover:text-indigo-600">
-                                <ShoppingCart className="h-6 w-6" />
-                                {cartCount > 0 && (
-                                    <span className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-xs text-white">
-                                        {cartCount}
-                                    </span>
+                        <div className='flex items-center justify-end gap-5'>
+                            <div className='flex items-center gap-2 space-x-6'>
+                                {/* Cart Dropdown */}
+                                <div className="relative">
+                                    <Link href={route('cart.index')} className="relative hover:text-[#FFC533]">
+                                        <ShoppingCart className="h-6 w-6" />
+                                        {cartCount > 0 && (
+                                            <span className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-[#FFC533] text-xs text-white">
+                                                {cartCount}
+                                            </span>
+                                        )}
+                                    </Link>
+                                </div>
+
+                                {/* Conditional Auth Section */}
+                                {auth.user ? (
+                                    <div className="flex items-center space-x-4">
+                                        <Link href={route('user.dashboard')} className="flex items-center space-x-1 text-gray-700 hover:text-[#FFC533]">
+                                            <User className="h-5 w-5" />
+                                            <span>{auth.user.name}</span>
+                                        </Link>
+                                        <Link href={route('logout')} method="post" as="button" className="text-gray-700 hover:text-[#FFC533]">
+                                            Logout
+                                        </Link>
+                                    </div>
+                                ) : (
+                                    <div className="flex space-x-4">
+                                        <Link href="/login" className='text-[15px] font-[600] text-gray-500 hover:text-[#FFC533]'>
+                                            Login
+                                        </Link>
+                                        <span className='text-[15px] font-[600] text-gray-500'>/</span>
+                                        <Link href="/register" className='text-[15px] font-[600] text-gray-500 hover:text-[#FFC533]'>
+                                            Register
+                                        </Link>
+                                    </div>
                                 )}
-                            </Link>
+                            </div>
+
+
                         </div>
-
-                        {/* Conditional Auth Section */}
-                        {auth.user ? (
-                            <div className="flex items-center space-x-4">
-                                <Link href={route('user.dashboard')} className="flex items-center space-x-1 text-gray-700 hover:text-indigo-600">
-                                    <User className="h-5 w-5" />
-                                    <span>{auth.user.name}</span>
-                                </Link>
-                                <Link href={route('logout')} method="post" as="button" className="text-gray-700 hover:text-indigo-600">
-                                    Logout
-                                </Link>
-                            </div>
-                        ) : (
-                            <div className="flex space-x-4">
-                                <Link href="/login" className="text-gray-700 hover:text-indigo-600">
-                                    Login
-                                </Link>
-                                <span className="text-gray-300">|</span>
-                                <Link href="/register" className="text-gray-700 hover:text-indigo-600">
-                                    Register
-                                </Link>
-                            </div>
-                        )}
                     </div>
-                </div>
-            </header>
+                </header>
 
-            {/* Navigation */}
-            <nav className="bg-white shadow">
-                <div className="container mx-auto px-4">
-                    <div className="flex">
+                {/* Navigation */}
+                <nav className=' border-b-[1px] border-[rgba(0,0,0,0.3)] py-2'>
+                    <div className='container flex items-center gap-4 justify-between'>
                         <div className="group dropdown relative" x-data="{ open: false }">
                             <button
                                 onClick={() => setIsCategoriesOpen(!isCategoriesOpen)}
-                                className="flex items-center px-4 py-3 text-gray-700 hover:text-indigo-600 focus:outline-none"
+                                className='!bg-[#FFC533] w-full text-white text-[14px] font-[600] text-center px-3 py-3 flex'
                             >
-                                <Menu className="mr-2 h-5 w-5" />
-                                <span>All Categories</span>
-                                <ChevronDown className="ml-1 h-3 w-3" />
+                                <Menu className="h-5 w-5" />
+                                <span className='mx-2'>SHOP BY CATEGORIES</span>
+                                <ChevronDown className="h-5 w-5 font-extrabold" />
                             </button>
                             <div x-show="open" className="dropdown-menu absolute left-0 z-50 w-64 rounded-b-md bg-white shadow-lg">
                                 {/* <!-- Category with subcategories --> */}
@@ -172,42 +127,50 @@ export default function EcommerceHeader() {
                             </div>
                         </div>
 
-                        {/* Main Menu */}
-                        <ul className="flex">
-                            <li>
-                                <Link href="/" className="flex items-center px-4 py-3 text-gray-700 hover:text-indigo-600">
-                                    Home
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/shop" className="flex items-center px-4 py-3 text-gray-700 hover:text-indigo-600">
-                                    Shop
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/new-arrivals" className="flex items-center px-4 py-3 text-gray-700 hover:text-indigo-600">
-                                    New Arrivals
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/deals" className="flex items-center px-4 py-3 text-gray-700 hover:text-indigo-600">
-                                    Deals
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/blog" className="flex items-center px-4 py-3 text-gray-700 hover:text-indigo-600">
-                                    Blog
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/contact" className="flex items-center px-4 py-3 text-gray-700 hover:text-indigo-600">
-                                    Contact
-                                </Link>
-                            </li>
-                        </ul>
+                        <div className='nav flex items-center gap-3'>
+                            {/* Main Menu */}
+                            <ul className="flex">
+                                <li>
+                                    <Link href="/" className="flex items-center px-4 py-3 text-gray-700 hover:text-[#FFC533]">
+                                        HOME
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/shop" className="flex items-center px-4 py-3 text-gray-700 hover:text-[#FFC533]">
+                                        SHOP
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/new-arrivals" className="flex items-center px-4 py-3 text-gray-700 hover:text-[#FFC533]">
+                                        NEW ARRIVALS
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/deals" className="flex items-center px-4 py-3 text-gray-700 hover:text-[#FFC533]">
+                                        DEALS
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/blog" className="flex items-center px-4 py-3 text-gray-700 hover:text-[#FFC533]">
+                                        BLOG
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/contact" className="flex items-center px-4 py-3 text-gray-700 hover:text-[#FFC533]">
+                                        CONTACT
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div className='flex items-center gap-2'>
+                            <Truck className="h-5 w-5" />
+                            <span className='text-[14px] font-[400]'>Free International Delivery</span>
+                        </div>
                     </div>
-                </div>
-            </nav>
+                </nav>
+
+            </div>
         </>
     );
 }

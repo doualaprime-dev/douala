@@ -14,20 +14,15 @@ export default function SpecialOffer() {
     const { specialOffers } = usePage().props as any;
 
     return (
-        <div className="bg-white py-12">
-            <div className="container mx-auto px-4">
-                <div className="mb-8 flex items-center justify-between">
-                    <h2 className="text-2xl font-bold">Special Offers</h2>
-                    <a href="#" className="text-indigo-600 hover:text-indigo-800">
-                        View All
-                    </a>
-                </div>
+        <div className="container py-4">
+            <div className='card shadow-lg p-4 w-full rounded-md bg-white'>
+                <h2 className="text-[20px] font-bold text-gray-800 border-b-4 border-[#FFC533] w-full mb-2">Special Offers</h2>
 
                 <div className="swiper brand-slider">
                     <div className="swiper-wrapper items-center">
                         <Swiper
                             modules={[Navigation, Pagination, Autoplay]}
-                            spaceBetween={0}
+                            spaceBetween={10}
                             slidesPerView={5}
                             // navigation
                             pagination={{ clickable: true }}
@@ -45,11 +40,11 @@ export default function SpecialOffer() {
                                 1280: { slidesPerView: 5 },
                                 1920: { slidesPerView: 5 }
                             }}
-                            className="swiper-wrapper items-center"
+                            className="productSlider"
                         >
                             {specialOffers.length > 0 ? (
                                 specialOffers.map((product: any) =>
-                                    <SwiperSlide key={product.id} className="swiper-slide p-4 text-center">
+                                    <SwiperSlide key={product.id} className="">
                                         <ProductCard key={product.id} {...product} />
                                     </SwiperSlide>
                             )) : (
