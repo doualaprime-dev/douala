@@ -78,7 +78,7 @@ export default function Dashboard({ stats = {
                             <CardTitle className='text-sm font-medium text-yellow-500'>
                                 Total Brands
                             </CardTitle>
-                            <List className='h-4 w-4 text-yellow-500' />
+                            <Clock className='h-4 w-4 text-yellow-500' />
                         </CardHeader>
                         <CardContent>
                             <div className='text-2xl font-bold text-yellow-500'>
@@ -95,7 +95,7 @@ export default function Dashboard({ stats = {
                             <CardTitle className='text-sm font-medium text-purple-500'>
                                 Total Products
                             </CardTitle>
-                            <List className='h-4 w-4 text-purple-500' />
+                            <AlertCircle className='h-4 w-4 text-purple-500' />
                         </CardHeader>
                         <CardContent>
                             <div className='text-2xl font-bold text-purple-500'>
