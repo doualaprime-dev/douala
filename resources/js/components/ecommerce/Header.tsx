@@ -117,10 +117,10 @@ export default function EcommerceHeader() {
                                 className='!bg-[#FFC533] w-full text-white text-[14px] font-[600] text-center px-3 py-3 flex'
                             >
                                 <Menu className="h-5 w-5" />
-                                <span className='mx-2'>SHOP BY CATEGORIES</span>
+                                <span className='mx-2'>TOUTES LES CATÉGORIES</span>
                                 <ChevronDown className="h-5 w-5 font-extrabold" />
                             </button>
-                            <div x-show="open" className="dropdown-menu absolute left-0 z-50 w-64 rounded-b-md bg-white shadow-lg">
+                            <div x-show="open" className="dropdown-menu absolute left-0 z-50 w-64 rounded-b-md bg-white shadow-lg text-xs">
                                 {/* <!-- Category with subcategories --> */}
                                 {parentCategories.length > 0 &&
                                     parentCategories.map((category: any) => <CategoryMenuItem key={category.id} category={category} />)}

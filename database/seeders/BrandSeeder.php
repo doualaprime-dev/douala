@@ -14,34 +14,40 @@ class BrandSeeder extends Seeder
     {
         $brands = [
             [
-                'name' => 'Samsung',
+                'name' => 'OSCAR',
             ],
             [
-                'name' => 'Apple',
+                'name' => 'INNOVA',
             ],
             [
-                'name' => 'Sony',
+                'name' => 'ROCH',
+            ],
+            [
+                'name' => 'FIABTEC',
+            ],
+            [
+                'name' => 'TCL',
+            ],
+            [
+                'name' => 'BINATONE',
+            ],
+            [
+                'name' => 'MIDEA',
+            ],
+            [
+                'name' => 'OCEAN',
+            ],
+            [
+                'name' => 'DELTA',
+            ],
+            [
+                'name' => 'STAR-SAT',
             ],
             [
                 'name' => 'LG',
             ],
             [
-                'name' => 'Dell',
-            ],
-            [
-                'name' => 'HP',
-            ],
-            [
-                'name' => 'Lenovo',
-            ],
-            [
-                'name' => 'Asus',
-            ],
-            [
-                'name' => 'Acer',
-            ],
-            [
-                'name' => 'Microsoft',
+                'name' => 'HISENSE',
             ]
         ];
 

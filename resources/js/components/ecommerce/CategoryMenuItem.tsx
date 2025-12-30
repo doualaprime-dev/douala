@@ -27,7 +27,7 @@ export default function CategoryMenuItem({ category }: CategoryMenuItemProps) {
                         onMouseLeave={() => setIsSubMenuOpen(false)}
                     >
                         <div className="flex items-center">
-                            <i className={`fas fa-${category.icon || 'folder'} mr-3 text-indigo-500`}></i>
+                            <i className={`fas fa-${category.icon || 'folder'} mr-3 text-[#FFC533]`}></i>
                             <span>{category.name}</span>
                         </div>
                         <i className="fas fa-chevron-right text-xs"></i>
@@ -45,9 +45,9 @@ export default function CategoryMenuItem({ category }: CategoryMenuItemProps) {
                     )}
                 </>
             ) : (
-                <Link href={`/category/${category.slug}`} className="flex items-center px-4 py-3 hover:bg-gray-100">
-                    <i className={`fas fa-${category.icon || 'folder'} mr-3 text-indigo-500`}></i>
-                    <span>{category.name}</span>
+                <Link href={`/category/${category.slug}`} className="flex items-center px-4 py-1 hover:bg-gray-100">
+                    <i className={`fas fa-${category.icon || 'folder'} mr-3 text-[#FFC533]`}></i>
+                    <span className='text-sm'>{category.name}</span>
                 </Link>
             )}
         </div>

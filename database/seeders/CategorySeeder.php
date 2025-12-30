@@ -14,43 +14,112 @@ class CategorySeeder extends Seeder
     {
         $categories = [
             [
-                'name' => 'Home Services',
+                'name' => 'CONGÉLATEURS',
                 'subcategories' => [
-                    'House Cleaning',
-                    'Plumbing',
-                    'Electrical Work'
+                    'Congélateur Coffre',
+                    'Congélateur Double Battant',
+                    'Congélateur Coffre Vitrine',
+                    'Congélateur Vertical'
                 ]
             ],
             [
-                'name' => 'Beauty & Wellness',
+                'name' => 'RÉFRIGÉRATEURS',
                 'subcategories' => [
-                    'Hair Styling',
-                    'Massage',
-                    'Nail Care'
+                    'Réfrigérateur Combiné',
+                    'Réfrigérateur Américain',
+                    'Réfrigérateur Double Battant',
+                    'Réfrigérateur Vitrine'
                 ]
             ],
             [
-                'name' => 'Education & Training',
+                'name' => 'CUISINIÈRES',
                 'subcategories' => [
-                    'Academic Tutoring',
-                    'Language Classes',
-                    'Music Lessons'
+                    'Cuisinière Manuelle',
+                    'Cuisinière Automatique',
+                    'Cuisinière Électrique',
+                    'Plaque À Gaz',
+                    'Marmite Chauffante'
                 ]
             ],
             [
-                'name' => 'Auto Services',
+                'name' => 'MACHINES À LAVER',
                 'subcategories' => [
-                    'Car Repair',
-                    'Car Wash',
-                    'Oil Change'
+                    'Automatique',
+                    'Semi-Automatique',
+                    'Sèche-Linge',
+                    'Machine Lavante Et Séchante'
                 ]
             ],
             [
-                'name' => 'Tech Support',
+                'name' => 'CLIMATISEURS',
                 'subcategories' => [
-                    'Computer Repair',
-                    'Phone Repair',
-                    'Network Setup'
+                    'Split Climatiseur',
+                    'Climatiseur Portatif',
+                    'Climatiseur Armoire',
+                    'Ventilateurs',
+                    'Refroidisseurs d\'air'
+                ]
+            ],
+            [
+                'name' => 'APPAREILS DE CUISSON',
+                'subcategories' => [
+                    'Micro-Ondes Et Fours',
+                    'Friteuses',
+                    'Autocuiseurs'
+                ]
+            ],
+            [
+                'name' => 'BLENDER ET HACHOIR',
+                'subcategories' => [
+                    'Blender',
+                    'Hachoir'
+                ]
+            ],
+            [
+                'name' => 'APPAREILS DE PATISSERIE ET JUS',
+                'subcategories' => [
+                    'Mélangeur, Mixeur Et Batteur',
+                    'Extracteur De Jus Et Presse Agrumes Électriques'
+                ]
+            ],
+            [
+                'name' => 'APPAREILS POUR PETIT DÉJ',
+                'subcategories' => [
+                    'Bouilloires & Cafétières',
+                    'Grill Et Autres'
+                ]
+            ],
+            [
+                'name' => 'APPAREILS DE MÉNAGE',
+                'subcategories' => [
+                    'Fer À Répasser, À Vapeur Et À Sec',
+                    'Central Vapeur Et Défroisseurs',
+                    'Aspirateur Assisté Et Autonomes'
+                ]
+            ],
+            [
+                'name' => 'TÉLÉVISEURS',
+                'subcategories' => [
+                    'Téléviseurs Smart',
+                    'Téléviseurs Numériques',
+                    'Téléviseurs LED'
+                ]
+            ],
+            [
+                'name' => 'ÉLÉCTRICITÉ',
+                'subcategories' => [
+                    'Onduleurs Et Convertisseurs',
+                    'Régulateurs De Tension'
+                ]
+            ],
+            [
+                'name' => 'AUDIO & HIFI',
+                'subcategories' => [
+                    'Home Cinéma',
+                    'Baffles Et Barres De Son Bluetooth',
+                    'Haut-Parleurs Et Woofers',
+                    'Enceintes Bluetooth',
+                    'Systèmes HIFI'
                 ]
             ]
         ];
