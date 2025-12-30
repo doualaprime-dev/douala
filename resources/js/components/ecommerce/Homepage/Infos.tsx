@@ -11,8 +11,8 @@ export default function Infos() {
                     </div>
 
                     <div className='info flex flex-col gap-0'>
-                        <h3 className='text-[16px] font-[600]'>Worldwide Shipping</h3>
-                        <p className='text-[14px] font-[400]'>Order Above $100</p>
+                        <h3 className='text-[16px] font-[600]'>Livraison à domicile</h3>
+                        <p className='text-[14px] font-[400]'>À partir de 2000 XAF</p>
                     </div>
                 </div>
 
@@ -22,8 +22,8 @@ export default function Infos() {
                     </div>
 
                     <div className='info flex flex-col gap-0'>
-                        <h3 className='text-[16px] font-[600]'>Money Back Guarantee</h3>
-                        <p className='text-[14px] font-[400]'>Guarante With In 30 Days</p>
+                        <h3 className='text-[16px] font-[600]'>Garantie de remboursement</h3>
+                        <p className='text-[14px] font-[400]'>Garantie sous 06 mois</p>
                     </div>
                 </div>
 
@@ -33,8 +33,8 @@ export default function Infos() {
                     </div>
 
                     <div className='info flex flex-col gap-0'>
-                        <h3 className='text-[16px] font-[600]'>Offers And Discounts</h3>
-                        <p className='text-[14px] font-[400]'>Back Returns In 7 Days</p>
+                        <h3 className='text-[16px] font-[600]'>Offres et réductions</h3>
+                        <p className='text-[14px] font-[400]'>Retours acceptés sous 7 jours</p>
                     </div>
                 </div>
 
@@ -44,8 +44,8 @@ export default function Infos() {
                     </div>
 
                     <div className='info flex flex-col gap-0'>
-                        <h3 className='text-[16px] font-[600]'>24/7 Support Services</h3>
-                        <p className='text-[14px] font-[400]'>Any Time Support</p>
+                        <h3 className='text-[16px] font-[600]'>Assistance 24h/24 et 7j/7</h3>
+                        <p className='text-[14px] font-[400]'>Assistance à tout moment</p>
                     </div>
                 </div>
             </div>

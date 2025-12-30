@@ -28,6 +28,7 @@ class ProductStoreRequest extends FormRequest
             'brand_id' => 'nullable|exists:brands,id',
             'category_id' => 'required|exists:categories,id',
             'price' => 'required|numeric|min:0',
+            'discount' => 'required|numeric|min:0',
             'quantity' => 'required|integer|min:0',
             'barcode' => 'nullable|string|max:255',
             'sku' => 'nullable|string|max:255',

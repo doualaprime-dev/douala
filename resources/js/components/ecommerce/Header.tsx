@@ -35,12 +35,12 @@ export default function EcommerceHeader() {
                 <div className='top-strip py-2 w-full border-b-[1px] border-[rgba(0,0,0,0.3)]'>
                     <div className='container flex items-center justify-between'>
                         <p className='text-[14px] text-gray-800'>
-                            Limited-Time Offers : Mid-Summer Season Sale Live Now - <Link href={"#"} className='link hover:text-[#FFC533]'>Shop Now</Link>
+                            Offres à durée limitée : <Link href={"#"} className='link hover:text-[#FFC533]'>Achetez maintenant</Link>
                         </p>
 
                         <ul className='flex items-center gap-3'>
-                            <li><Link href={"#"} className='text-[13px] font-[500] text-gray-800 hover:text-[#FFC533]'>Store Locator</Link></li>
-                            <li><Link href={"#"} className='text-[13px] font-[500] text-gray-800 hover:text-[#FFC533]'>Order Tracking</Link></li>
+                            <li><Link href={"#"} className='text-[13px] font-[500] text-gray-800 hover:text-[#FFC533]'>Localisateur de magasins</Link></li>
+                            <li><Link href={"#"} className='text-[13px] font-[500] text-gray-800 hover:text-[#FFC533]'>Suivi de commande</Link></li>
                         </ul>
                     </div>
                 </div>
@@ -57,7 +57,7 @@ export default function EcommerceHeader() {
                                 type="text"
                                 value={data.search}
                                 onChange={handleChange}
-                                placeholder="Search for products..."
+                                placeholder="Recherche de produits . . ."
                                 className="w-full h-[50px] bg-transparent outline-none px-4"
                             />
                             <button className="!min-w-[40px] !w-[40px !h-[40px] !rounded-full !absolute top-[3px] right-[3px] z-50">
@@ -87,17 +87,17 @@ export default function EcommerceHeader() {
                                             <span>{auth.user.name}</span>
                                         </Link>
                                         <Link href={route('logout')} method="post" as="button" className="text-gray-700 hover:text-[#FFC533]">
-                                            Logout
+                                            Se Déconnecter
                                         </Link>
                                     </div>
                                 ) : (
                                     <div className="flex space-x-4">
                                         <Link href="/login" className='text-[15px] font-[600] text-gray-500 hover:text-[#FFC533]'>
-                                            Login
+                                            Se Connecter
                                         </Link>
                                         <span className='text-[15px] font-[600] text-gray-500'>/</span>
                                         <Link href="/register" className='text-[15px] font-[600] text-gray-500 hover:text-[#FFC533]'>
-                                            Register
+                                            S'inscrire
                                         </Link>
                                     </div>
                                 )}
@@ -132,22 +132,12 @@ export default function EcommerceHeader() {
                             <ul className="flex">
                                 <li>
                                     <Link href="/" className="flex items-center px-4 py-3 text-gray-700 hover:text-[#FFC533]">
-                                        HOME
+                                        ACCUEIL
                                     </Link>
                                 </li>
                                 <li>
                                     <Link href="/shop" className="flex items-center px-4 py-3 text-gray-700 hover:text-[#FFC533]">
-                                        SHOP
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/new-arrivals" className="flex items-center px-4 py-3 text-gray-700 hover:text-[#FFC533]">
-                                        NEW ARRIVALS
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/deals" className="flex items-center px-4 py-3 text-gray-700 hover:text-[#FFC533]">
-                                        DEALS
+                                        BOUTIQUE
                                     </Link>
                                 </li>
                                 <li>
@@ -165,7 +155,7 @@ export default function EcommerceHeader() {
 
                         <div className='flex items-center gap-2'>
                             <Truck className="h-5 w-5" />
-                            <span className='text-[14px] font-[400]'>Free International Delivery</span>
+                            <span className='text-[14px] font-[400]'>Livraison Rapide</span>
                         </div>
                     </div>
                 </nav>

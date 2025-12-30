@@ -45,6 +45,7 @@ export default function Create({ categories, brands }: Props) {
         brand_id: '',
         description: '',
         price: '',
+        discount: '',
         sku: '',
         barcode: '',
         status: 'draft',
@@ -263,6 +264,34 @@ export default function Create({ categories, brands }: Props) {
                                             </div>
                                         )}
                                     </div>
+                                </div>
+
+                                {/* Discount */}
+                                <div className="space-y-2">
+                                    <Label
+                                        htmlFor="discount"
+                                        className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-200"
+                                    >
+                                        <TagIcon size={14} className="text-primary dark:text-primary-light" />
+                                        Discount
+                                    </Label>
+
+                                    <Input
+                                        id="discount"
+                                        type="number"
+                                        step="0.01"
+                                        value={data.price}
+                                        onChange={(e) => setData('discount', e.target.value)}
+                                        className="focus:border-primary focus:ring-primary/20 dark:focus:border-primary-light dark:focus:ring-primary-light/20 h-12 w-full rounded-lg border border-gray-200 bg-white/80 text-base text-gray-900 shadow-sm backdrop-blur-sm transition-all group-hover:border-gray-300 focus:ring-2 dark:border-gray-600 dark:bg-gray-800/80 dark:text-gray-100 dark:group-hover:border-gray-500"
+                                        placeholder="0.00"
+                                    />
+
+                                    {errors.price && (
+                                        <div className="mt-2 flex items-center gap-2 rounded-md bg-red-50 p-2 text-sm text-red-500 dark:bg-red-900/20 dark:text-red-400">
+                                            <AlertCircle size={14} />
+                                            <span>{errors.price}</span>
+                                        </div>
+                                    )}
                                 </div>
 
                                 {/* SKU and Barcode */}

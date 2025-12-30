@@ -21,8 +21,9 @@ class ProductListResource extends JsonResource
             'price' => $this->getPriceForFirstOptions(),
             'quantity' => $this->quantity,
             'image' => $this->getFirstImageUrl('images', 'small'),
-            'isDiscount' => false,
-            'discount' => 0
+            'isDiscount' => true,
+            'discount' => $this->discount,
+            'percent' => 25,
         ];
     }
 }

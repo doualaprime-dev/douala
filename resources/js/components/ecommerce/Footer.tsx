@@ -12,8 +12,8 @@ export default function Footer() {
                             <img src="/images/logo.png" width={100} alt="" />
                         </Link>
                         <p className="mb-6 text-gray-400">
-                            ShopMart offers a wide range of high-quality products at competitive prices. We're committed to providing an exceptional
-                            shopping experience with fast shipping and excellent customer service.
+                            Douala-Prime propose une vaste gamme de produits de haute qualité à des prix compétitifs. Nous nous engageons à vous offrir une expérience d'achat exceptionnelle,
+                            avec une livraison rapide et un excellent service client.
                         </p>
                         <div className="flex space-x-4">
                             <Link
@@ -45,26 +45,26 @@ export default function Footer() {
 
                     {/* Quick Links */}
                     <div>
-                        <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
+                        <h3 className="mb-4 text-lg font-semibold">Liens rapides</h3>
                         <ul className="space-y-2">
                             <li>
                                 <Link href="/" className="text-gray-400 transition-colors hover:text-white">
-                                    Home
+                                    Accueil
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/shop" className="text-gray-400 transition-colors hover:text-white">
-                                    Shop
+                                    Boutique
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/products" className="text-gray-400 transition-colors hover:text-white">
-                                    Products
+                                    Produits
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/about" className="text-gray-400 transition-colors hover:text-white">
-                                    About Us
+                                    A Propos
                                 </Link>
                             </li>
                             <li>
@@ -82,26 +82,26 @@ export default function Footer() {
 
                     {/* Customer Service */}
                     <div>
-                        <h3 className="mb-4 text-lg font-semibold">Customer Service</h3>
+                        <h3 className="mb-4 text-lg font-semibold">Service client</h3>
                         <ul className="space-y-2">
                             <li>
                                 <Link href="/account" className="text-gray-400 transition-colors hover:text-white">
-                                    My Account
+                                    Mon compte
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/orders" className="text-gray-400 transition-colors hover:text-white">
-                                    Order History
+                                    Historique des commandes
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/wishlist" className="text-gray-400 transition-colors hover:text-white">
-                                    Wishlist
+                                    Liste de souhaits
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/returns" className="text-gray-400 transition-colors hover:text-white">
-                                    Returns
+                                    Retours
                                 </Link>
                             </li>
                             <li>
@@ -111,7 +111,7 @@ export default function Footer() {
                             </li>
                             <li>
                                 <Link href="/terms" className="text-gray-400 transition-colors hover:text-white">
-                                    Terms & Conditions
+                                    Conditions générales
                                 </Link>
                             </li>
                         </ul>
@@ -119,27 +119,31 @@ export default function Footer() {
 
                     {/* Contact Information */}
                     <div>
-                        <h3 className="mb-4 text-lg font-semibold">Contact Us</h3>
+                        <h3 className="mb-4 text-lg font-semibold">Contactez-nous</h3>
                         <ul className="space-y-3">
                             <li className="flex items-start">
                                 <MapPin className="mt-1 mr-3 h-5 w-5 text-indigo-500" />
                                 <span className="text-gray-400">
-                                    1234 Market St, Suite 900
+                                    Deido Grand Moulin
                                     <br />
-                                    San Francisco, CA 94103
+                                    MRS Omnisports
                                 </span>
                             </li>
                             <li className="flex items-center">
                                 <Phone className="mr-3 h-5 w-5 text-indigo-500" />
-                                <span className="text-gray-400">+1 (800) 123-4567</span>
+                                <span className="text-gray-400">
+                                    +237 670 85 72 04
+                                    <br />
+                                    +237 699 01 35 35
+                                </span>
                             </li>
                             <li className="flex items-center">
                                 <Mail className="mr-3 h-5 w-5 text-indigo-500" />
-                                <span className="text-gray-400">info@shopmart.com</span>
+                                <span className="text-gray-400">doualaprime@commande.com</span>
                             </li>
                             <li className="flex items-center">
                                 <Clock className="mr-3 h-5 w-5 text-indigo-500" />
-                                <span className="text-gray-400">Mon-Fri: 9AM - 6PM</span>
+                                <span className="text-gray-400">Lundi - Samedi : 8H - 18H</span>
                             </li>
                         </ul>
                     </div>
@@ -148,7 +152,7 @@ export default function Footer() {
                 <hr className="my-8 border-gray-700" />
 
                 <div className="flex flex-col items-center justify-between md:flex-row">
-                    <p className="mb-4 text-gray-400 md:mb-0">© {new Date().getFullYear()} ShopMart. All Rights Reserved.</p>
+                    <p className="mb-4 text-gray-400 md:mb-0">© {new Date().getFullYear()} Douala-Prime. Tous droits réservés.</p>
                     <div className="flex space-x-6">
                         <img src="/images/payment-4.png" alt="Payment" className="h-8" />
                         <img src="/images/payment-3.png" alt="Payment" className="h-8" />
