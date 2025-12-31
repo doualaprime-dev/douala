@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\HomeController;
@@ -15,6 +17,21 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/category/{category:slug}','byCategory')->name('by-category');
 });
 
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class,'index'])->name('dashboard');
+
+    Route::get('/posts/create', [PostController::class,'create'])->name('posts.create');
+    Route::post('/posts', [PostController::class,'store'])->name('posts.store');
+    Route::get('/posts/{post}/edit', [PostController::class,'edit'])->name('posts.edit');
+    Route::put('/posts/{post}', [PostController::class,'update'])->name('posts.update');
+    Route::delete('/posts/{post}', [PostController::class,'destroy'])->name('posts.destroy');
+    Route::post('/posts/{post}/like', [PostController::class,'like'])->name('posts.like');
+});
+
+Route::get('/posts/{post}', [PostController::class,'show'])->name('posts.show');
+
+Route::get('/blog', [BlogController::class,'index'])->name('blog');
+
 // Cart routes
 Route::controller(CartController::class)->group(function () {
     Route::get('/cart', 'index')->name('cart.index');
@@ -26,6 +43,8 @@ Route::controller(CartController::class)->group(function () {
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class,'index'])->name('dashboard');
 });
+
+Route::get('posts/{post}', [PostController::class,'show'])->name('posts.show');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/checkout', [CartController::class, 'checkoutForm'])->name('checkout');

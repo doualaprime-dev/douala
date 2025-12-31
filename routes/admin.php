@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\ProductImageController;
 use App\Http\Controllers\Admin\ProductVariationTypeController;
 use App\Http\Controllers\Admin\ProductVariationController;
 use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\PostController;
 
 Route::middleware(['auth', AdminCheckMiddleware::class])->group(function () {
     Route::prefix('admin')->name('admin.')->group(function () {
@@ -49,6 +50,7 @@ Route::middleware(['auth', AdminCheckMiddleware::class])->group(function () {
             'brands' => BrandController::class,
             'products' => ProductController::class,
             'orders' => OrderController::class,
+            'posts' => PostController::class,
         ]);
     });
 });

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Http\Controllers\Controller;
@@ -24,12 +25,15 @@ class HomeController extends Controller
             $brand->image = asset('storage/' . $brand->image);
             return $brand;
         });
+        $posts = Post::with('author')->latest()->get();
+
         return Inertia::render('Ecommerce/Home', [
             'title' => 'Welcome to Our Store',
             'description' => 'Explore our wide range of products and enjoy exclusive offers.',
             'bestSellingProducts' => $bestSellingProducts,
             'specialOffers' => $specialOffers,
             'brands' => $brands,
+            'posts' => $posts,
         ]);
     }
 
