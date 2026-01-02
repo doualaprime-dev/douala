@@ -131,22 +131,17 @@ export default function EcommerceHeader() {
                             {/* Main Menu */}
                             <ul className="flex">
                                 <li>
-                                    <Link href="/" className="flex items-center px-4 py-3 text-gray-700 hover:text-[#FFC533]">
+                                    <Link href={route('home')} className="flex items-center px-4 py-3 text-gray-700 hover:text-[#FFC533]">
                                         ACCUEIL
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/shop" className="flex items-center px-4 py-3 text-gray-700 hover:text-[#FFC533]">
-                                        BOUTIQUE
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/blog" className="flex items-center px-4 py-3 text-gray-700 hover:text-[#FFC533]">
+                                    <Link href={route('blog')} className="flex items-center px-4 py-3 text-gray-700 hover:text-[#FFC533]">
                                         BLOG
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/contact" className="flex items-center px-4 py-3 text-gray-700 hover:text-[#FFC533]">
+                                    <Link href={route('contacts.create')}  className="flex items-center px-4 py-3 text-gray-700 hover:text-[#FFC533]">
                                         CONTACT
                                     </Link>
                                 </li>

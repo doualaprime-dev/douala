@@ -48,18 +48,8 @@ export default function Footer() {
                         <h3 className="mb-4 text-lg font-semibold">Liens rapides</h3>
                         <ul className="space-y-2">
                             <li>
-                                <Link href="/" className="text-gray-400 transition-colors hover:text-white">
+                                <Link href={route('home')} className="text-gray-400 transition-colors hover:text-white">
                                     Accueil
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/shop" className="text-gray-400 transition-colors hover:text-white">
-                                    Boutique
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/products" className="text-gray-400 transition-colors hover:text-white">
-                                    Produits
                                 </Link>
                             </li>
                             <li>
@@ -68,12 +58,12 @@ export default function Footer() {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/contact" className="text-gray-400 transition-colors hover:text-white">
+                                <Link href={route('contacts.create')} className="text-gray-400 transition-colors hover:text-white">
                                     Contact
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/blog" className="text-gray-400 transition-colors hover:text-white">
+                                <Link href={route('blog')} className="text-gray-400 transition-colors hover:text-white">
                                     Blog
                                 </Link>
                             </li>
@@ -85,7 +75,7 @@ export default function Footer() {
                         <h3 className="mb-4 text-lg font-semibold">Service client</h3>
                         <ul className="space-y-2">
                             <li>
-                                <Link href="/account" className="text-gray-400 transition-colors hover:text-white">
+                                <Link href={route('user.dashboard')}  className="text-gray-400 transition-colors hover:text-white">
                                     Mon compte
                                 </Link>
                             </li>

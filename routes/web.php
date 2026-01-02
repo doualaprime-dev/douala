@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\ContactContoller;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\UserCheckMiddleware;
@@ -26,10 +27,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::put('/posts/{post}', [PostController::class,'update'])->name('posts.update');
     Route::delete('/posts/{post}', [PostController::class,'destroy'])->name('posts.destroy');
     Route::post('/posts/{post}/like', [PostController::class,'like'])->name('posts.like');
+
+    Route::post('/contacts', [ContactContoller::class,'store'])->name('contacts.store');
+    Route::delete('/contacts/{contact}', [ContactContoller::class,'destroy'])->name('contacts.destroy');
 });
 
 Route::get('/posts/{post}', [PostController::class,'show'])->name('posts.show');
 
+Route::get('/contacts/create', [ContactContoller::class,'create'])->name('contacts.create');
 Route::get('/blog', [BlogController::class,'index'])->name('blog');
 
 // Cart routes

@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\ProductVariationTypeController;
 use App\Http\Controllers\Admin\ProductVariationController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\ContactContoller;
 
 Route::middleware(['auth', AdminCheckMiddleware::class])->group(function () {
     Route::prefix('admin')->name('admin.')->group(function () {
@@ -51,6 +52,7 @@ Route::middleware(['auth', AdminCheckMiddleware::class])->group(function () {
             'products' => ProductController::class,
             'orders' => OrderController::class,
             'posts' => PostController::class,
+            'contacts' => ContactContoller::class,
         ]);
     });
 });

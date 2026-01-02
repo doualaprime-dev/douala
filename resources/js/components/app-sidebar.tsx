@@ -67,6 +67,11 @@ const mainNavItems: NavItem[] = [
     href: '/admin/posts',
     icon: User,
   },
+  {
+    title: 'Contacts',
+    href: '/admin/contacts',
+    icon: User,
+  },
 ]
 
 const footerNavItems: NavItem[] = [
