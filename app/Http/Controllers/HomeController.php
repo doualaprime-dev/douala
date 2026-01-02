@@ -19,13 +19,89 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        $bestSellingProducts = ProductListResource::collection(Product::query()->limit(10)->orderBy('sales', 'desc')->get())->resolve();
-        $specialOffers = ProductListResource::collection(Product::query()->where('is_special_offer', true)->limit(10)->get())->resolve();
+        $bestSellingProducts = ProductListResource::collection(
+            Product::query()
+                        ->limit(10)
+                        ->orderBy('sales', 'desc')
+                        ->get()
+        )->resolve();
+
+        $specialOffers = ProductListResource::collection(
+            Product::query()
+                        ->where('is_special_offer', true)
+                        ->limit(10)
+                        ->get()
+        )->resolve();
+
         $brands = Brand::query()->select('id', 'name', 'slug', 'image')->get()->map(function ($brand) {
             $brand->image = asset('storage/' . $brand->image);
             return $brand;
         });
+
         $posts = Post::with('author')->latest()->get();
+
+        $congelateurs = ProductListResource::collection(
+            Product::query()
+                        ->limit(10)
+                        ->whereIn('products.category_id', [1,2,3,4,5])
+                        ->get()
+        )->resolve();
+
+        $refrigerateurs = ProductListResource::collection(
+            Product::query()
+                        ->limit(10)
+                        ->whereIn('products.category_id', [6,7,8,9,10])
+                        ->get()
+        )->resolve();
+
+        $cuisinieres = ProductListResource::collection(
+            Product::query()
+                        ->limit(10)
+                        ->whereIn('products.category_id', [11,12,13,14,15,16])
+                        ->get()
+        )->resolve();
+
+        $machines_a_laver = ProductListResource::collection(
+            Product::query()
+                        ->limit(10)
+                        ->whereIn('products.category_id', [17,18,19,20,21])
+                        ->get()
+        )->resolve();
+
+        $climatiseurs = ProductListResource::collection(
+            Product::query()
+                        ->limit(10)
+                        ->whereIn('products.category_id', [22,23,24,25,26,27])
+                        ->get()
+        )->resolve();
+
+        $appareils_cuisson = ProductListResource::collection(
+            Product::query()
+                        ->limit(10)
+                        ->whereIn('products.category_id', [28,29,30,31])
+                        ->get()
+        )->resolve();
+
+        $blender_hachoir = ProductListResource::collection(
+            Product::query()
+                        ->limit(10)
+                        ->whereIn('products.category_id', [32,33,34,35,36,37,38,39,40])
+                        ->get()
+        )->resolve();
+
+        $televiseurs = ProductListResource::collection(
+            Product::query()
+                        ->limit(10)
+                        ->whereIn('products.category_id', [45,46,47,48,49,50,51])
+                        ->get()
+        )->resolve();
+
+        $audio_hifi = ProductListResource::collection(
+            Product::query()
+                        ->limit(10)
+                        ->whereIn('products.category_id', [51,52,53,54,55,56,57])
+                        ->get()
+        )->resolve();
 
         return Inertia::render('Ecommerce/Home', [
             'title' => 'Welcome to Our Store',
@@ -34,6 +110,15 @@ class HomeController extends Controller
             'specialOffers' => $specialOffers,
             'brands' => $brands,
             'posts' => $posts,
+            'congelateurs' => $congelateurs,
+            'refrigerateurs' => $refrigerateurs,
+            'cuisinieres' => $cuisinieres,
+            'machines_a_laver' => $machines_a_laver,
+            'climatiseurs' => $climatiseurs,
+            'appareils_cuisson' => $appareils_cuisson,
+            'blender_hachoir' => $blender_hachoir,
+            'televiseurs' => $televiseurs,
+            'audio_hifi' => $audio_hifi,
         ]);
     }
 
@@ -44,7 +129,8 @@ class HomeController extends Controller
         $relatedProducts = ProductListResource::collection(
             Product::where('category_id', $product->category_id)
                 ->where('id', '!=', $product->id)
-                ->limit(4)
+                ->limit(10)
+                ->orderBy('sales', 'desc')
                 ->get()
         );
         return Inertia::render('Ecommerce/ProductDetail', [

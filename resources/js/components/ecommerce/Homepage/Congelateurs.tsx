@@ -10,13 +10,13 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import ProductCard from '../ProductCard';
 
-export default function BestSeller() {
-    const { bestSellingProducts } = usePage().props as any;
+export default function Congelateurs() {
+    const { congelateurs } = usePage().props as any;
 
     return (
         <div className="container py-4">
             <div className='card shadow-lg p-4 w-full rounded-md bg-white'>
-                <h2 className="text-[20px] font-bold text-gray-800 border-b-4 border-[#FFC533] w-full mb-2">Best Sellers</h2>
+                <h2 className="text-[20px] font-bold text-gray-800 border-b-4 border-[#FFC533] w-full mb-2">Congelateurs</h2>
 
                 <div className="swiper brand-slider">
                     <div className="swiper-wrapper items-center">
@@ -42,8 +42,8 @@ export default function BestSeller() {
                             }}
                             className="productSlider"
                         >
-                            {bestSellingProducts.length > 0 ? (
-                                bestSellingProducts.map((product: any) =>
+                            {congelateurs.length > 0 ? (
+                                congelateurs.map((product: any) =>
                                     <SwiperSlide key={product.id} className="">
                                         <ProductCard key={product.id} {...product} />
                                     </SwiperSlide>
