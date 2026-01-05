@@ -8,18 +8,18 @@ export default function UserSideBar() {
     const menuItems = [
         {
             icon: BarChart3,
-            label: 'Dashboard',
+            label: 'Tableau de bord',
             href: '/user/dashboard',
             active: true,
         },
         {
             icon: ShoppingBag,
-            label: 'Orders',
+            label: 'Commandes',
             href: '/user/orders',
         },
         {
             icon: User,
-            label: 'Account Details',
+            label: 'Détails du compte',
             href: '/user/account-details',
         },
     ];
@@ -60,7 +60,7 @@ export default function UserSideBar() {
                     className='flex w-full items-center rounded-md px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-red-600'
                 >
                     <LogOut className="mr-3 h-5 w-5" />
-                    <span>Logout</span>
+                    <span>Déconnexion</span>
                 </Link>
             </nav>
         </div>

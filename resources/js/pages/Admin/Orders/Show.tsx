@@ -99,60 +99,60 @@ interface Order {
 
 const ORDER_STATUSES = {
   pending: {
-    label: 'Pending',
+    label: 'En attente',
     color: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300',
   },
   confirmed: {
-    label: 'Confirmed',
+    label: 'Confirmé',
     color: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300',
   },
   preparing: {
-    label: 'Preparing',
+    label: 'Préparation',
     color: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300',
   },
   ready_for_pickup: {
-    label: 'Ready for Pickup',
+    label: 'Prêt à être récupéré',
     color: 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-300',
   },
   out_for_delivery: {
-    label: 'Out for Delivery',
+    label: 'En cours de livraison',
     color: 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-300',
   },
   delivered: {
-    label: 'Delivered',
+    label: 'Livré',
     color: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300',
   },
   completed: {
-    label: 'Completed',
+    label: 'Complété',
     color: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300',
   },
   cancelled: {
-    label: 'Cancelled',
+    label: 'Annulé',
     color: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300',
   },
 } as const
 
 const PAYMENT_STATUSES = {
   pending: {
-    label: 'Pending',
+    label: 'En attente',
     color: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300',
   },
   paid: {
-    label: 'Paid',
+    label: 'Payé',
     color: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300',
   },
   failed: {
-    label: 'Failed',
+    label: 'Échoué',
     color: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300',
   },
   refunded: {
-    label: 'Refunded',
+    label: 'Remboursé',
     color: 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300',
   },
 } as const
 
 const formatPrice = (price: number | string | null | undefined): string => {
-  const currency = 'USD'
+  const currency = 'XAF'
   const numericPrice = Number(price)
   if (isNaN(numericPrice)) {
     return '0 ' + currency
@@ -235,7 +235,7 @@ export default function OrderShow({ order }: OrderShowProps) {
             className="flex items-center gap-2"
           >
             <ArrowLeft className="h-4 w-4" />
-            Back to Orders
+            Retour aux commandes
           </Button>
         </div>
 
@@ -274,7 +274,7 @@ export default function OrderShow({ order }: OrderShowProps) {
             {/* Order Items */}
             <Card>
               <CardHeader>
-                <CardTitle>Order Items</CardTitle>
+                <CardTitle>Articles commandés</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
@@ -330,7 +330,7 @@ export default function OrderShow({ order }: OrderShowProps) {
                                 </div>
                               )}
 
-                              <p className="text-sm text-gray-500">Quantity: {item.quantity}</p>
+                              <p className="text-sm text-gray-500">Quantité : {item.quantity}</p>
 
                               {item.notes && (
                                 <p className="text-sm text-gray-500 italic">{item.notes}</p>
@@ -340,14 +340,14 @@ export default function OrderShow({ order }: OrderShowProps) {
                           <div className="space-y-1 text-right">
                             <p className="font-medium">{formatPrice(item.unit_price)}</p>
                             <p className="text-sm font-medium">
-                              Total: {formatPrice(item.total_price)}
+                              Total : {formatPrice(item.total_price)}
                             </p>
                           </div>
                         </div>
                       )
                     })
                   ) : (
-                    <p className="text-gray-500">No items found</p>
+                    <p className="text-gray-500">Aucun article trouvé</p>
                   )}
                 </div>
               </CardContent>
@@ -358,46 +358,46 @@ export default function OrderShow({ order }: OrderShowProps) {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <CreditCard className="h-5 w-5" />
-                  Order Summary
+                  Résumé de la commande
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-2">
                   <div className="flex justify-between">
-                    <span className="text-gray-500">Subtotal:</span>
+                    <span className="text-gray-500">Sous total :</span>
                     <span>{formatPrice(order.subtotal)}</span>
                   </div>
 
                   <div className="flex justify-between">
-                    <span className="text-gray-500">Tax:</span>
+                    <span className="text-gray-500">Tax :</span>
                     <span>{formatPrice(order.tax_amount)}</span>
                   </div>
 
                   <div className="flex justify-between">
-                    <span className="text-gray-500">Shipping:</span>
+                    <span className="text-gray-500">Livraison :</span>
                     <span>{formatPrice(order.shipping_amount)}</span>
                   </div>
 
                   <div className="flex justify-between">
-                    <span className="text-gray-500">Discount:</span>
+                    <span className="text-gray-500">Rabais :</span>
                     <span className="text-red-500">-{formatPrice(order.discount_amount)}</span>
                   </div>
 
                   <div className="flex justify-between border-t border-gray-200 pt-2 font-medium">
-                    <span>Total:</span>
+                    <span>Total :</span>
                     <span>{formatPrice(order.total_price)}</span>
                   </div>
 
                   {/* Additional Order Information */}
                   <div className="mt-4 space-y-2 border-t border-gray-200 pt-4">
                     <div className="flex justify-between">
-                      <span className="text-gray-500">Payment Method:</span>
+                      <span className="text-gray-500">Mode de paiement :</span>
                       <span className="capitalize">
                         {order.payment_method?.replace(/_/g, ' ') || 'Unknown'}
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-500">Payment Status:</span>
+                      <span className="text-gray-500">État du paiement :</span>
                       <span className="capitalize">
                         {order.payment_status?.charAt(0).toUpperCase() +
                           order.payment_status?.slice(1) || 'Unknown'}
@@ -405,7 +405,7 @@ export default function OrderShow({ order }: OrderShowProps) {
                     </div>
                     {order.tracking_number && (
                       <div className="flex justify-between">
-                        <span className="text-gray-500">Tracking Number:</span>
+                        <span className="text-gray-500">Numéro de suivi :</span>
                         <span>{order.tracking_number}</span>
                       </div>
                     )}
@@ -422,7 +422,7 @@ export default function OrderShow({ order }: OrderShowProps) {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <User className="h-5 w-5" />
-                  Customer Information
+                  Informations client
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -439,7 +439,7 @@ export default function OrderShow({ order }: OrderShowProps) {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <CreditCard className="h-5 w-5" />
-                  Billing Information
+                  Informations de facturation
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -466,14 +466,14 @@ export default function OrderShow({ order }: OrderShowProps) {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <MapPin className="h-5 w-5" />
-                  Shipping Information
+                  Informations sur la livraison
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-2">
                   {order.is_shipping_same_as_billing ? (
                     <Badge variant="outline" className="mb-2">
-                      Same as Billing
+                      Identique à la facturation
                     </Badge>
                   ) : (
                     <>
@@ -498,7 +498,7 @@ export default function OrderShow({ order }: OrderShowProps) {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <FileText className="h-5 w-5" />
-                    Customer Notes
+                    Notes des clients
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -512,12 +512,12 @@ export default function OrderShow({ order }: OrderShowProps) {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Package2 className="h-5 w-5" />
-                  Update Order
+                  Mettre à jour la commande
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <Label htmlFor="status">Order Status</Label>
+                  <Label htmlFor="status">État de la commande</Label>
                   <Select
                     value={formData.status}
                     onValueChange={(value) => handleInputChange('status', value)}
@@ -536,13 +536,13 @@ export default function OrderShow({ order }: OrderShowProps) {
                 </div>
 
                 <div>
-                  <Label htmlFor="payment_status">Payment Status</Label>
+                  <Label htmlFor="payment_status">État du paiement</Label>
                   <Select
                     value={formData.payment_status}
                     onValueChange={(value) => handleInputChange('payment_status', value)}
                   >
                     <SelectTrigger>
-                      <SelectValue placeholder="Select payment status" />
+                      <SelectValue placeholder="Sélectionnez le statut de paiement" />
                     </SelectTrigger>
                     <SelectContent>
                       {Object.entries(PAYMENT_STATUSES).map(([value, { label }]) => (
@@ -555,28 +555,28 @@ export default function OrderShow({ order }: OrderShowProps) {
                 </div>
 
                 <div>
-                  <Label htmlFor="tracking_number">Tracking Number</Label>
+                  <Label htmlFor="tracking_number">Numéro de suivi</Label>
                   <Input
                     id="tracking_number"
                     value={formData.tracking_number}
                     onChange={(e) => handleInputChange('tracking_number', e.target.value)}
-                    placeholder="Enter tracking number"
+                    placeholder="Saisissez le numéro de suivi"
                   />
                 </div>
 
                 <div>
-                  <Label htmlFor="admin_notes">Admin Notes</Label>
+                  <Label htmlFor="admin_notes">Notes de l'administrateur</Label>
                   <Textarea
                     id="admin_notes"
                     value={formData.admin_notes}
                     onChange={(e) => handleInputChange('admin_notes', e.target.value)}
-                    placeholder="Enter admin notes"
+                    placeholder="Saisir les notes de l'administrateur"
                     rows={3}
                   />
                 </div>
 
                 <Button onClick={handleStatusUpdate} className="w-full">
-                  Update Order
+                  Mettre à jour la commande
                 </Button>
               </CardContent>
             </Card>
@@ -589,7 +589,7 @@ export default function OrderShow({ order }: OrderShowProps) {
             onClick={handlePrint}
           >
             <Printer className="h-4 w-4" />
-            Print Invoice
+            Imprimer la facture
           </Button>
           <div style={{ display: 'none' }}>
             {/* <OrderInvoice ref={contentRef} order={order} /> */}

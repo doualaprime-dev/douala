@@ -86,12 +86,12 @@ export default function ProductVariations({ product, variationsLists }: { produc
         >
             <div className="space-y-6">
                 <div className="flex items-center justify-between">
-                    <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200">Product Variations</h2>
+                    <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200">Variantes de produits</h2>
                 </div>
 
                 {data.variations.length === 0 ? (
                     <div className="rounded-xl border border-gray-200 bg-white p-6 text-center shadow-sm dark:border-gray-700 dark:bg-gray-800">
-                        <p className="text-gray-600 dark:text-gray-400">No variation types found for this product.</p>
+                        <p className="text-gray-600 dark:text-gray-400">Aucune variante n'a été trouvée pour ce produit.</p>
                     </div>
                 ) : (
                     data.variations.map((variation, idx) => (
@@ -120,14 +120,14 @@ export default function ProductVariations({ product, variationsLists }: { produc
                                                         className="focus:border-primary focus:ring-primary/20 dark:focus:border-primary-light dark:focus:ring-primary-light/20 h-12 w-full rounded-lg border border-gray-200 bg-white/80 text-base text-gray-900 shadow-sm backdrop-blur-sm transition-all group-hover:border-gray-300 focus:ring-2 dark:border-gray-600 dark:bg-gray-800/80 dark:text-gray-100 dark:group-hover:border-gray-500"
                                                         value={value.name}
                                                         readOnly={true}
-                                                        placeholder={`Enter ${value.label.toLowerCase()}`}
+                                                        placeholder={`Entrer ${value.label.toLowerCase()}`}
                                                     />
                                                 </div>
                                             ))}
                                         </div>
                                         <div className="grid grid-cols-2 gap-6">
                                             <div className="space-y-2">
-                                                <Label className="text-sm font-medium text-gray-700 dark:text-gray-300">Quantity</Label>
+                                                <Label className="text-sm font-medium text-gray-700 dark:text-gray-300">Quantité</Label>
                                                 <Input
                                                     className={`focus:border-primary focus:ring-primary/20 dark:focus:border-primary-light dark:focus:ring-primary-light/20 h-12 w-full rounded-lg border ${
                                                         errors[`variations.${idx}.quantity`] ? 'border-red-500' : 'border-gray-200'
@@ -150,7 +150,7 @@ export default function ProductVariations({ product, variationsLists }: { produc
                                                         type="number"
                                                         value={variation.price}
                                                         onChange={(e) => handleChange(idx, 'price', e.target.value)}
-                                                        placeholder="Enter price"
+                                                        placeholder="Saisissez le prix"
                                                     />
                                                 </div>
                                             </div>
@@ -169,7 +169,7 @@ export default function ProductVariations({ product, variationsLists }: { produc
                     disabled={processing}
                     className="bg-primary hover:bg-primary/90 focus:ring-primary/20 dark:bg-primary-light dark:hover:bg-primary-light/90 dark:focus:ring-primary-light/20 inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-medium text-white transition-colors focus:ring-2 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
                 >
-                    {processing ? 'Updating...' : 'Update Variations'}
+                    {processing ? 'Mise à jour en cours...' : 'Mise à jour des variantes'}
                 </button>
             </div>
         </ProductLayout>

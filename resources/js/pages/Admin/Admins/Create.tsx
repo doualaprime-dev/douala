@@ -91,8 +91,8 @@ export default function Create() {
                                                 <User className="text-primary dark:text-primary-light" size={24} />
                                             </div>
                                             <div>
-                                                <h1 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Create Admin</h1>
-                                                <p className="mt-1 text-sm text-gray-500 dark:text-gray-300">Add new admin</p>
+                                                <h1 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Créer un administrateur</h1>
+                                                <p className="mt-1 text-sm text-gray-500 dark:text-gray-300">Ajouter un nouvel administrateur</p>
                                             </div>
                                         </div>
 
@@ -103,7 +103,7 @@ export default function Create() {
                                                 className="flex items-center gap-2 text-gray-700 transition-all hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
                                             >
                                                 <ArrowLeft size={16} />
-                                                Back
+                                                Rentrer
                                             </Button>
                                         </Link>
                                     </div>
@@ -118,7 +118,7 @@ export default function Create() {
                                                     className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-200"
                                                 >
                                                     <User size={14} className="text-primary dark:text-primary-light" />
-                                                    Name
+                                                    Nom
                                                 </Label>
 
                                                 <div className="group relative">
@@ -128,7 +128,7 @@ export default function Create() {
                                                         value={data.name}
                                                         onChange={(e) => setData('name', e.target.value)}
                                                         className="focus:border-primary focus:ring-primary/20 dark:focus:border-primary-light dark:focus:ring-primary-light/20 h-12 w-full rounded-lg border border-gray-200 bg-white/80 pl-10 text-base text-gray-900 shadow-sm backdrop-blur-sm transition-all group-hover:border-gray-300 focus:ring-2 dark:border-gray-600 dark:bg-gray-800/80 dark:text-gray-100 dark:group-hover:border-gray-500"
-                                                        placeholder="Enter name"
+                                                        placeholder="Entrez le nom"
                                                         required
                                                         autoFocus
                                                     />
@@ -152,7 +152,7 @@ export default function Create() {
                                                     className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-200"
                                                 >
                                                     <User size={14} className="text-primary dark:text-primary-light" />
-                                                    Username
+                                                    Nom d'utilisateur
                                                 </Label>
 
                                                 <div className="group relative">
@@ -162,7 +162,7 @@ export default function Create() {
                                                         value={data.username}
                                                         onChange={(e) => setData('username', e.target.value)}
                                                         className="focus:border-primary focus:ring-primary/20 dark:focus:border-primary-light dark:focus:ring-primary-light/20 h-12 w-full rounded-lg border border-gray-200 bg-white/80 pl-10 text-base text-gray-900 shadow-sm backdrop-blur-sm transition-all group-hover:border-gray-300 focus:ring-2 dark:border-gray-600 dark:bg-gray-800/80 dark:text-gray-100 dark:group-hover:border-gray-500"
-                                                        placeholder="Enter username"
+                                                        placeholder="Saisissez votre nom d'utilisateur"
                                                         required
                                                         autoFocus
                                                     />
@@ -196,7 +196,7 @@ export default function Create() {
                                                         value={data.email}
                                                         onChange={(e) => setData('email', e.target.value)}
                                                         className="focus:border-primary focus:ring-primary/20 dark:focus:border-primary-light dark:focus:ring-primary-light/20 h-12 w-full rounded-lg border border-gray-200 bg-white/80 pl-10 text-base text-gray-900 shadow-sm backdrop-blur-sm transition-all group-hover:border-gray-300 focus:ring-2 dark:border-gray-600 dark:bg-gray-800/80 dark:text-gray-100 dark:group-hover:border-gray-500"
-                                                        placeholder="Enter email"
+                                                        placeholder="Saisissez votre adresse e-mail"
                                                         required
                                                         autoFocus
                                                     />
@@ -220,7 +220,7 @@ export default function Create() {
                                                     className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-200"
                                                 >
                                                     <Phone size={14} className="text-primary dark:text-primary-light" />
-                                                    Phone
+                                                    Téléphone
                                                 </Label>
 
                                                 <div className="group relative">
@@ -230,7 +230,7 @@ export default function Create() {
                                                         value={data.phone}
                                                         onChange={(e) => setData('phone', e.target.value)}
                                                         className="focus:border-primary focus:ring-primary/20 dark:focus:border-primary-light dark:focus:ring-primary-light/20 h-12 w-full rounded-lg border border-gray-200 bg-white/80 pl-10 text-base text-gray-900 shadow-sm backdrop-blur-sm transition-all group-hover:border-gray-300 focus:ring-2 dark:border-gray-600 dark:bg-gray-800/80 dark:text-gray-100 dark:group-hover:border-gray-500"
-                                                        placeholder="Enter phone"
+                                                        placeholder="Saisissez le numéro de téléphone"
                                                         required
                                                         autoFocus
                                                     />
@@ -254,7 +254,7 @@ export default function Create() {
                                                     className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-200"
                                                 >
                                                     <Lock size={14} className="text-primary dark:text-primary-light" />
-                                                    Password
+                                                    Mot de passe
                                                 </Label>
 
                                                 <div className="group relative">
@@ -265,7 +265,7 @@ export default function Create() {
                                                         value={data.password}
                                                         onChange={(e) => setData('password', e.target.value)}
                                                         className="focus:border-primary focus:ring-primary/20 dark:focus:border-primary-light dark:focus:ring-primary-light/20 h-12 w-full rounded-lg border border-gray-200 bg-white/80 pl-10 text-base text-gray-900 shadow-sm backdrop-blur-sm transition-all group-hover:border-gray-300 focus:ring-2 dark:border-gray-600 dark:bg-gray-800/80 dark:text-gray-100 dark:group-hover:border-gray-500"
-                                                        placeholder="Enter password"
+                                                        placeholder="Saisissez le mot de passe"
                                                         required
                                                         autoFocus
                                                     />
@@ -289,7 +289,7 @@ export default function Create() {
                                                     className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-200"
                                                 >
                                                     <Mail size={14} className="text-primary dark:text-primary-light" />
-                                                    Confirm Passwod
+                                                    Confirmez le mot de passe
                                                 </Label>
 
                                                 <div className="group relative">
@@ -300,7 +300,7 @@ export default function Create() {
                                                         value={data.password_confirmation}
                                                         onChange={(e) => setData('password_confirmation', e.target.value)}
                                                         className="focus:border-primary focus:ring-primary/20 dark:focus:border-primary-light dark:focus:ring-primary-light/20 h-12 w-full rounded-lg border border-gray-200 bg-white/80 pl-10 text-base text-gray-900 shadow-sm backdrop-blur-sm transition-all group-hover:border-gray-300 focus:ring-2 dark:border-gray-600 dark:bg-gray-800/80 dark:text-gray-100 dark:group-hover:border-gray-500"
-                                                        placeholder="Enter password_confirmation"
+                                                        placeholder="Saisissez la confirmation du mot de passe"
                                                         required
                                                         autoFocus
                                                     />
@@ -324,7 +324,7 @@ export default function Create() {
                                                     className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-200"
                                                 >
                                                     <ImageIcon size={14} className="text-primary dark:text-primary-light" />
-                                                    Admin Avatar
+                                                    Avatar de l'administrateur
                                                 </Label>
 
                                                 <div className="group relative">
@@ -334,8 +334,8 @@ export default function Create() {
                                                             onClick={() => fileInputRef.current?.click()}
                                                         >
                                                             <Upload size={24} className="mb-2 text-gray-400 dark:text-gray-500" />
-                                                            <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Click to upload</p>
-                                                            <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">PNG, JPG, GIF up to 5MB</p>
+                                                            <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Cliquez pour télécharger</p>
+                                                            <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">PNG, JPG, GIF jusqu'à 5 Mo</p>
                                                         </div>
                                                     ) : (
                                                         <div className="relative h-40 w-full overflow-hidden rounded-lg border border-gray-200 bg-white/80 transition-all dark:border-gray-600 dark:bg-gray-800/80">
@@ -378,7 +378,7 @@ export default function Create() {
                                                 {isUploading && data.avatar && (
                                                     <div className="mt-2">
                                                         <Progress value={uploadProgress} className="h-2 w-full bg-gray-200 dark:bg-gray-700" />
-                                                        <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">{uploadProgress}% uploaded</p>
+                                                        <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">{uploadProgress}% téléchargé</p>
                                                     </div>
                                                 )}
 
@@ -393,7 +393,7 @@ export default function Create() {
                                             <div className="pt-4">
                                                 <Button type="submit" className="w-full" disabled={processing}>
                                                     <Save size={16} className="mr-2" />
-                                                    Save Admin
+                                                    Enregistrer l'administrateur
                                                 </Button>
                                             </div>
                                         </div>

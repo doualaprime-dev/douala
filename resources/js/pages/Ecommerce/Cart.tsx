@@ -90,16 +90,16 @@ const Cart = ({ cartItems, cartCount }: CartProps) => {
                 />
               </svg>
             </div>
-            <h2 className="mb-4 text-2xl font-bold text-gray-800">Your cart is empty</h2>
+            <h2 className="mb-4 text-2xl font-bold text-gray-800">Votre panier est vide.</h2>
             <p className="mb-8 text-gray-600">
-              Looks like you haven't added any items to your cart yet.
+              Il semblerait que vous n'ayez ajouté aucun article à votre panier pour le moment.
             </p>
             <Link
               href="/"
               className="inline-flex items-center rounded-md bg-indigo-600 px-6 py-3 text-white hover:bg-indigo-700"
             >
               <ArrowLeft className="mr-2 h-5 w-5" />
-              Continue Shopping
+              Continuer vos achats
             </Link>
           </div>
         </div>
@@ -116,7 +116,7 @@ const Cart = ({ cartItems, cartCount }: CartProps) => {
             <ol className="flex items-center space-x-4">
               <li>
                 <Link href="/" className="text-gray-500 hover:text-gray-700">
-                  Home
+                  Accueil
                 </Link>
               </li>
               <li>
@@ -128,7 +128,7 @@ const Cart = ({ cartItems, cartCount }: CartProps) => {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <span className="ml-4 text-gray-500">Shopping Cart</span>
+                  <span className="ml-4 text-gray-500">Panier</span>
                 </div>
               </li>
             </ol>
@@ -141,7 +141,7 @@ const Cart = ({ cartItems, cartCount }: CartProps) => {
             <div className="rounded-lg bg-white shadow-sm">
               <div className="border-b px-6 py-4">
                 <h1 className="text-xl font-semibold text-gray-800">
-                  Shopping Cart ({cartCount} items)
+                  Panier ({cartCount} articles)
                 </h1>
               </div>
               <div className="divide-y">
@@ -218,15 +218,15 @@ const Cart = ({ cartItems, cartCount }: CartProps) => {
           {/* Order Summary */}
           <div className="lg:col-span-1">
             <div className="rounded-lg bg-white p-6 shadow-sm">
-              <h2 className="mb-4 text-lg font-semibold text-gray-800">Order Summary</h2>
+              <h2 className="mb-4 text-lg font-semibold text-gray-800">Résumé de la commande</h2>
               <div className="space-y-3">
                 <div className="flex justify-between">
-                  <span className="text-gray-600">Subtotal</span>
+                  <span className="text-gray-600">Sous-total</span>
                   <span className="font-medium">${subtotal.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-600">Shipping</span>
-                  <span className="font-medium text-green-600">Free</span>
+                  <span className="text-gray-600">Livraison</span>
+                  <span className="font-medium text-green-600">à domicile</span>
                 </div>
                 <div className="border-t pt-3">
                   <div className="flex justify-between">
@@ -239,13 +239,13 @@ const Cart = ({ cartItems, cartCount }: CartProps) => {
                 onClick={handleCheckout}
                 className="mt-6 w-full rounded-md bg-indigo-600 px-4 py-3 text-white hover:bg-indigo-700"
               >
-                Proceed to Checkout
+                Passer à la caisse
               </button>
               <Link
                 href="/"
                 className="mt-3 block w-full rounded-md border border-gray-300 px-4 py-3 text-center text-gray-700 hover:bg-gray-50"
               >
-                Continue Shopping
+                Continuer vos achats
               </Link>
             </div>
           </div>

@@ -128,7 +128,7 @@ export default function AccountDetail({ user, success, errors }: AccountDetailPr
     ]
 
     return (
-        <UserLayout title='Account Details'>
+        <UserLayout title='Détails du compte'>
             <div className='space-y-6'>
                 {/* Success Message */}
                 {success && (
@@ -178,17 +178,17 @@ export default function AccountDetail({ user, success, errors }: AccountDetailPr
                             <CardHeader>
                                 <CardTitle className='flex items-center gap-2'>
                                     <User className='h-5 w-5' />
-                                    Personal Information
+                                    Informations personnelles
                                 </CardTitle>
                                 <CardDescription>
-                                    Update your personal information and profile picture
+                                    Mettez à jour vos informations personnelles et votre photo de profil
                                 </CardDescription>
                             </CardHeader>
                             <CardContent>
                                 <form onSubmit={handleProfileSubmit} className='space-y-6'>
                                     {/* Avatar Section */}
                                     <div className='space-y-4'>
-                                        <Label>Profile Picture</Label>
+                                        <Label>Photo de profil</Label>
                                         <div className='flex items-center gap-4'>
                                             <div className='relative'>
                                                 <div className='h-20 w-20 overflow-hidden rounded-full border-2 border-gray-200'>
@@ -225,7 +225,7 @@ export default function AccountDetail({ user, success, errors }: AccountDetailPr
                                                     size="sm"
                                                     onClick={() => document.getElementById('avatar-upload')?.click()}
                                                 >
-                                                    Upload New Photo
+                                                    Télécharger une nouvelle photo
                                                 </Button>
                                                 {avatarPreview && (
                                                     <Button
@@ -235,7 +235,7 @@ export default function AccountDetail({ user, success, errors }: AccountDetailPr
                                                         onClick={removeAvatar}
                                                         className='text-red-600 hover:text-red-700'
                                                     >
-                                                        Remove Photo
+                                                        Supprimer la photo
                                                     </Button>
                                                 )}
                                             </div>
@@ -247,7 +247,7 @@ export default function AccountDetail({ user, success, errors }: AccountDetailPr
                                     {/* Personal Information Fields */}
                                     <div className='grid gap-6 md:grid-cols-2'>
                                         <div className='space-y-2'>
-                                            <Label htmlFor='name'>Full Name *</Label>
+                                            <Label htmlFor='name'>Nom et prénom *</Label>
                                             <Input
                                                 id='name'
                                                 value={profileForm.data.name}
@@ -261,12 +261,12 @@ export default function AccountDetail({ user, success, errors }: AccountDetailPr
                                         </div>
 
                                         <div className='space-y-2'>
-                                            <Label htmlFor='username'>Username</Label>
+                                            <Label htmlFor='username'>Nom d'utilisateur</Label>
                                             <Input
                                                 id='username'
                                                 value={profileForm.data.username}
                                                 onChange={(e) => profileForm.setData('username', e.target.value)}
-                                                placeholder='Enter your full username'
+                                                placeholder="Veuillez saisir votre nom d'utilisateur complet"
                                                 className={profileForm.errors.username ? 'border-red-500' : ''}
                                             />
                                             {profileForm.errors.username && (
@@ -282,7 +282,7 @@ export default function AccountDetail({ user, success, errors }: AccountDetailPr
                                                     type='email'
                                                     value={profileForm.data.email}
                                                     onChange={(e) => profileForm.setData('email', e.target.value)}
-                                                    placeholder='Enter your email'
+                                                    placeholder="Saisissez votre adresse e-mail"
                                                     className={`pl-10 ${profileForm.errors.email ? 'border-red-500' : ''}`}
                                                 />
                                             </div>
@@ -291,17 +291,17 @@ export default function AccountDetail({ user, success, errors }: AccountDetailPr
                                             )}
                                             {user.email_verified_at ? (
                                                 <Badge variant="secondary" className='mt-1'>
-                                                    Verified
+                                                    Vérifié
                                                 </Badge>
                                             ) : (
                                                 <Badge variant="outline" className='mt-1'>
-                                                    Not Verified
+                                                    Non vérifié
                                                 </Badge>
                                             )}
                                         </div>
 
                                         <div className='space-y-2'>
-                                            <Label htmlFor='phone'>Phone Number</Label>
+                                            <Label htmlFor='phone'>Numéro de téléphone</Label>
                                             <div className='relative'>
                                                 <Phone className='absolute top-3 left-3 h-4 w-4 text-gray-400' />
                                                 <Input
@@ -309,7 +309,7 @@ export default function AccountDetail({ user, success, errors }: AccountDetailPr
                                                     type='tel'
                                                     value={profileForm.data.phone}
                                                     onChange={(e) => profileForm.setData('phone', e.target.value)}
-                                                    placeholder='Enter your phone number'
+                                                    placeholder='Saisissez votre numéro de téléphone'
                                                     className={`pl-10 ${profileForm.errors.phone ? 'border-red-500' : ''}`}
                                                 />
                                             </div>
@@ -320,14 +320,14 @@ export default function AccountDetail({ user, success, errors }: AccountDetailPr
                                     </div>
 
                                     <div className='space-y-2'>
-                                        <Label htmlFor='address'>Address</Label>
+                                        <Label htmlFor='address'>Adresse</Label>
                                         <div className='relative'>
                                             <MapPin className='absolute top-3 left-3 h-4 w-4 text-gray-400' />
                                             <Textarea
                                                 id='address'
                                                 value={profileForm.data.address}
                                                 onChange={(e) => profileForm.setData('address', e.target.value)}
-                                                placeholder='Enter your address'
+                                                placeholder='Saisissez votre adresse'
                                                 className={`pl-10 ${profileForm.errors.address ? 'border-red-500' : ''}`}
                                                 rows={3}
                                             />
@@ -340,11 +340,11 @@ export default function AccountDetail({ user, success, errors }: AccountDetailPr
                                     <div className='flex gap-4'>
                                         <Button type='submit' disabled={profileForm.processing}>
                                             <Save className='mr-2 h-4 w-4' />
-                                            {profileForm.processing ? 'Saving...' : 'Save Changes'}
+                                            {profileForm.processing ? 'Enregistrement en cours...' : 'Enregistrer les modifications'}
                                         </Button>
                                         <Button type='button' variant='outline' onClick={() => profileForm.reset()}>
                                             <X className='mr-2 h-4 w-4' />
-                                            Cancel
+                                            Annuler
                                         </Button>
                                     </div>
                                 </form>
@@ -358,20 +358,20 @@ export default function AccountDetail({ user, success, errors }: AccountDetailPr
                     <div className='space-y-6'>
                         <Card>
                             <CardHeader>
-                                <CardTitle>Change Password</CardTitle>
-                                <CardDescription>Update your password to keep account secure</CardDescription>
+                                <CardTitle>Changer le mot de passe</CardTitle>
+                                <CardDescription>Mettez à jour votre mot de passe pour sécuriser votre compte. N'oubliez pas de modifier votre mot de passe.</CardDescription>
                             </CardHeader>
                             <CardContent>
                                 <form onSubmit={handlePasswordSubmit} className='space-y-6'>
                                     <div className='space-y-2'>
-                                        <Label htmlFor='current_password'>Current Password *</Label>
+                                        <Label htmlFor='current_password'>Mot de passe actuel *</Label>
                                         <div className='relative'>
                                             <Input
                                                 id='current_password'
                                                 type={showPassword ? 'text' : 'password'}
                                                 value={passwordForm.data.current_password}
                                                 onChange={(e) => passwordForm.setData('current_password', e.target.value)}
-                                                placeholder='Enter current password'
+                                                placeholder='Saisissez le mot de passe actuel'
                                                 className={passwordForm.errors.current_password ? 'border-red-500' : ''}
                                             />
                                             <Button
@@ -394,14 +394,14 @@ export default function AccountDetail({ user, success, errors }: AccountDetailPr
                                     </div>
 
                                     <div className='space-y-2'>
-                                        <Label htmlFor='password'>New Password *</Label>
+                                        <Label htmlFor='password'>Nouveau mot de passe *</Label>
                                         <div className='relative'>
                                             <Input
                                                 id='password'
                                                 type={showNewPassword ? 'text' : 'password'}
                                                 value={passwordForm.data.password}
                                                 onChange={(e) => passwordForm.setData('password', e.target.value)}
-                                                placeholder='Enter new password'
+                                                placeholder='Saisissez le nouveau mot de passe'
                                                 className={passwordForm.errors.password ? 'border-red-500' : ''}
                                             />
                                             <Button
@@ -424,13 +424,13 @@ export default function AccountDetail({ user, success, errors }: AccountDetailPr
                                     </div>
 
                                     <div className='space-y-2'>
-                                        <Label htmlFor='password_confirmation'>Confirm New Password *</Label>
+                                        <Label htmlFor='password_confirmation'>Confirmer le nouveau mot de passe *</Label>
                                         <Input
                                             id='password_confirmation'
                                             type="password"
                                             value={passwordForm.data.password_confirmation}
                                             onChange={(e) => passwordForm.setData('password_confirmation', e.target.value)}
-                                            placeholder='Confirm new password'
+                                            placeholder='Confirmer le nouveau mot de passe'
                                             className={passwordForm.errors.password_confirmation ? 'border-red-500' : ''}
                                         />
                                         {passwordForm.errors.password_confirmation && (
@@ -441,11 +441,11 @@ export default function AccountDetail({ user, success, errors }: AccountDetailPr
                                     <div className='flex gap-4'>
                                         <Button type='submit' disabled={passwordForm.processing}>
                                             <Save className='mr-2 h-4 w-4' />
-                                            {passwordForm.processing ? 'Updating..' : 'Update Password'}
+                                            {passwordForm.processing ? 'Mise à jour en cours..' : 'Mettre à jour le mot de passe'}
                                         </Button>
                                         <Button type='button' variant="outline" onClick={() => passwordForm.reset()}>
                                             <X className='mr-2 h-4 w-4' />
-                                            Cancel
+                                            Annuler
                                         </Button>
                                     </div>
                                 </form>
@@ -455,27 +455,27 @@ export default function AccountDetail({ user, success, errors }: AccountDetailPr
                         {/* Account Security Info */}
                         <Card>
                             <CardHeader>
-                                <CardTitle>Account Security</CardTitle>
-                                <CardDescription>Important security information about your account</CardDescription>
+                                <CardTitle>Sécurité du compte</CardTitle>
+                                <CardDescription>Informations importantes concernant la sécurité de votre compte</CardDescription>
                             </CardHeader>
                             <CardContent className='space-y-4'>
                                 <div className='flex items-center justify-between rounded-lg border p-4'>
                                     <div>
-                                        <h4 className='font-medium'>Email Verification</h4>
+                                        <h4 className='font-medium'>Vérification de l'adresse e-mail</h4>
                                         <p className='text-sm text-gray-600'>
                                             {user.email_verified_at
-                                                ? 'Your email is verified'
-                                                : 'Your email is not verified'}
+                                                ? 'Votre adresse e-mail est vérifiée.'
+                                                : "Votre adresse e-mail n'est pas vérifiée."}
                                         </p>
                                     </div>
                                     <Badge variant={user.email_verified_at ? 'default' : 'secondary'}>
-                                        {user.email_verified_at ? 'Verified' : 'Not Verified'}
+                                        {user.email_verified_at ? 'Vérifié' : 'Non vérifié'}
                                     </Badge>
                                 </div>
 
                                 <div className='flex items-center justify-between rounded-lg border p-4'>
                                     <div>
-                                        <h4 className='font-medium'>Account Created</h4>
+                                        <h4 className='font-medium'>Compte créé</h4>
                                         <p className='text-sm text-gray-600'>
                                             {new Date(user.created_at).toLocaleDateString()}
                                         </p>
@@ -484,7 +484,7 @@ export default function AccountDetail({ user, success, errors }: AccountDetailPr
 
                                 <div className='flex items-center justify-between rounded-lg border p-4'>
                                     <div>
-                                        <h4 className='font-medium'>Last Updated</h4>
+                                        <h4 className='font-medium'>Dernière mise à jour</h4>
                                         <p className='text-sm text-gray-600'>
                                             {new Date(user.updated_at).toLocaleDateString()}
                                         </p>

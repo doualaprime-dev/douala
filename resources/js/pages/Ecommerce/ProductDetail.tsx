@@ -18,6 +18,8 @@ import {
 } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
 
+import DOMPurify from 'dompurify';
+
 interface VariationOption {
   id: number
   name: string
@@ -305,11 +307,11 @@ const ProductDetail = ({ product, variationOptions, relatedProducts }: ProductDe
         <div className="container mx-auto px-4">
           <div className="flex items-center text-sm text-gray-600">
             <Link href="/" className="hover:text-indigo-600">
-              Home
+              ACCUEIL
             </Link>
             <span className="mx-2">/</span>
             <Link href="/products" className="hover:text-indigo-600">
-              Products
+              PRODUIT
             </Link>
             <span className="mx-2">/</span>
             <span className="text-gray-800">{product.name}</span>
@@ -378,17 +380,17 @@ const ProductDetail = ({ product, variationOptions, relatedProducts }: ProductDe
                     })}
                   </div>
                   <span className="ml-2 text-gray-600">
-                    ({product.rating} - {product.reviews_count} Reviews)
+                    ({product.rating} - {product.reviews_count} Avis)
                   </span>
                 </div>
 
                 {/* Price and Stock Status */}
                 <div className="mb-4 flex items-center">
                   <span className="text-3xl font-bold text-indigo-600">
-                    ${computedProduct.price}
+                    {computedProduct.price} XAF
                   </span>
                   {computedProduct.variation && (
-                    <span className="ml-2 text-sm text-gray-500">(Selected variation)</span>
+                    <span className="ml-2 text-sm text-gray-500">(Variante sélectionnée)</span>
                   )}
                 </div>
 
@@ -396,18 +398,18 @@ const ProductDetail = ({ product, variationOptions, relatedProducts }: ProductDe
                   <span className="mr-4 flex items-center">
                     <Shield className="mr-1 text-green-500" size={16} />
                     {computedProduct.quantity && computedProduct.quantity !== Number.MAX_VALUE
-                      ? `In Stock (${computedProduct.quantity} available)`
+                      ? `En Stock (${computedProduct.quantity} disponible)`
                       : computedProduct.quantity === Number.MAX_VALUE
-                        ? 'In Stock'
-                        : 'Out of Stock'}
+                        ? 'En Stock'
+                        : 'Rupture de Stock'}
                   </span>
                   <span className="flex items-center">
                     <RefreshCw className="mr-1 text-blue-500" size={16} />
-                    Free Shipping
+                    Livraison à domicile
                   </span>
                 </div>
 
-                <p className="mb-4 text-gray-600">{product.description}</p>
+                {/* <p className="mb-4 text-gray-600">{product.description}</p> */}
               </div>
 
               {/* Variation Options */}
@@ -437,7 +439,7 @@ const ProductDetail = ({ product, variationOptions, relatedProducts }: ProductDe
 
               {/* Quantity Selector */}
               <div className="mb-6">
-                <h3 className="mb-2 font-semibold text-gray-800">Quantity</h3>
+                <h3 className="mb-2 font-semibold text-gray-800">Quantité</h3>
                 <div className="flex w-32 items-center rounded-md border">
                   <button
                     onClick={() => setQuantity((q) => Math.max(1, q - 1))}
@@ -470,13 +472,13 @@ const ProductDetail = ({ product, variationOptions, relatedProducts }: ProductDe
                   }
                   className="flex flex-1 items-center justify-center rounded-md bg-indigo-600 px-6 py-3 text-white hover:bg-indigo-700 disabled:cursor-not-allowed disabled:bg-gray-400"
                 >
-                  <ShoppingCart className="mr-2" size={20} /> Add to Cart
+                  <ShoppingCart className="mr-2" size={20} /> Ajouter au panier
                 </button>
                 <button
                   disabled={!computedProduct.quantity || computedProduct.quantity === 0}
                   className="flex flex-1 items-center justify-center rounded-md bg-gray-800 px-6 py-3 text-white hover:bg-gray-900 disabled:cursor-not-allowed disabled:bg-gray-400"
                 >
-                  <Zap className="mr-2" size={20} /> Buy Now
+                  <Zap className="mr-2" size={20} /> Payer Maintenant
                 </button>
                 <button className="rounded-md border border-gray-300 p-3 text-gray-600 hover:bg-gray-100">
                   <Heart size={20} />
@@ -491,21 +493,21 @@ const ProductDetail = ({ product, variationOptions, relatedProducts }: ProductDe
                 <div className="flex flex-col text-sm text-gray-600 sm:flex-row sm:items-center">
                   <div className="mb-2 flex items-center sm:mr-6 sm:mb-0">
                     <Shield className="mr-2 text-indigo-500" size={16} />
-                    <span>1 Year Warranty</span>
+                    <span>Garantie de 06 mois</span>
                   </div>
                   <div className="mb-2 flex items-center sm:mr-6 sm:mb-0">
                     <RefreshCw className="mr-2 text-indigo-500" size={16} />
-                    <span>30-Day Return Policy</span>
+                    <span>Politique de retour de 30 jours</span>
                   </div>
                   <div className="flex items-center">
                     <Lock className="mr-2 text-indigo-500" size={16} />
-                    <span>Secure Checkout</span>
+                    <span>Paiement sécurisé</span>
                   </div>
                 </div>
 
                 {/* Share Links */}
                 <div className="mt-4 flex items-center">
-                  <span className="mr-2 text-gray-600">Share:</span>
+                  <span className="mr-2 text-gray-600">Partager :</span>
                   <div className="flex space-x-2">
                     <a href="#" className="text-gray-500 hover:text-blue-600">
                       <Facebook size={16} />
@@ -555,7 +557,7 @@ const ProductDetail = ({ product, variationOptions, relatedProducts }: ProductDe
                     : 'text-gray-500 hover:text-gray-700'
                 }`}
               >
-                Reviews ({product.reviews_count})
+                Avis ({product.reviews_count})
               </button>
             </div>
           </div>
@@ -564,43 +566,17 @@ const ProductDetail = ({ product, variationOptions, relatedProducts }: ProductDe
           <div className="mt-4 rounded-b-lg bg-white p-6 shadow-sm">
             {activeTab === 'description' && (
               <div>
-                <h3 className="mb-3 text-lg font-semibold">Product Description</h3>
-                <p className="mb-4 text-gray-600">
-                  {product.description ||
-                    'Experience music like never before with our premium Wireless Noise Cancelling Headphones. Designed for the ultimate listening experience, these headphones combine cutting-edge technology with superior comfort.'}
-                </p>
-                <p className="mb-4 text-gray-600">
-                  The active noise cancellation technology blocks out ambient sounds, allowing you
-                  to focus on your music, podcast, or call without distractions. With crystal-clear
-                  sound quality and deep, rich bass, these headphones deliver an immersive audio
-                  experience that brings your music to life.
-                </p>
+                <h3 className="mb-3 text-lg font-semibold">Description du produit</h3>
+                <div
+                    dangerouslySetInnerHTML={{ __html: product.description }}
+                />
 
-                <h4 className="mt-4 mb-2 font-semibold">Key Features:</h4>
-                <ul className="mb-4 list-inside list-disc space-y-1 text-gray-600">
-                  <li>Active Noise Cancellation Technology</li>
-                  <li>Bluetooth 5.0 with 10m range</li>
-                  <li>Up to 30 hours battery life</li>
-                  <li>Fast charging (10 min charge = 3 hours playback)</li>
-                  <li>Premium memory foam ear cushions</li>
-                  <li>Built-in microphone for calls</li>
-                  <li>Voice assistant compatible (Siri, Google Assistant)</li>
-                </ul>
-
-                <h4 className="mt-4 mb-2 font-semibold">What's in the Box:</h4>
-                <ul className="list-inside list-disc space-y-1 text-gray-600">
-                  <li>Wireless Noise Cancelling Headphones</li>
-                  <li>USB-C Charging Cable</li>
-                  <li>3.5mm Audio Cable</li>
-                  <li>Carrying Case</li>
-                  <li>User Manual</li>
-                </ul>
               </div>
             )}
 
             {activeTab === 'specs' && (
               <div>
-                <h3 className="mb-3 text-lg font-semibold">Technical Specifications</h3>
+                <h3 className="mb-3 text-lg font-semibold">Spécifications techniques</h3>
 
                 <div className="space-y-4">
                   <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -653,8 +629,8 @@ const ProductDetail = ({ product, variationOptions, relatedProducts }: ProductDe
 
             {activeTab === 'reviews' && (
               <div>
-                <h3 className="mb-3 text-lg font-semibold">Customer Reviews</h3>
-                <p className="text-gray-600">Reviews content will be displayed here.</p>
+                <h3 className="mb-3 text-lg font-semibold">Avis clients</h3>
+                <p className="text-gray-600">Le contenu des avis sera affiché ici.</p>
               </div>
             )}
           </div>
@@ -664,10 +640,7 @@ const ProductDetail = ({ product, variationOptions, relatedProducts }: ProductDe
         <div className="mt-12 bg-white py-12">
           <div className="container mx-auto px-4">
             <div className="mb-8 flex items-center justify-between">
-              <h2 className="text-2xl font-bold">Related Products</h2>
-              <Link href="/products" className="text-indigo-600 hover:text-indigo-800">
-                View All
-              </Link>
+              <h2 className="text-2xl font-bold">Produits associés</h2>
             </div>
 
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">

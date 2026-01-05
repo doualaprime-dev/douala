@@ -115,8 +115,8 @@ export default function Show() {
                 <div className="border-b p-6">
                     <div className="flex items-center justify-between">
                         <div>
-                            <h1 className="text-2xl font-bold text-gray-900">Order #{order.order_number}</h1>
-                            <p className="mt-1 text-sm text-gray-600">Placed on {order.created_at}</p>
+                            <h1 className="text-2xl font-bold text-gray-900">Commande #{order.order_number}</h1>
+                            <p className="mt-1 text-sm text-gray-600">Placé sur {order.created_at}</p>
                         </div>
                         <div className="flex items-center space-x-4">
                             <div className="flex items-center space-x-2">
@@ -146,7 +146,7 @@ export default function Show() {
                 <div className="rounded-lg border bg-white p-4 shadow-sm">
                     <h3 className="mb-4 flex items-center gap-2 text-lg font-semibold">
                         <User className="h-5 w-5" />
-                        Billing Address
+                        Adresse de facturation
                     </h3>
                     <div className="space-y-2 text-sm">
                         <p className="font-semibold">{order.billing_full_name}</p>
@@ -164,12 +164,12 @@ export default function Show() {
                 <div className="rounded-lg border bg-white p-6 shadow-sm">
                     <h3 className="mb-4 flex items-center gap-2 text-lg font-semibold">
                         <MapPin className="h-5 w-5" />
-                        Shipping Address
+                        Adresse de livraison
                     </h3>
                     <div className="space-y-2 text-sm">
                         {order.is_shipping_same_as_billing ? (
                             <span className="inline-block rounded bg-gray-100 px-2 py-1 text-xs text-gray-700">
-                                Same as billing address
+                                Identique à l'adresse de facturation
                             </span>
                         ) : (
                             <>
@@ -192,7 +192,7 @@ export default function Show() {
                 <div className="rounded-lg border bg-white p-6 shadow-sm">
                     <h3 className="mb-4 flex items-center gap-2 text-lg font-semibold">
                         <Truck className="h-5 w-5" />
-                        Shipping Details
+                        Détails d'expédition
                     </h3>
                     <div className="space-y-2 text-sm">
                         <div>
@@ -200,22 +200,22 @@ export default function Show() {
                         </div>
                         {order.tracking_number && (
                             <div>
-                                <span className="font-semibold">Tracking #:</span> {order.tracking_number}
+                                <span className="font-semibold">Suivie #:</span> {order.Suivie_number}
                             </div>
                         )}
                         {order.estimated_delivery && (
                             <div>
-                                <span className="font-semibold">Tracking #:</span> {order.estimated_delivery}
+                                <span className="font-semibold">Suivie #:</span> {order.estimated_delivery}
                             </div>
                         )}
                         {order.shipped_at && (
                             <div>
-                                <span className="font-semibold">Tracking #:</span> {order.shipped_at}
+                                <span className="font-semibold">Suivie #:</span> {order.shipped_at}
                             </div>
                         )}
                         {order.delivered_at && (
                             <div>
-                                <span className="font-semibold">Tracking #:</span> {order.delivered_at}
+                                <span className="font-semibold">Suivie #:</span> {order.delivered_at}
                             </div>
                         )}
                     </div>
@@ -225,23 +225,23 @@ export default function Show() {
             {/* Order Items */}
             <div className="mb-4 overflow-hidden rounded-lg bg-white shadow-sm">
                 <div className="border-b p-6">
-                    <h2 className="text-lg font-semibold">Order Items</h2>
+                    <h2 className="text-lg font-semibold">Articles commandés</h2>
                 </div>
                 <div className="overflow-x-auto">
                     <table className="min-w-full divide-y divide-gray-200">
                         <thead className="bg-gray-50">
                             <tr>
                                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                                    Product
+                                    Produit
                                 </th>
                                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
                                     SKU
                                 </th>
                                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                                    Quantity
+                                    Quantité
                                 </th>
                                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                                    Unit Price
+                                    Prix unitaire
                                 </th>
                                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
                                     Total
@@ -252,7 +252,7 @@ export default function Show() {
                             {order.order_items.length === 0 ? (
                                 <tr>
                                     <td colSpan={5} className="px-6 py-4 text-center text-gray-500">
-                                        No items found
+                                        Aucun article trouvé
                                     </td>
                                 </tr>
                             ) : (
@@ -294,10 +294,10 @@ export default function Show() {
             {/* Order Totals */}
             <div className="mb-4 flex flex-col items-end">
                 <div className="w-full max-w-md rounded-lg border bg-white p-6 shadow-sm">
-                    <h3 className="mb-4 text-lg font-semibold">Order Summary</h3>
+                    <h3 className="mb-4 text-lg font-semibold">Résumé de la commande</h3>
                     <div className="space-y-2 text-sm">
                         <div className="flex justify-between">
-                            <span>Subtotal</span>
+                            <span>Total</span>
                             <span>${order.Subtotal}</span>
                         </div>
                         <div className="flex justify-between">
@@ -305,11 +305,11 @@ export default function Show() {
                             <span>${order.tax_amount}</span>
                         </div>
                         <div className="flex justify-between">
-                            <span>Shipping</span>
+                            <span>Expédition</span>
                             <span>${order.shipping_amount}</span>
                         </div>
                         <div className="flex justify-between">
-                            <span>Discount</span>
+                            <span>Rabais</span>
                             <span>${order.discount_amount}</span>
                         </div>
                     </div>

@@ -28,13 +28,13 @@ export default function Dashboard({ stats = {
 } }: Props) {
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
-            <Head title='Dashboard' />
+            <Head title='Tableau de bord' />
 
             <div className='flex h-full flex-1 flex-col gap-6 rounded-xl p-6 bg-gradient-to-br from-background to-muted/20'>
                 <div className='flex justify-between items-center'>
                     <div>
-                        <h1 className='text-3xl font-bold tracking-tight'>Dashboard</h1>
-                        <p className='text-muted-foreground mt-1'>Welcome back ! Here's your overview</p>
+                        <h1 className='text-3xl font-bold tracking-tight'>Tableau de bord</h1>
+                        <p className='text-muted-foreground mt-1'>Bienvenue ! Voici un aperçu.</p>
                     </div>
                 </div>
 
@@ -42,7 +42,7 @@ export default function Dashboard({ stats = {
                     <Card className='bg-gradient-to-br from-blue-500/10 to-blue-600/10 border-blue-500/20'>
                         <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
                             <CardTitle className='text-sm font-medium text-blue-500'>
-                                Total Products
+                                Total Produits
                             </CardTitle>
                             <List className='h-4 w-4 text-blue-500' />
                         </CardHeader>
@@ -51,7 +51,7 @@ export default function Dashboard({ stats = {
                                 {stats.totalProducts}
                             </div>
                             <p className='text-xs text-muted-foreground'>
-                                Your products lists
+                                Listes de vos produits
                             </p>
                         </CardContent>
                     </Card>
@@ -59,7 +59,7 @@ export default function Dashboard({ stats = {
                     <Card className='bg-gradient-to-br from-green-500/10 to-green-600/10 border-green-500/20'>
                         <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
                             <CardTitle className='text-sm font-medium text-green-500'>
-                                Total Categories
+                                Total des catégories
                             </CardTitle>
                             <CheckCircle className='h-4 w-4 text-green-500' />
                         </CardHeader>
@@ -68,7 +68,7 @@ export default function Dashboard({ stats = {
                                 {stats.totalCategories}
                             </div>
                             <p className='text-xs text-muted-foreground'>
-                                Your categories lists
+                                Vos listes de catégories
                             </p>
                         </CardContent>
                     </Card>
@@ -76,7 +76,7 @@ export default function Dashboard({ stats = {
                     <Card className='bg-gradient-to-br from-yellow-500/10 to-yellow-600/10 border-yellow-500/20'>
                         <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
                             <CardTitle className='text-sm font-medium text-yellow-500'>
-                                Total Brands
+                                Total Marques
                             </CardTitle>
                             <Clock className='h-4 w-4 text-yellow-500' />
                         </CardHeader>
@@ -85,7 +85,7 @@ export default function Dashboard({ stats = {
                                 {stats.totalCategories}
                             </div>
                             <p className='text-xs text-muted-foreground'>
-                                Your brands lists
+                                Listes de vos marques
                             </p>
                         </CardContent>
                     </Card>

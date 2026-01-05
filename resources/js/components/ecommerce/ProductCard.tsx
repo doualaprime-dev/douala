@@ -47,7 +47,7 @@ const ProductCard = (product: ProductListItem) => {
           </button>
         </div>
       </div>
-      <div className="p-4" onClick={() => handleDetail(product.slug)}>
+      <div className="p-4 cursor-pointer" onClick={() => handleDetail(product.slug)}>
         <h3 className="mb-2 text-lg font-medium">{product.name}</h3>
         <div className="flex items-center justify-between">
           <div>

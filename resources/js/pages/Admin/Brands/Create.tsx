@@ -73,7 +73,7 @@ export default function Create() {
 
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
-            <Head title="Create Brand" />
+            <Head title="Créer une marque" />
             <div className="fron-gray-50 min-h-screen bg-gradient-to-br to-gray-100 p-4 sm:p-6 lg:p-8 dark:from-gray-900 dark:to-gray-800">
                 <Card className="overflow-hidden border-none bg-white shadow-xl dark:bg-gray-800">
                     <CardHeader>
@@ -86,8 +86,8 @@ export default function Create() {
                                                 <User className="text-primary dark:text-primary-light" size={24} />
                                             </div>
                                             <div>
-                                                <h1 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Create Brand</h1>
-                                                <p className="mt-1 text-sm text-gray-500 dark:text-gray-300">Add new brand</p>
+                                                <h1 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Créer une marque</h1>
+                                                <p className="mt-1 text-sm text-gray-500 dark:text-gray-300">Ajouter une nouvelle marque</p>
                                             </div>
                                         </div>
 
@@ -98,7 +98,7 @@ export default function Create() {
                                                 className="flex items-center gap-2 text-gray-700 transition-all hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
                                             >
                                                 <ArrowLeft size={16} />
-                                                Back
+                                                Retour
                                             </Button>
                                         </Link>
                                     </div>
@@ -113,7 +113,7 @@ export default function Create() {
                                                     className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-200"
                                                 >
                                                     <TagIcon size={14} className="text-primary dark:text-primary-light" />
-                                                    Name
+                                                    Nom
                                                 </Label>
 
                                                 <div className="group relative">
@@ -123,7 +123,7 @@ export default function Create() {
                                                         value={data.name}
                                                         onChange={(e) => setData('name', e.target.value)}
                                                         className="focus:border-primary focus:ring-primary/20 dark:focus:border-primary-light dark:focus:ring-primary-light/20 h-12 w-full rounded-lg border border-gray-200 bg-white/80 pl-10 text-base text-gray-900 shadow-sm backdrop-blur-sm transition-all group-hover:border-gray-300 focus:ring-2 dark:border-gray-600 dark:bg-gray-800/80 dark:text-gray-100 dark:group-hover:border-gray-500"
-                                                        placeholder="Enter name"
+                                                        placeholder="Entrez le nom"
                                                         required
                                                         autoFocus
                                                     />
@@ -147,7 +147,7 @@ export default function Create() {
                                                     className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-200"
                                                 >
                                                     <ImageIcon size={14} className="text-primary dark:text-primary-light" />
-                                                    Brand Image
+                                                    Image de la marque
                                                 </Label>
 
                                                 <div className="group relative">
@@ -157,8 +157,8 @@ export default function Create() {
                                                             onClick={() => fileInputRef.current?.click()}
                                                         >
                                                             <Upload size={24} className="mb-2 text-gray-400 dark:text-gray-500" />
-                                                            <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Click to upload</p>
-                                                            <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">PNG, JPG, GIF up to 5MB</p>
+                                                            <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Cliquez pour télécharger</p>
+                                                            <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">PNG, JPG, GIF jusqu'à 5 Mo</p>
                                                         </div>
                                                     ) : (
                                                         <div className="relative h-40 w-full overflow-hidden rounded-lg border border-gray-200 bg-white/80 transition-all dark:border-gray-600 dark:bg-gray-800/80">
@@ -201,7 +201,7 @@ export default function Create() {
                                                 {isUploading && data.image && (
                                                     <div className="mt-2">
                                                         <Progress value={uploadProgress} className="h-2 w-full bg-gray-200 dark:bg-gray-700" />
-                                                        <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">{uploadProgress}% uploaded</p>
+                                                        <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">{uploadProgress}% téléchargé</p>
                                                     </div>
                                                 )}
 
@@ -216,7 +216,7 @@ export default function Create() {
                                             <div className="pt-4">
                                                 <Button type="submit" className="w-full" disabled={processing}>
                                                     <Save size={16} className="mr-2" />
-                                                    Save Brand
+                                                    Enregistrer la marque
                                                 </Button>
                                             </div>
                                         </div>

@@ -165,21 +165,21 @@ export default function Checkout({
         <div className="container mx-auto px-4">
           <div className="flex items-center text-sm text-gray-600">
             <Link href={route('home')} className="hover:text-indigo-600">
-              Home
+              Accueil
             </Link>
             <span className="mx-2">/</span>
             <Link href={route('cart.index')} className="hover:text-indigo-600">
-              Shopping Cart
+              Panier
             </Link>
             <span className="mx-2">/</span>
-            <span className="text-gray-800">Checkout</span>
+            <span className="text-gray-800">Vérifier</span>
           </div>
         </div>
       </div>
 
       {/* Main Content Area */}
       <div className="container mx-auto px-4 py-8">
-        <h1 className="mb-6 text-2xl font-bold">Checkout</h1>
+        <h1 className="mb-6 text-2xl font-bold">Vérifier</h1>
 
         {/* Checkout Progress */}
         <div className="mb-8 flex justify-center">
@@ -191,7 +191,7 @@ export default function Checkout({
                     <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
                   </svg>
                 </div>
-                <span className="mt-2 text-sm font-medium">Cart</span>
+                <span className="mt-2 text-sm font-medium">Chariot</span>
               </div>
               <div className="mx-2 h-1 flex-1 bg-indigo-600"></div>
               <div className="flex flex-col items-center">
@@ -204,7 +204,7 @@ export default function Checkout({
                     />
                   </svg>
                 </div>
-                <span className="mt-2 text-sm font-medium">Details</span>
+                <span className="mt-2 text-sm font-medium">Détails</span>
               </div>
               <div className="mx-2 h-1 flex-1 bg-gray-300"></div>
               <div className="flex flex-col items-center">
@@ -213,7 +213,7 @@ export default function Checkout({
                     <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4zM18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" />
                   </svg>
                 </div>
-                <span className="mt-2 text-sm text-gray-500">Payment</span>
+                <span className="mt-2 text-sm text-gray-500">Paiement</span>
               </div>
               <div className="mx-2 h-1 flex-1 bg-gray-300"></div>
               <div className="flex flex-col items-center">
@@ -226,7 +226,7 @@ export default function Checkout({
                     />
                   </svg>
                 </div>
-                <span className="mt-2 text-sm text-gray-500">Complete</span>
+                <span className="mt-2 text-sm text-gray-500">Complète</span>
               </div>
             </div>
           </div>
@@ -237,7 +237,7 @@ export default function Checkout({
           <div className="lg:w-2/3">
             <div className="mb-6 overflow-hidden rounded-lg bg-white shadow-sm">
               <div className="p-6">
-                <h2 className="mb-4 text-lg font-semibold">Billing Details</h2>
+                <h2 className="mb-4 text-lg font-semibold">Détails de facturation</h2>
 
                 <form onSubmit={handleSubmit}>
                   <div className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -246,7 +246,7 @@ export default function Checkout({
                         htmlFor="first_name"
                         className="mb-1 block text-sm font-medium text-gray-700"
                       >
-                        First Name
+                        Prénom
                       </label>
                       <input
                         type="text"
@@ -267,7 +267,7 @@ export default function Checkout({
                         htmlFor="last_name"
                         className="mb-1 block text-sm font-medium text-gray-700"
                       >
-                        Last Name
+                        Nom de famille
                       </label>
                       <input
                         type="text"
@@ -288,7 +288,7 @@ export default function Checkout({
                         htmlFor="email"
                         className="mb-1 block text-sm font-medium text-gray-700"
                       >
-                        Email Address
+                        Adresse email
                       </label>
                       <input
                         type="email"
@@ -307,7 +307,7 @@ export default function Checkout({
                         htmlFor="phone"
                         className="mb-1 block text-sm font-medium text-gray-700"
                       >
-                        Phone Number
+                        Numéro de téléphone
                       </label>
                       <input
                         type="tel"
@@ -328,7 +328,7 @@ export default function Checkout({
                       htmlFor="address"
                       className="mb-1 block text-sm font-medium text-gray-700"
                     >
-                      Street Address
+                      Adresse de la rue
                     </label>
                     <input
                       type="text"
@@ -351,7 +351,7 @@ export default function Checkout({
                         htmlFor="city"
                         className="mb-1 block text-sm font-medium text-gray-700"
                       >
-                        City
+                        Ville
                       </label>
                       <input
                         type="text"
@@ -370,7 +370,7 @@ export default function Checkout({
                         htmlFor="state"
                         className="mb-1 block text-sm font-medium text-gray-700"
                       >
-                        State/Province
+                        Pays/Région
                       </label>
                       <input
                         type="text"
@@ -407,7 +407,7 @@ export default function Checkout({
                       htmlFor="country"
                       className="mb-1 block text-sm font-medium text-gray-700"
                     >
-                      Country
+                      Pays
                     </label>
                     <select
                       id="country"
@@ -418,15 +418,15 @@ export default function Checkout({
                       }`}
                       required
                     >
-                      <option value="">Select a country</option>
-                      <option value="US">United States</option>
-                      <option value="CA">Canada</option>
-                      <option value="UK">United Kingdom</option>
-                      <option value="AU">Australia</option>
-                      <option value="DE">Germany</option>
-                      <option value="FR">France</option>
-                      <option value="JP">Japan</option>
-                      <option value="IN">India</option>
+                      <option value="">Sélectionnez un pays</option>
+                      <option value="US">Cameroun</option>
+                      <option value="CA">Gabon</option>
+                      <option value="UK">Congo</option>
+                      <option value="AU">RCA</option>
+                      <option value="DE">Tchad</option>
+                      <option value="JP">Guinée Equatoriale</option>
+                      <option value="FR">Nigéria</option>
+                      <option value="IN">France</option>
                     </select>
                     {errors.country && (
                       <p className="mt-1 text-sm text-red-500">{errors.country}</p>
@@ -442,7 +442,7 @@ export default function Checkout({
                         className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                       />
                       <span className="ml-2 text-sm text-gray-600">
-                        Shipping address same as billing
+                        Adresse de livraison identique à l'adresse de facturation
                       </span>
                     </label>
                   </div>
@@ -450,14 +450,14 @@ export default function Checkout({
                   {/* Shipping Address (shown when checkbox is unchecked) */}
                   {!sameAsBilling && (
                     <div className="mb-6 border-t pt-6">
-                      <h3 className="mb-4 text-lg font-semibold">Shipping Address</h3>
+                      <h3 className="mb-4 text-lg font-semibold">Adresse de livraison</h3>
                       <div className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-2">
                         <div>
                           <label
                             htmlFor="shipping_first_name"
                             className="mb-1 block text-sm font-medium text-gray-700"
                           >
-                            First Name
+                            Prénom
                           </label>
                           <input
                             type="text"
@@ -472,7 +472,7 @@ export default function Checkout({
                             htmlFor="shipping_last_name"
                             className="mb-1 block text-sm font-medium text-gray-700"
                           >
-                            Last Name
+                            Nom de famille
                           </label>
                           <input
                             type="text"
@@ -488,7 +488,7 @@ export default function Checkout({
                           htmlFor="shipping_address"
                           className="mb-1 block text-sm font-medium text-gray-700"
                         >
-                          Street Address
+                          Adresse de la rue
                         </label>
                         <input
                           type="text"
@@ -504,7 +504,7 @@ export default function Checkout({
                             htmlFor="shipping_city"
                             className="mb-1 block text-sm font-medium text-gray-700"
                           >
-                            City
+                            Ville
                           </label>
                           <input
                             type="text"
@@ -519,7 +519,7 @@ export default function Checkout({
                             htmlFor="shipping_state"
                             className="mb-1 block text-sm font-medium text-gray-700"
                           >
-                            State/Province
+                            Région
                           </label>
                           <input
                             type="text"
@@ -550,7 +550,7 @@ export default function Checkout({
                           htmlFor="shipping_country"
                           className="mb-1 block text-sm font-medium text-gray-700"
                         >
-                          Country
+                          Pays
                         </label>
                         <select
                           id="shipping_country"
@@ -558,15 +558,15 @@ export default function Checkout({
                           onChange={(e) => setData('shipping_country', e.target.value)}
                           className="w-full rounded-md border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
                         >
-                          <option value="">Select a country</option>
-                          <option value="US">United States</option>
-                          <option value="CA">Canada</option>
-                          <option value="UK">United Kingdom</option>
-                          <option value="AU">Australia</option>
-                          <option value="DE">Germany</option>
-                          <option value="FR">France</option>
-                          <option value="JP">Japan</option>
-                          <option value="IN">India</option>
+                            <option value="">Sélectionnez un pays</option>
+                            <option value="US">Cameroun</option>
+                            <option value="CA">Gabon</option>
+                            <option value="UK">Congo</option>
+                            <option value="AU">RCA</option>
+                            <option value="DE">Tchad</option>
+                            <option value="JP">Guinée Equatoriale</option>
+                            <option value="FR">Nigéria</option>
+                            <option value="IN">France</option>
                         </select>
                       </div>
                     </div>
@@ -574,7 +574,7 @@ export default function Checkout({
 
                   <div className="mb-6">
                     <label htmlFor="notes" className="mb-1 block text-sm font-medium text-gray-700">
-                      Order Notes (Optional)
+                      Notes de commande (facultatif)
                     </label>
                     <textarea
                       id="notes"
@@ -590,7 +590,7 @@ export default function Checkout({
                     disabled={processing}
                     className="w-full rounded-md bg-indigo-600 py-3 text-white hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-50"
                   >
-                    {processing ? 'Processing...' : 'Proceed to Payment'}
+                    {processing ? 'Traitement...' : 'Procéder au paiement'}
                   </button>
                 </form>
               </div>
@@ -601,7 +601,7 @@ export default function Checkout({
           <div className="lg:w-1/3">
             <div className="sticky top-6 overflow-hidden rounded-lg bg-white shadow-sm">
               <div className="p-6">
-                <h2 className="mb-4 text-lg font-semibold">Order Summary</h2>
+                <h2 className="mb-4 text-lg font-semibold">Résumé de la commande</h2>
 
                 <div className="mb-6 space-y-4">
                   {cartItems.map((item) => (
@@ -626,7 +626,7 @@ export default function Checkout({
                                 .join(', ')}
                             </span>
                           )}
-                          <span className="text-xs text-gray-500">Qty: {item.quantity}</span>
+                          <span className="text-xs text-gray-500">Qté: {item.quantity}</span>
                         </div>
                       </div>
                     </div>
@@ -635,11 +635,11 @@ export default function Checkout({
 
                 <div className="space-y-3 border-t pt-4">
                   <div className="flex justify-between text-sm">
-                    <span className="text-gray-600">Subtotal</span>
+                    <span className="text-gray-600">Sous total</span>
                     <span className="font-medium">{formatPrice(subtotal)}</span>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span className="text-gray-600">Shipping</span>
+                    <span className="text-gray-600">Livraison</span>
                     <span className="font-medium">{formatPrice(shipping)}</span>
                   </div>
                   <div className="flex justify-between text-sm">

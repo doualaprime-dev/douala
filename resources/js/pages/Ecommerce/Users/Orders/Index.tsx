@@ -6,12 +6,12 @@ export default function OrdersIndex() {
 
     return (
         <UserLayout>
-            <h2 className="mb-4 text-xl font-semibold">My Orders</h2>
+            <h2 className="mb-4 text-xl font-semibold">Mes commandes</h2>
 
             <table className="min-w-full divide-y divide-gray-200 rounded-lg bg-white shadow-sm">
                 <thead>
                     <tr>
-                        <th className="px-6 py-3 text-left">Order #</th>
+                        <th className="px-6 py-3 text-left">Commande #</th>
                         <th className="px-6 py-3 text-left">Date</th>
                         <th className="px-6 py-3 text-left">Status</th>
                         <th className="px-6 py-3 text-left">Total</th>
@@ -22,7 +22,7 @@ export default function OrdersIndex() {
                     {orders.length === 0 ? (
                         <tr>
                             <td colSpan={5} className="px-6 py-4 text-center text-gray-500">
-                                No orders founds
+                                Aucune commande trouvée
                             </td>
                         </tr>
                     ) : (
@@ -37,7 +37,7 @@ export default function OrdersIndex() {
                                         href={`/user/orders/${order.id}`}
                                         className="text-indigo-600 hover:text-indigo-900"
                                     >
-                                        View
+                                        Voir
                                     </Link>
                                 </td>
                             </tr>

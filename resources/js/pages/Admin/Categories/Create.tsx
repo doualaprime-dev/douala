@@ -109,8 +109,8 @@ export default function Create({ categories }: { categories: CategoryWithPath[] 
                                                 <User className="text-primary dark:text-primary-light" size={24} />
                                             </div>
                                             <div>
-                                                <h1 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Create Category</h1>
-                                                <p className="mt-1 text-sm text-gray-500 dark:text-gray-300">Add new category</p>
+                                                <h1 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Créer une catégorie</h1>
+                                                <p className="mt-1 text-sm text-gray-500 dark:text-gray-300">Ajouter une nouvelle catégorie</p>
                                             </div>
                                         </div>
 
@@ -121,7 +121,7 @@ export default function Create({ categories }: { categories: CategoryWithPath[] 
                                                 className="flex items-center gap-2 text-gray-700 transition-all hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
                                             >
                                                 <ArrowLeft size={16} />
-                                                Back
+                                                Retour
                                             </Button>
                                         </Link>
                                     </div>
@@ -136,7 +136,7 @@ export default function Create({ categories }: { categories: CategoryWithPath[] 
                                                     className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-200"
                                                 >
                                                     <TagIcon size={14} className="text-primary dark:text-primary-light" />
-                                                    Name
+                                                    Nom
                                                 </Label>
 
                                                 <div className="group relative">
@@ -146,7 +146,7 @@ export default function Create({ categories }: { categories: CategoryWithPath[] 
                                                         value={data.name}
                                                         onChange={(e) => setData('name', e.target.value)}
                                                         className="focus:border-primary focus:ring-primary/20 dark:focus:border-primary-light dark:focus:ring-primary-light/20 h-12 w-full rounded-lg border border-gray-200 bg-white/80 pl-10 text-base text-gray-900 shadow-sm backdrop-blur-sm transition-all group-hover:border-gray-300 focus:ring-2 dark:border-gray-600 dark:bg-gray-800/80 dark:text-gray-100 dark:group-hover:border-gray-500"
-                                                        placeholder="Enter name"
+                                                        placeholder="Entrez le nom"
                                                         required
                                                         autoFocus
                                                     />
@@ -179,7 +179,7 @@ export default function Create({ categories }: { categories: CategoryWithPath[] 
                                                     value={data.description}
                                                     onChange={(e) => setData('description', e.target.value)}
                                                     className="focus:border-primary focus:ring-primary/20 dark:focus:border-primary-light dark:focus:ring-primary-light/20 min-h-24 w-full rounded-lg border border-gray-200 bg-white/80 p-4 text-base text-gray-900 shadow-sm backdrop-blur-sm transition-all focus:ring-2 dark:border-gray-600 dark:bg-gray-800/80 dark:text-gray-100"
-                                                    placeholder="Enter category description"
+                                                    placeholder="Saisissez la description de la catégorie"
                                                 />
 
                                                 {errors.description && (
@@ -196,16 +196,16 @@ export default function Create({ categories }: { categories: CategoryWithPath[] 
                                                     className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-200"
                                                 >
                                                     <TagIcon size={14} className="text-primary dark:text-primary-light" />
-                                                    Parent Category
+                                                    Catégorie parente
                                                 </Label>
 
                                                 <Select value={data.parent_id ?? 'none'} onValueChange={(value) => setData('parent_id', value)}>
                                                     <SelectTrigger className="h-12 w-full">
-                                                        <SelectValue placeholder="Select parent category" />
+                                                        <SelectValue placeholder="Sélectionner la catégorie parente" />
                                                     </SelectTrigger>
                                                     <SelectContent>
                                                         <SelectItem value="none" className="text-gray-500">
-                                                            No Parent Category
+                                                            Aucune catégorie parente
                                                         </SelectItem>
                                                         {categories &&
                                                             categories.map((category) => (
@@ -236,7 +236,7 @@ export default function Create({ categories }: { categories: CategoryWithPath[] 
                                                     className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-200"
                                                 >
                                                     <ImageIcon size={14} className="text-primary dark:text-primary-light" />
-                                                    Category Image
+                                                    Image de la catégorie
                                                 </Label>
 
                                                 <div className="group relative">
@@ -246,8 +246,8 @@ export default function Create({ categories }: { categories: CategoryWithPath[] 
                                                             onClick={() => fileInputRef.current?.click()}
                                                         >
                                                             <Upload size={24} className="mb-2 text-gray-400 dark:text-gray-500" />
-                                                            <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Click to upload</p>
-                                                            <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">PNG, JPG, GIF up to 5MB</p>
+                                                            <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Cliquez pour télécharger</p>
+                                                            <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">PNG, JPG, GIF jusqu'à 5 Mo</p>
                                                         </div>
                                                     ) : (
                                                         <div className="relative h-40 w-full overflow-hidden rounded-lg border border-gray-200 bg-white/80 transition-all dark:border-gray-600 dark:bg-gray-800/80">
@@ -290,7 +290,7 @@ export default function Create({ categories }: { categories: CategoryWithPath[] 
                                                 {isUploading && data.image && (
                                                     <div className="mt-2">
                                                         <Progress value={uploadProgress} className="h-2 w-full bg-gray-200 dark:bg-gray-700" />
-                                                        <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">{uploadProgress}% uploaded</p>
+                                                        <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">{uploadProgress}% téléchargé</p>
                                                     </div>
                                                 )}
 
@@ -305,7 +305,7 @@ export default function Create({ categories }: { categories: CategoryWithPath[] 
                                             <div className="pt-4">
                                                 <Button type="submit" className="w-full" disabled={processing}>
                                                     <Save size={16} className="mr-2" />
-                                                    Save Category
+                                                    Enregistrer la catégorie
                                                 </Button>
                                             </div>
                                         </div>

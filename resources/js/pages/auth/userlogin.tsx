@@ -17,21 +17,21 @@ export default function CustomerLogin() {
     };
 
     return (
-        <EcommerceLayout title="Customer Login - ShopMart">
+        <EcommerceLayout title="Connexion client - DoualaPrime">
             <div className="container mx-auto px-4 py-8">
                 <div className="flex flex-col items-center justify-center gap-8 md:flex-row">
                     {/* Login Form */}
                     <div className="md:w-1/2">
                         <div className="overflow-hidden rounded-lg bg-white shadow-sm">
                             <div className="border-b p-6">
-                                <h2 className="text-lg font-semibold">Login</h2>
-                                <p className="mt-1 text-gray-600">Welcome back! Sign in to your account.</p>
+                                <h2 className="text-lg font-semibold">Se connecter</h2>
+                                <p className="mt-1 text-gray-600">Bienvenue ! Connectez-vous à votre compte.</p>
                             </div>
                             <div className="p-6">
                                 <form onSubmit={handleSubmit}>
                                     <div className="mb-4">
                                         <label htmlFor="login-email" className="mb-2 block text-sm font-medium text-gray-700">
-                                            Email Address
+                                            Adresse email
                                         </label>
                                         <input
                                             type="email"
@@ -47,10 +47,10 @@ export default function CustomerLogin() {
                                     <div className="mb-4">
                                         <div className="flex items-center justify-between">
                                             <label htmlFor="login-password" className="mb-2 block text-sm font-medium text-gray-700">
-                                                Password
+                                                Mot de passe
                                             </label>
                                             <Link href="/forgot-password" className="text-sm text-indigo-600 hover:text-indigo-800">
-                                                Forgot Password?
+                                                Mot de passe oublié ?
                                             </Link>
                                         </div>
                                         <div className="relative">
@@ -80,7 +80,7 @@ export default function CustomerLogin() {
                                             className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                                         />
                                         <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-700">
-                                            Remember me
+                                            Souviens-toi de moi
                                         </label>
                                     </div>
                                     <button
@@ -88,7 +88,7 @@ export default function CustomerLogin() {
                                         disabled={processing}
                                         className="w-full rounded-md bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
                                     >
-                                        {processing ? 'Signing In...' : 'Sign In'}
+                                        {processing ? 'Connexion...' : 'Se connecter'}
                                     </button>
                                 </form>
                                 <div className="mt-6">
@@ -99,9 +99,9 @@ export default function CustomerLogin() {
                                         <div className="relative flex justify-center text-sm">
                                             <div className="mt-6 text-center">
                                                 <p className="text-sm text-gray-600">
-                                                    Don't have an account?{' '}
+                                                    Vous n'avez pas de compte ?{' '}
                                                     <a href={route('register')} className="font-medium text-indigo-600 hover:text-indigo-500">
-                                                        Sign up
+                                                        S'inscrire
                                                     </a>
                                                 </p>
                                             </div>
@@ -115,39 +115,39 @@ export default function CustomerLogin() {
 
                 {/* Benefits Section */}
                 <div className="mt-12">
-                    <h2 className="mb-6 text-xl font-semibold">Why Create an Account?</h2>
+                    <h2 className="mb-6 text-xl font-semibold">Pourquoi créer un compte ?</h2>
                     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
                         {/* Benefit 1 */}
                         <div className="rounded-lg border border-gray-100 bg-white p-6 shadow-sm">
                             <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-indigo-100">
                                 <i className="fas fa-truck text-xl text-indigo-600"></i>
                             </div>
-                            <h3 className="mb-2 text-lg font-medium">Faster Checkout</h3>
-                            <p className="text-gray-600">Save your shipping and payment details for quicker checkout on future orders.</p>
+                            <h3 className="mb-2 text-lg font-medium">Paiement plus rapide</h3>
+                            <p className="text-gray-600">Enregistrez vos informations de livraison et de paiement pour un passage en caisse plus rapide lors de vos prochaines commandes.</p>
                         </div>
                         {/* Benefit 2 */}
                         <div className="rounded-lg border border-gray-100 bg-white p-6 shadow-sm">
                             <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-indigo-100">
                                 <i className="fas fa-history text-xl text-indigo-600"></i>
                             </div>
-                            <h3 className="mb-2 text-lg font-medium">Order History</h3>
-                            <p className="text-gray-600">Easily track and view all your past and current orders in one place.</p>
+                            <h3 className="mb-2 text-lg font-medium">Historique des commandes</h3>
+                            <p className="text-gray-600">Suivez et consultez facilement toutes vos commandes passées et actuelles au même endroit.</p>
                         </div>
                         {/* Benefit 3 */}
                         <div className="rounded-lg border border-gray-100 bg-white p-6 shadow-sm">
                             <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-indigo-100">
                                 <i className="fas fa-heart text-xl text-indigo-600"></i>
                             </div>
-                            <h3 className="mb-2 text-lg font-medium">Wishlist</h3>
-                            <p className="text-gray-600">Save products to your wishlist for later and get notified about special offers.</p>
+                            <h3 className="mb-2 text-lg font-medium">Liste de souhaits</h3>
+                            <p className="text-gray-600">Enregistrez les produits dans votre liste de souhaits pour plus tard et soyez informé des offres spéciales.</p>
                         </div>
                         {/* Benefit 4 */}
                         <div className="rounded-lg border border-gray-100 bg-white p-6 shadow-sm">
                             <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-indigo-100">
                                 <i className="fas fa-tag text-xl text-indigo-600"></i>
                             </div>
-                            <h3 className="mb-2 text-lg font-medium">Exclusive Deals</h3>
-                            <p className="text-gray-600">Get access to member-only discounts and be the first to know about new promotions.</p>
+                            <h3 className="mb-2 text-lg font-medium">Offres exclusives</h3>
+                            <p className="text-gray-600">Bénéficiez de réductions réservées aux membres et soyez parmi les premiers informés des nouvelles promotions..</p>
                         </div>
                     </div>
                 </div>

@@ -22,11 +22,11 @@ export default function Dashboard({ dashboardData }: { dashboardData: any }) {
         <UserLayout>
             <div className='mb-6 overflow-hidden rounded-lg bg-white shadow-sm'>
                 <div className='border-b p-6'>
-                    <h2 className='text-lg font-semibold'>Dashboard</h2>
+                    <h2 className='text-lg font-semibold'>Tableau de bord</h2>
                     <p className='mt-1 text-gray-600'>
-                        Hello {dashboardData.user?.name} (not {dashboardData.user?.name}?
+                        Salut {dashboardData.user?.name} (pas {dashboardData.user?.name}?
                             <a href="#" className='text-indigo-600 hover:text-indigo-800'>
-                                Log out
+                                Déconnexion
                             </a>
                         )
                     </p>
@@ -34,17 +34,17 @@ export default function Dashboard({ dashboardData }: { dashboardData: any }) {
 
                 <div className='p-6'>
                     <p className='mb-4'>
-                        From your account dashboard you can view your
+                        Depuis le tableau de bord de votre compte, vous pouvez consulter votre
                         <Link href="/user/orders" className='text-indigo-600 hover:text-indigo-800'>
-                            recent orders
+                            commandes récentes
                         </Link>
-                        , manage your
+                        , gérez votre
                         <Link href="/user/orders" className='text-indigo-600 hover:text-indigo-800'>
-                            shipping and billing addresses
+                            adresses de livraison et de facturation
                         </Link>
-                        , and
+                        , et
                         <Link href="/user/orders" className='text-indigo-600 hover:text-indigo-800'>
-                            edit your password and account details
+                            modifier votre mot de passe et les détails de votre compte
                         </Link>
                         ,
                     </p>
@@ -54,7 +54,7 @@ export default function Dashboard({ dashboardData }: { dashboardData: any }) {
                         <div className='overflow-hidden rounded-lg border transition-shadow hover:shadow-md'>
                             <div className='border-b bg-gray-50 p-5'>
                                 <div className='flex items-center justify-between'>
-                                    <h3 className='font-medium'>Orders</h3>
+                                    <h3 className='font-medium'>Commandes</h3>
                                     <span className='rounded-full bg-indigo-100 px-2.5 py-0.5 text-xs font-medium text-indigo-800'>
                                         {dashboardData.orderCount}
                                     </span>
@@ -62,13 +62,13 @@ export default function Dashboard({ dashboardData }: { dashboardData: any }) {
                             </div>
                             <div className='p-5'>
                                 <p className='mb-4 text-sm text-gray-600'>
-                                    View and track your orders, download invoices
+                                    Consultez et suivez vos commandes, téléchargez vos factures
                                 </p>
                                 <Link
                                     href="/user/orders"
                                     className='flex items-center text-sm font-medium text-indigo-600 hover:text-indigo-800'
                                 >
-                                    View Orders
+                                    Afficher les commandes
                                     <ArrowRight className='ml-2 h-4 w-4' />
                                 </Link>
                             </div>
@@ -77,7 +77,7 @@ export default function Dashboard({ dashboardData }: { dashboardData: any }) {
                         <div className='overflow-hidden rounded-lg border transition-shadow hover:shadow-md'>
                             <div className='border-b bg-gray-50 p-5'>
                                 <div className='flex items-center justify-between'>
-                                    <h3 className='font-medium'>Wishlist</h3>
+                                    <h3 className='font-medium'>Liste de souhaits</h3>
                                     <span className='rounded-full bg-indigo-100 px-2.5 py-0.5 text-xs font-medium text-indigo-800'>
                                         {dashboardData.wishlistCount}
                                     </span>
@@ -85,13 +85,13 @@ export default function Dashboard({ dashboardData }: { dashboardData: any }) {
                             </div>
                             <div className='p-5'>
                                 <p className='mb-4 text-sm text-gray-600'>
-                                    View saved items and add to cart
+                                    Voir les articles enregistrés et les ajouter au panier
                                 </p>
                                 <Link
                                     href="/user/wishlist"
                                     className='flex items-center text-sm font-medium text-indigo-600 hover:text-indigo-800'
                                 >
-                                    View Wishlist
+                                    Voir la liste de souhaits
                                     <ArrowRight className='ml-2 h-4 w-4' />
                                 </Link>
                             </div>
@@ -100,19 +100,19 @@ export default function Dashboard({ dashboardData }: { dashboardData: any }) {
                         <div className='overflow-hidden rounded-lg border transition-shadow hover:shadow-md'>
                             <div className='border-b bg-gray-50 p-5'>
                                 <div className='flex items-center justify-between'>
-                                    <h3 className='font-medium'>Addresses</h3>
+                                    <h3 className='font-medium'>Adresses</h3>
                                     <i className='fas fa-map-marker-alt text-indigo-600'></i>
                                 </div>
                             </div>
                             <div className='p-5'>
                                 <p className='mb-4 text-sm text-gray-600'>
-                                    Manage your shipping and billing addresses
+                                    Gérez vos adresses de livraison et de facturation
                                 </p>
                                 <Link
                                     href="/user/addresses"
                                     className='flex items-center text-sm font-medium text-indigo-600 hover:text-indigo-800'
                                 >
-                                    View Addresses
+                                    Afficher les adresses
                                     <ArrowRight className='ml-2 h-4 w-4' />
                                 </Link>
                             </div>
@@ -122,7 +122,7 @@ export default function Dashboard({ dashboardData }: { dashboardData: any }) {
                     {/* Recent Orders */}
                     <div className='mb-6 overflow-hidden rounded-lg bg-white shadow-sm'>
                         <div className='border-b p-6'>
-                            <h2 className='text-lg font-semibold'>Recent Orders</h2>
+                            <h2 className='text-lg font-semibold'>Commandes récentes</h2>
                         </div>
                         <div className='overflow-x-auto'>
                             <table className='min-w-full divide-y divide-gray-200'>
@@ -132,7 +132,7 @@ export default function Dashboard({ dashboardData }: { dashboardData: any }) {
                                             scope='col'
                                             className='px-6 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase'
                                         >
-                                            Order
+                                            Commande
                                         </th>
                                         <th
                                             scope='col'
@@ -164,7 +164,7 @@ export default function Dashboard({ dashboardData }: { dashboardData: any }) {
                                     {dashboardData.recentOrders.length === 0 ? (
                                         <tr>
                                             <td colSpan={5} className='px-6 py-4 text-center text-gray-500'>
-                                                No recent orders found.
+                                                Aucune commande récente trouvée.
                                             </td>
                                         </tr>
                                     ) : (
@@ -193,7 +193,7 @@ export default function Dashboard({ dashboardData }: { dashboardData: any }) {
                                                         href={`/user/orders/${order.id}`}
                                                         className='text-indigo-600 hover:text-indigo-900'
                                                     >
-                                                        View
+                                                        Voir
                                                     </Link>
                                                 </td>
                                             </tr>
@@ -208,7 +208,7 @@ export default function Dashboard({ dashboardData }: { dashboardData: any }) {
                                 href="/user/orders"
                                 className='flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-800'
                             >
-                                View All Orders
+                                Afficher toutes les commandes
                                 <ArrowRight className='ml-2 h-4 w-4' />
                             </Link>
                         </div>
@@ -217,12 +217,12 @@ export default function Dashboard({ dashboardData }: { dashboardData: any }) {
                     {/* Account Details */}
                     <div className='mb-6 overflow-hidden rounded-lg bg-white shadow-sm'>
                         <div className='border-b p-6'>
-                            <h2 className='text-lg font-semibold'>Account Details</h2>
+                            <h2 className='text-lg font-semibold'>Détails du compte</h2>
                         </div>
                         <div className='p-6'>
                             <div className='grid grid-cols-1 gap-6 md:grid-cols-2'>
                                 <div>
-                                    <h3 className='mb-2 text-sm font-medium text-gray-500'>CONTACT INFORMATION</h3>
+                                    <h3 className='mb-2 text-sm font-medium text-gray-500'>COORDONNÉES</h3>
                                     <p className='text-gray-800'>{dashboardData.userAddress.name}</p>
                                     <p className='text-gray-800'>{dashboardData.userAddress.email}</p>
                                     <p className='text-gray-800'>{dashboardData.userAddress.phone}</p>
@@ -230,27 +230,27 @@ export default function Dashboard({ dashboardData }: { dashboardData: any }) {
                                         href="/user/profile/edit"
                                         className='mt-2 inline-block text-sm text-indigo-600 hover:text-indigo-800'
                                     >
-                                        Edit
+                                        Modifier
                                     </Link>
                                 </div>
                                 <div>
-                                    <h3 className='mb-2 text-sm font-medium text-gray-500'>BILLING ADDRESS</h3>
+                                    <h3 className='mb-2 text-sm font-medium text-gray-500'>ADRESSE DE FACTURATION</h3>
                                     <p className='text-gray-800'>{dashboardData.userAddress.name}</p>
                                     <p className='text-gray-800'>{dashboardData.userAddress.Address || 'N/A'}</p>
                                     <Link
                                         href="/user/addresses"
                                         className='mt-2 inline-block text-sm text-indigo-600 hover:text-indigo-800'
                                     >
-                                        Edit
+                                        Modifier
                                     </Link>
                                 </div>
                             </div>
 
                             <div className='mt-6'>
                                 <h3 className='mb-2 text-sm font-medium text-gray-500'>NEWSLETTERS</h3>
-                                <p className='text-gray-800'>You are currently subscribed to our newsletter.</p>
+                                <p className='text-gray-800'>Vous êtes actuellement abonné(e) à notre newsletter.</p>
                                 <a href="#" className='mt-2 inline-block text-sm text-indigo-600 hover:text-indigo-800'>
-                                    Unsubscribe
+                                    Se désabonner
                                 </a>
                             </div>
                         </div>

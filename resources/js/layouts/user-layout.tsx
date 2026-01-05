@@ -16,17 +16,17 @@ export default function UserLayout({ children, title = 'My Account - ShopMart' }
                 <div className="container mx-auto px-4">
                     <div className="flex items-center text-sm text-gray-600">
                         <Link href="/" className="hover:text-indigo-600">
-                            Home
+                            Accueil
                         </Link>
                         <span className="mx-2">/</span>
-                        <span className="text-gray-800">My Account</span>
+                        <span className="text-gray-800">Mon compte</span>
                     </div>
                 </div>
             </div>
 
             {/* Main Content Area */}
             <div className="container mx-auto px-4 py-8">
-                <h1 className="mb-6 text-2xl font-bold">My Account</h1>
+                <h1 className="mb-6 text-2xl font-bold">Mon compte</h1>
 
                 <div className="flex flex-col gap-8 lg:flex-row">
                     {/* Sidebar Navigation */}

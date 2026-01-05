@@ -58,14 +58,14 @@ export default function OrderComplete({ order }: OrderCompleteProps) {
         <div className="container mx-auto px-4">
           <div className="flex items-center text-sm text-gray-600">
             <Link href={route('home')} className="hover:text-indigo-600">
-              Home
+              Accueil
             </Link>
             <span className="mx-2">/</span>
             <Link href={route('cart.index')} className="hover:text-indigo-600">
-              Shopping Cart
+              Panier
             </Link>
             <span className="mx-2">/</span>
-            <span className="text-gray-800">Order Complete</span>
+            <span className="text-gray-800">Commande terminée</span>
           </div>
         </div>
       </div>
@@ -90,23 +90,23 @@ export default function OrderComplete({ order }: OrderCompleteProps) {
                 />
               </svg>
             </div>
-            <h1 className="mb-2 text-3xl font-bold text-gray-900">Thank you for your order!</h1>
+            <h1 className="mb-2 text-3xl font-bold text-gray-900">Merci pour votre commande !</h1>
             <p className="text-gray-600">
-              Your order has been placed successfully. We'll send you an email confirmation shortly.
+              Votre commande a bien été enregistrée. Nous vous enverrons prochainement un courriel de confirmation.
             </p>
           </div>
 
           {/* Order Details */}
           <div className="mb-8 rounded-lg border bg-white shadow-sm">
             <div className="border-b p-6">
-              <h2 className="mb-4 text-xl font-semibold">Order Details</h2>
+              <h2 className="mb-4 text-xl font-semibold">Détails de la commande</h2>
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <div>
-                  <p className="text-sm text-gray-600">Order Number</p>
+                  <p className="text-sm text-gray-600">Numéro de commande</p>
                   <p className="font-medium">{order.order_number}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-600">Order Date</p>
+                  <p className="text-sm text-gray-600">Date de commande</p>
                   <p className="font-medium">{order.created_at}</p>
                 </div>
                 <div>
@@ -116,7 +116,7 @@ export default function OrderComplete({ order }: OrderCompleteProps) {
                   </span>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-600">Payment Status</p>
+                  <p className="text-sm text-gray-600">État du paiement</p>
                   <span className="inline-flex items-center rounded-full bg-yellow-100 px-2.5 py-0.5 text-xs font-medium text-yellow-800">
                     {order.payment_status}
                   </span>
@@ -126,7 +126,7 @@ export default function OrderComplete({ order }: OrderCompleteProps) {
 
             {/* Order Items */}
             <div className="p-6">
-              <h3 className="mb-4 text-lg font-semibold">Order Items</h3>
+              <h3 className="mb-4 text-lg font-semibold">Articles commandés</h3>
               <div className="space-y-4">
                 {order.order_items.map((item) => (
                   <div key={item.id} className="flex items-center">
@@ -150,7 +150,7 @@ export default function OrderComplete({ order }: OrderCompleteProps) {
                               .join(', ')}
                           </span>
                         )}
-                        <span className="text-xs text-gray-500">Qty: {item.quantity}</span>
+                        <span className="text-xs text-gray-500">Qté: {item.quantity}</span>
                       </div>
                     </div>
                   </div>
@@ -171,7 +171,7 @@ export default function OrderComplete({ order }: OrderCompleteProps) {
           <div className="mb-8 grid grid-cols-1 gap-8 md:grid-cols-2">
             {/* Billing Address */}
             <div className="rounded-lg border bg-white p-6 shadow-sm">
-              <h3 className="mb-4 text-lg font-semibold">Billing Address</h3>
+              <h3 className="mb-4 text-lg font-semibold">Adresse de facturation</h3>
               <div className="space-y-2 text-sm">
                 <p className="font-medium">{order.billing_full_name}</p>
                 <p>{order.billing_email}</p>
@@ -185,7 +185,7 @@ export default function OrderComplete({ order }: OrderCompleteProps) {
 
             {/* Shipping Address */}
             <div className="rounded-lg border bg-white p-6 shadow-sm">
-              <h3 className="mb-4 text-lg font-semibold">Shipping Address</h3>
+              <h3 className="mb-4 text-lg font-semibold">Adresse de livraison</h3>
               <div className="space-y-2 text-sm">
                 <p className="font-medium">{order.shipping_full_name}</p>
                 <p>{order.shipping_address}</p>
@@ -203,7 +203,7 @@ export default function OrderComplete({ order }: OrderCompleteProps) {
               href={route('home')}
               className="inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white hover:bg-indigo-700"
             >
-              Continue Shopping
+              Continuer vos achats
             </Link>
           </div>
         </div>

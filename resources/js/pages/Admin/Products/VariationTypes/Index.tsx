@@ -259,8 +259,8 @@ export default function VariationTypes({ product, variationTypesLists }: { produ
                                 <Images className="h-8 w-8 text-gray-400 dark:text-gray-500" />
                             </div>
                         </div>
-                        <p className="mt-4 text-sm font-medium text-gray-600 dark:text-gray-400">Click to upload images</p>
-                        <p className="mt-1 text-xs text-gray-500 dark:text-gray-500">PNG, JPG up to 10MB</p>
+                        <p className="mt-4 text-sm font-medium text-gray-600 dark:text-gray-400">Cliquez pour télécharger des images</p>
+                        <p className="mt-1 text-xs text-gray-500 dark:text-gray-500">PNG, JPG jusqu'à 10 Mo</p>
                     </div>
                 </div>
             </label>
@@ -324,8 +324,8 @@ export default function VariationTypes({ product, variationTypesLists }: { produ
 
     return (
         <ProductLayout
-            title="Variation Types"
-            description="Manage product variation types"
+            title="Types de variations"
+            description="Gérer les types de variantes de produits"
             breadcrumbs={breadcrumbs}
             backUrl={route('admin.products.edit', product.id)}
             productId={product.id}
@@ -337,8 +337,8 @@ export default function VariationTypes({ product, variationTypesLists }: { produ
                     <div className="space-y-6">
                         <div className="mb-6 flex items-center justify-between">
                             <div>
-                                <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Product Variations</h2>
-                                <p className="text-sm text-gray-500 dark:text-gray-400">Configure your product variations and options</p>
+                                <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Variantes de produits</h2>
+                                <p className="text-sm text-gray-500 dark:text-gray-400">Configurez les variantes et options de votre produit.</p>
                             </div>
                             <div className="flex gap-2">
                                 <Button
@@ -349,7 +349,7 @@ export default function VariationTypes({ product, variationTypesLists }: { produ
                                     className="bg-white shadow-sm hover:bg-gray-50 dark:bg-gray-800"
                                 >
                                     <ChevronDown size={14} className="mr-1" />
-                                    Expand All
+                                    Développer tout
                                 </Button>
                                 <Button
                                     type="button"
@@ -359,14 +359,14 @@ export default function VariationTypes({ product, variationTypesLists }: { produ
                                     className="bg-white shadow-sm hover:bg-gray-50 dark:bg-gray-800"
                                 >
                                     <ChevronUp size={14} className="mr-1" />
-                                    Collapse All
+                                    Tout réduire
                                 </Button>
                             </div>
                         </div>
 
                         {Object.keys(errors).length > 0 && (
                             <div className="mb-4 rounded-lg bg-red-50 p-4 text-red-500 dark:bg-red-900/20">
-                                <p className="font-medium">Please fix the following errors:</p>
+                                <p className="font-medium">Veuillez corriger les erreurs suivantes :</p>
                                 <ul className="mt-2 list-disc pl-5">
                                     {Object.entries(errors).map(([key, value]) => (
                                         <li key={key}>{value}</li>
@@ -418,7 +418,7 @@ export default function VariationTypes({ product, variationTypesLists }: { produ
                                                 className="bg-red-50 text-red-600 hover:bg-red-100 dark:bg-red-900/20 dark:text-red-400"
                                             >
                                                 <Trash2 size={16} className="mr-1" />
-                                                Remove
+                                                Retirer
                                             </Button>
                                         </div>
                                     </div>
@@ -428,9 +428,9 @@ export default function VariationTypes({ product, variationTypesLists }: { produ
                                     <div className="space-y-6 p-6">
                                         <div className="grid grid-cols-2 gap-6">
                                             <div className="space-y-2">
-                                                <label className="text-sm font-medium text-gray-700 dark:text-gray-200">Type Name</label>
+                                                <label className="text-sm font-medium text-gray-700 dark:text-gray-200">Nom du type</label>
                                                 <Input
-                                                    placeholder="Enter variation type name (e.g., Color, Size)"
+                                                    placeholder="Saisissez le nom du type de variation (par exemple, Couleur, Taille)"
                                                     value={variationType.name}
                                                     onChange={(e) => {
                                                         const newTypes = [...variationTypes];
@@ -445,7 +445,7 @@ export default function VariationTypes({ product, variationTypesLists }: { produ
                                             </div>
 
                                             <div className="space-y-2">
-                                                <label className="text-sm font-medium text-gray-700 dark:text-gray-200">Selection Type</label>
+                                                <label className="text-sm font-medium text-gray-700 dark:text-gray-200">Type de sélection</label>
                                                 <Select
                                                     value={variationType.type}
                                                     onValueChange={(value) => {
@@ -455,12 +455,12 @@ export default function VariationTypes({ product, variationTypesLists }: { produ
                                                     }}
                                                 >
                                                     <SelectTrigger className="h-11">
-                                                        <SelectValue placeholder="Choose selection type" />
+                                                        <SelectValue placeholder="Choisir le type de sélection" />
                                                     </SelectTrigger>
                                                     <SelectContent>
-                                                        <SelectItem value="select">Dropdown Select</SelectItem>
-                                                        <SelectItem value="radio">Radio Buttons</SelectItem>
-                                                        <SelectItem value="image">Image Selection</SelectItem>
+                                                        <SelectItem value="select">Liste déroulante</SelectItem>
+                                                        <SelectItem value="radio">Boutons radio</SelectItem>
+                                                        <SelectItem value="image">Sélection d'images</SelectItem>
                                                     </SelectContent>
                                                 </Select>
                                             </div>
@@ -472,7 +472,7 @@ export default function VariationTypes({ product, variationTypesLists }: { produ
                                                     <Badge variant="secondary" className="px-2 py-1">
                                                         {variationType.options.length} Options
                                                     </Badge>
-                                                    <h4 className="font-medium text-gray-900 dark:text-white">Variation Options</h4>
+                                                    <h4 className="font-medium text-gray-900 dark:text-white">Options de variantes</h4>
                                                 </div>
                                             </div>
 
@@ -491,7 +491,7 @@ export default function VariationTypes({ product, variationTypesLists }: { produ
                                                                     {optionIndex + 1}
                                                                 </Badge>
                                                                 <h5 className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                                                                    {option.name || 'New Option'}
+                                                                    {option.name || 'Nouvelle option'}
                                                                 </h5>
                                                             </div>
                                                             <div className="flex items-center gap-2">
@@ -529,7 +529,7 @@ export default function VariationTypes({ product, variationTypesLists }: { produ
                                                             <div className="space-y-4 p-4">
                                                                 <div>
                                                                     <Input
-                                                                        placeholder="Enter option name"
+                                                                        placeholder="Saisissez le nom de l'option"
                                                                         value={option.name}
                                                                         onChange={(e) => {
                                                                             const newTypes = [...variationTypes];
@@ -554,7 +554,7 @@ export default function VariationTypes({ product, variationTypesLists }: { produ
                                                 className="w-full border-dashed"
                                             >
                                                 <Plus size={16} className="mr-2" />
-                                                Add New Option
+                                                Ajouter une nouvelle option
                                             </Button>
                                         </div>
                                     </div>
@@ -569,13 +569,13 @@ export default function VariationTypes({ product, variationTypesLists }: { produ
                             className="h-16 w-full border-2 border-dashed bg-gray-50/50 hover:bg-gray-100/50 dark:bg-gray-800/30 dark:hover:bg-gray-800/50"
                         >
                             <Plus size={20} className="mr-2" />
-                            Add New Variation Type
+                            Ajouter un nouveau type de variante
                         </Button>
 
                         <div className="sticky bottom-4 flex justify-end rounded-lg bg-white/80 p-4 shadow-lg backdrop-blur-sm dark:bg-gray-800/80">
                             <Button type="submit" className="bg-primary hover:bg-primary/90 min-w-[120px]">
                                 <Save size={16} className="mr-2" />
-                                Save Changes
+                                Enregistrer les modifications
                             </Button>
                         </div>
                     </div>

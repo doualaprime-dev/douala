@@ -53,7 +53,7 @@ export default function ProductLayout({
                                             className="flex items-center gap-2 text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
                                         >
                                             <ArrowLeft size={16} />
-                                            Back
+                                            Retour
                                         </Button>
                                     </Link>
                                 </div>
@@ -70,8 +70,8 @@ export default function ProductLayout({
                         <Card className="sticky top-4 border-none bg-white shadow-xl dark:bg-gray-800">
                             <CardContent className="p-0">
                                 <div className="border-b border-gray-200 p-4 dark:border-gray-700">
-                                    <h2 className="font-semibold text-gray-900 dark:text-white">Product Settings</h2>
-                                    <p className="text-sm text-gray-500 dark:text-gray-400">Manage your product details</p>
+                                    <h2 className="font-semibold text-gray-900 dark:text-white">Paramètres du produit</h2>
+                                    <p className="text-sm text-gray-500 dark:text-gray-400">Gérez les détails de votre produit</p>
                                 </div>
                                 <nav className="flex flex-col space-y-1 p-2">
                                     <Link
@@ -84,7 +84,7 @@ export default function ProductLayout({
                                         )}
                                     >
                                         <Pencil size={16} />
-                                        Edit Product
+                                        Modifier le produit
                                     </Link>
                                     <Link
                                         href={route('admin.products.images.index', productId)}
@@ -96,7 +96,7 @@ export default function ProductLayout({
                                         )}
                                     >
                                         <Images size={16} />
-                                        Product Images
+                                        Images du produit
                                     </Link>
                                     <Link
                                         href={route('admin.products.variation-types.index', productId)}
@@ -108,7 +108,7 @@ export default function ProductLayout({
                                         )}
                                     >
                                         <Layers size={16} />
-                                        Variation Types
+                                        Types de variations
                                     </Link>
                                     <Link
                                         href={route('admin.products.variations.index', productId)}

@@ -181,7 +181,7 @@ export default function DataTable({
                         onClick={() => router.visit(route(viewRoute, item.id))}
                         className="rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-600 hover:bg-blue-100 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none dark:bg-blue-900 dark:text-blue-300 dark:hover:bg-blue-800"
                     >
-                        View
+                        Voir
                     </button>
                 )}
                 {canEditResource && (
@@ -189,7 +189,7 @@ export default function DataTable({
                         onClick={() => router.visit(route(editRoute, item.id))}
                         className="rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-600 hover:bg-blue-100 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none dark:bg-blue-900 dark:text-blue-300 dark:hover:bg-blue-800"
                     >
-                        Edit
+                        Modifier
                     </button>
                 )}
                 {canDeleteResource && (
@@ -200,7 +200,7 @@ export default function DataTable({
                         }}
                         className="rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-600 hover:bg-red-100 focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:outline-none dark:bg-red-900 dark:text-red-300 dark:hover:bg-red-800"
                     >
-                        Delete
+                        Supprimer
                     </button>
                 )}
             </div>
@@ -233,7 +233,7 @@ export default function DataTable({
                             href={route(createRoute)}
                             className="inline-flex items-center rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none dark:bg-blue-700 dark:hover:bg-blue-800"
                         >
-                            Add {singularName}
+                            Ajouter {singularName}
                         </a>
                     )}
                 </div>
@@ -242,7 +242,7 @@ export default function DataTable({
                     <form onSubmit={handleSearch} className="relative flex w-full max-w-md">
                         <input
                             type="text"
-                            placeholder={`Search ...`}
+                            placeholder={`Rechercher ...`}
                             className="w-full rounded-lg border border-gray-300 bg-white py-2 pr-4 pl-10 text-gray-700 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
                             value={search}
                             onChange={(e) => setSearch(e.target.value)}
@@ -252,13 +252,13 @@ export default function DataTable({
                             type="submit"
                             className="ml-2 rounded-lg bg-blue-600 px-4 py-2 text-white transition-colors hover:bg-blue-700 focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:outline-none dark:bg-blue-700 dark:hover:bg-blue-800"
                         >
-                            Search
+                            Rechercher
                         </button>
                     </form>
 
                     <div className="flex items-center">
                         <label htmlFor="perPage" className="mr-2 text-sm font-medium text-gray-600 dark:text-gray-400">
-                            Show
+                            Montrer
                         </label>
                         <select
                             id="perPage"
@@ -266,11 +266,11 @@ export default function DataTable({
                             value={perPage}
                             onChange={handlePerPageChange}
                         >
-                            <option value="5">5 per page</option>
-                            <option value="10">10 per page</option>
-                            <option value="25">25 per page</option>
-                            <option value="50">50 per page</option>
-                            <option value="100">100 per page</option>
+                            <option value="5">5 par page</option>
+                            <option value="10">10 par page</option>
+                            <option value="25">25 par page</option>
+                            <option value="50">50 par page</option>
+                            <option value="100">100 par page</option>
                         </select>
                     </div>
                 </div>
@@ -328,8 +328,8 @@ export default function DataTable({
                                     <td colSpan={tableColumns.length} className="px-6 py-10 text-center text-sm text-gray-500 dark:text-gray-400">
                                         <div className="flex flex-col items-center justify-center">
                                             {Icon && <Icon className="mb-2 h-10 w-10 text-gray-400 dark:text-gray-600" />}
-                                            <p className="font-medium">No {resourceName.toLowerCase()} Found</p>
-                                            <p className="mt-1 text-gray-400 dark:text-gray-500">Try adjusting your search criteria</p>
+                                            <p className="font-medium">Non {resourceName.toLowerCase()} Trouvé(e)</p>
+                                            <p className="mt-1 text-gray-400 dark:text-gray-500">Essayez de modifier vos critères de recherche</p>
                                         </div>
                                     </td>
                                 </tr>
@@ -341,8 +341,8 @@ export default function DataTable({
                 {/* Pagination section */}
                 <div className="mt-6 flex items-center justify-between">
                     <p className="text-sm text-gray-600 dark:text-gray-400">
-                        Showing <span className="font-medium">{data.from || 0}</span> to <span className="font-medium">{data.to || 0}</span> of{' '}
-                        <span className="font-medium">{data.total}</span> results
+                        Affichage <span className="font-medium">{data.from || 0}</span> de <span className="font-medium">{data.to || 0}</span> à{' '}
+                        <span className="font-medium">{data.total}</span> résultats
                     </p>
 
                     <div className="flex items-center space-x-1">
@@ -405,10 +405,10 @@ export default function DataTable({
                 isOpen={showDeleteDialog}
                 onClose={() => setShowDeleteDialog(false)}
                 onConfirm={() => onDelete(itemToDelete?.id)}
-                title="Delete Item"
-                message="Are you sure you want to delete this item? This action cannot be undone."
-                confirmButtonText="Delete"
-                cancelButtonText="Cancel"
+                title="Supprimer l'élément"
+                message="Êtes-vous sûr de vouloir supprimer cet élément ? Cette action est irréversible."
+                confirmButtonText="Supprimer"
+                cancelButtonText="Annuler"
             />
         </div>
     );

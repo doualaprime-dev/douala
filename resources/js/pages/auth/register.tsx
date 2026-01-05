@@ -21,22 +21,22 @@ export default function Register() {
     };
 
     return (
-        <EcommerceLayout title="Customer Register - ShopMart">
+        <EcommerceLayout title="Inscription des clients - DoualaPrime">
             <div className="container mx-auto px-4 py-8">
                 <div className="flex flex-col items-center justify-center gap-8 md:flex-row">
                     {/* Register Form */}
                     <div className="md:w-1/2">
                         <div className="overflow-hidden rounded-lg bg-white shadow-sm">
                             <div className="border-b p-6">
-                                <h2 className="text-lg font-semibold">Register</h2>
-                                <p className="mt-1 text-gray-600">Create your account to start shopping!</p>
+                                <h2 className="text-lg font-semibold">S'inscrire</h2>
+                                <p className="mt-1 text-gray-600">Créez votre compte pour commencer vos achats !</p>
                             </div>
                             <div className="p-6">
                                 <form onSubmit={handleSubmit}>
                                     <div className="mb-4 flex gap-2">
                                         <div className="w-full">
                                             <label htmlFor="name" className="mb-2 block text-sm font-medium text-gray-700">
-                                                Full Name
+                                                Nom et prénom
                                             </label>
                                             <input
                                                 type="text"
@@ -51,7 +51,7 @@ export default function Register() {
                                     </div>
                                     <div className="mb-4">
                                         <label htmlFor="email" className="mb-2 block text-sm font-medium text-gray-700">
-                                            Email Address
+                                            Adresse email
                                         </label>
                                         <input
                                             type="email"
@@ -65,7 +65,7 @@ export default function Register() {
                                     </div>
                                     <div className="mb-4">
                                         <label htmlFor="phone" className="mb-2 block text-sm font-medium text-gray-700">
-                                            Phone (optional)
+                                            Téléphone (facultatif)
                                         </label>
                                         <input
                                             type="text"
@@ -78,7 +78,7 @@ export default function Register() {
                                     </div>
                                     <div className="mb-4">
                                         <label htmlFor="password" className="mb-2 block text-sm font-medium text-gray-700">
-                                            Password
+                                            Mot de passe
                                         </label>
                                         <div className="relative">
                                             <input
@@ -101,7 +101,7 @@ export default function Register() {
                                     </div>
                                     <div className="mb-4">
                                         <label htmlFor="password_confirmation" className="mb-2 block text-sm font-medium text-gray-700">
-                                            Confirm Password
+                                            Confirmez le mot de passe
                                         </label>
                                         <div className="relative">
                                             <input
@@ -126,7 +126,7 @@ export default function Register() {
                                         disabled={processing}
                                         className="w-full rounded-md bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
                                     >
-                                        {processing ? 'Registering...' : 'Register'}
+                                        {processing ? 'Enregistrement...' : 'S\'inscrire'}
                                     </button>
                                 </form>
                                 <div className="mt-6">
@@ -135,7 +135,7 @@ export default function Register() {
                                             <div className="w-full border-t border-gray-300"></div>
                                         </div>
                                         <div className="relative flex justify-center text-sm">
-                                            <span className="bg-white px-2 text-gray-500">Or continue with</span>
+                                            <span className="bg-white px-2 text-gray-500">Ou continuez avec</span>
                                         </div>
                                     </div>
                                 </div>
@@ -146,46 +146,46 @@ export default function Register() {
 
                 {/* Login Link */}
                 <div className="mt-6 text-center">
-                    <span className="text-gray-600">Already have an account?</span>
+                    <span className="text-gray-600">Vous avez déjà un compte ?</span>
                     <Link href="/login" className="ml-2 font-medium text-indigo-600 hover:text-indigo-800">
-                        Login
+                        Se connecter
                     </Link>
                 </div>
                 {/* Benefits Section */}
                 <div className="mt-12">
-                    <h2 className="mb-6 text-xl font-semibold">Why Create an Account?</h2>
+                    <h2 className="mb-6 text-xl font-semibold">Pourquoi créer un compte ?</h2>
                     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
                         {/* Benefit 1 */}
                         <div className="rounded-lg border border-gray-100 bg-white p-6 shadow-sm">
                             <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-indigo-100">
                                 <i className="fas fa-truck text-xl text-indigo-600"></i>
                             </div>
-                            <h3 className="mb-2 text-lg font-medium">Faster Checkout</h3>
-                            <p className="text-gray-600">Save your shipping and payment details for quicker checkout on future orders.</p>
+                            <h3 className="mb-2 text-lg font-medium">Paiement plus rapide</h3>
+                            <p className="text-gray-600">Enregistrez vos informations de livraison et de paiement pour un passage en caisse plus rapide lors de vos prochaines commandes.</p>
                         </div>
                         {/* Benefit 2 */}
                         <div className="rounded-lg border border-gray-100 bg-white p-6 shadow-sm">
                             <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-indigo-100">
                                 <i className="fas fa-history text-xl text-indigo-600"></i>
                             </div>
-                            <h3 className="mb-2 text-lg font-medium">Order History</h3>
-                            <p className="text-gray-600">Easily track and view all your past and current orders in one place.</p>
+                            <h3 className="mb-2 text-lg font-medium">Historique des commandes</h3>
+                            <p className="text-gray-600">Suivez et consultez facilement toutes vos commandes passées et actuelles au même endroit.</p>
                         </div>
                         {/* Benefit 3 */}
                         <div className="rounded-lg border border-gray-100 bg-white p-6 shadow-sm">
                             <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-indigo-100">
                                 <i className="fas fa-heart text-xl text-indigo-600"></i>
                             </div>
-                            <h3 className="mb-2 text-lg font-medium">Wishlist</h3>
-                            <p className="text-gray-600">Save products to your wishlist for later and get notified about special offers.</p>
+                            <h3 className="mb-2 text-lg font-medium">Liste de souhaits</h3>
+                            <p className="text-gray-600">Enregistrez les produits dans votre liste de souhaits pour plus tard et soyez informé des offres spéciales.</p>
                         </div>
                         {/* Benefit 4 */}
                         <div className="rounded-lg border border-gray-100 bg-white p-6 shadow-sm">
                             <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-indigo-100">
                                 <i className="fas fa-tag text-xl text-indigo-600"></i>
                             </div>
-                            <h3 className="mb-2 text-lg font-medium">Exclusive Deals</h3>
-                            <p className="text-gray-600">Get access to member-only discounts and be the first to know about new promotions.</p>
+                            <h3 className="mb-2 text-lg font-medium">Offres exclusives</h3>
+                            <p className="text-gray-600">Bénéficiez de réductions réservées aux membres et soyez parmi les premiers informés des nouvelles promotions..</p>
                         </div>
                     </div>
                 </div>
@@ -194,124 +194,3 @@ export default function Register() {
     );
 }
 
-
-
-
-
-
-
-// import { login } from '@/routes';
-// import { store } from '@/routes/register';
-// import { Form, Head } from '@inertiajs/react';
-
-// import InputError from '@/components/input-error';
-// import TextLink from '@/components/text-link';
-// import { Button } from '@/components/ui/button';
-// import { Input } from '@/components/ui/input';
-// import { Label } from '@/components/ui/label';
-// import { Spinner } from '@/components/ui/spinner';
-// import AuthLayout from '@/layouts/auth-layout';
-
-// export default function Register() {
-//     return (
-//         <AuthLayout
-//             title="Create an account"
-//             description="Enter your details below to create your account"
-//         >
-//             <Head title="Register" />
-//             <Form
-//                 {...store.form()}
-//                 resetOnSuccess={['password', 'password_confirmation']}
-//                 disableWhileProcessing
-//                 className="flex flex-col gap-6"
-//             >
-//                 {({ processing, errors }) => (
-//                     <>
-//                         <div className="grid gap-6">
-//                             <div className="grid gap-2">
-//                                 <Label htmlFor="name">Name</Label>
-//                                 <Input
-//                                     id="name"
-//                                     type="text"
-//                                     required
-//                                     autoFocus
-//                                     tabIndex={1}
-//                                     autoComplete="name"
-//                                     name="name"
-//                                     placeholder="Full name"
-//                                 />
-//                                 <InputError
-//                                     message={errors.name}
-//                                     className="mt-2"
-//                                 />
-//                             </div>
-
-//                             <div className="grid gap-2">
-//                                 <Label htmlFor="email">Email address</Label>
-//                                 <Input
-//                                     id="email"
-//                                     type="email"
-//                                     required
-//                                     tabIndex={2}
-//                                     autoComplete="email"
-//                                     name="email"
-//                                     placeholder="email@example.com"
-//                                 />
-//                                 <InputError message={errors.email} />
-//                             </div>
-
-//                             <div className="grid gap-2">
-//                                 <Label htmlFor="password">Password</Label>
-//                                 <Input
-//                                     id="password"
-//                                     type="password"
-//                                     required
-//                                     tabIndex={3}
-//                                     autoComplete="new-password"
-//                                     name="password"
-//                                     placeholder="Password"
-//                                 />
-//                                 <InputError message={errors.password} />
-//                             </div>
-
-//                             <div className="grid gap-2">
-//                                 <Label htmlFor="password_confirmation">
-//                                     Confirm password
-//                                 </Label>
-//                                 <Input
-//                                     id="password_confirmation"
-//                                     type="password"
-//                                     required
-//                                     tabIndex={4}
-//                                     autoComplete="new-password"
-//                                     name="password_confirmation"
-//                                     placeholder="Confirm password"
-//                                 />
-//                                 <InputError
-//                                     message={errors.password_confirmation}
-//                                 />
-//                             </div>
-
-//                             <Button
-//                                 type="submit"
-//                                 className="mt-2 w-full"
-//                                 tabIndex={5}
-//                                 data-test="register-user-button"
-//                             >
-//                                 {processing && <Spinner />}
-//                                 Create account
-//                             </Button>
-//                         </div>
-
-//                         <div className="text-center text-sm text-muted-foreground">
-//                             Already have an account?{' '}
-//                             <TextLink href={login()} tabIndex={6}>
-//                                 Log in
-//                             </TextLink>
-//                         </div>
-//                     </>
-//                 )}
-//             </Form>
-//         </AuthLayout>
-//     );
-// }

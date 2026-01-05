@@ -36,7 +36,7 @@ export default function UserIndex() {
 
     return (
         <AppLayout>
-            <Head title="Users" />
+            <Head title="Utilisateurs" />
             <div className="py-6">
                 <div className="mx-auto">
                     <DataTable

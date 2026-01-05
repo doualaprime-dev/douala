@@ -12,11 +12,11 @@ export default function Products() {
                 <div className="container mx-auto px-4">
                 <div className="flex items-center text-sm text-gray-600">
                     {/* <Link href="/" className="hover:text-indigo-600"> */}
-                    Home
+                    ACCUEIL
                     {/* </Link> */}
                     <span className="mx-2">/</span>
                     {/* <Link href="/products" className="hover:text-indigo-600"> */}
-                    Category
+                    PRODUITS
                     {/* </Link> */}
                     <span className="mx-2">/</span>
                     <span className="text-gray-800">{category.name}</span>

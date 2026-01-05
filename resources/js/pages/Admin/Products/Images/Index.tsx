@@ -103,8 +103,8 @@ export default function ProductImages({ product, images }: { product: Product; i
 
     return (
         <ProductLayout
-            title="Product Images"
-            description="Manage product images"
+            title="Images du produit"
+            description="Gérer les images des produits"
             breadcrumbs={breadcrumbs}
             backUrl={route('admin.products.edit', product.id)}
             productId={product.id}
@@ -115,7 +115,7 @@ export default function ProductImages({ product, images }: { product: Product; i
                 <div className="space-y-6 p-4">
                     {/* Image Upload Section */}
                     <div className="space-y-4">
-                        <Label className="text-sm font-medium text-gray-700 dark:text-gray-200">Upload New Images</Label>
+                        <Label className="text-sm font-medium text-gray-700 dark:text-gray-200">Télécharger de nouvelles images</Label>
                         <div
                             {...getRootProps()}
                             className={cn(
@@ -131,11 +131,11 @@ export default function ProductImages({ product, images }: { product: Product; i
                                 )}
                             />
                             {isDragActive ? (
-                                <p className="text-primary font-medium">Drop the files here</p>
+                                <p className="text-primary font-medium">Déposez les fichiers ici</p>
                             ) : (
                                 <>
-                                    <p className="font-medium text-gray-600 dark:text-gray-300">Drag & drop images here, or click to select</p>
-                                    <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">Supports: JPG, PNG, GIF (Max: 5MB)</p>
+                                    <p className="font-medium text-gray-600 dark:text-gray-300">Glissez-déposez les images ici, ou cliquez pour sélectionner</p>
+                                    <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">Formats pris en charge : JPG, PNG, GIF (Max : 5 Mo)</p>
                                 </>
                             )}
                         </div>
@@ -151,7 +151,7 @@ export default function ProductImages({ product, images }: { product: Product; i
                                 {selectedFiles.length > 0 && (
                                     <Button onClick={handleUpload} disabled={processing} className="bg-primary hover:bg-primary/90">
                                         <Upload className="mr-2 h-4 w-4" />
-                                        {processing ? 'Uploading...' : 'Upload All'}
+                                        {processing ? 'Chargement en cours...' : 'Tout télécharger'}
                                     </Button>
                                 )}
                             </div>
@@ -205,7 +205,7 @@ export default function ProductImages({ product, images }: { product: Product; i
                             {processing && progress && (
                                 <div className="mt-4">
                                     <Progress value={progress.percentage} className="h-2 w-full" />
-                                    <p className="mt-1 text-sm text-gray-500">{progress.percentage}% uploaded</p>
+                                    <p className="mt-1 text-sm text-gray-500">{progress.percentage}% téléchargé</p>
                                 </div>
                             )}
                         </div>

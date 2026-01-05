@@ -68,60 +68,60 @@ export default function Payment({
 
   return (
     <EcomLayout>
-      <Head title="Payment - ShopMart" />
+      <Head title="Paiement - DoualaPrime" />
       {/* Breadcrumb */}
       <div className="bg-gray-100 py-3">
         <div className="container mx-auto px-4">
           <div className="flex items-center text-sm text-gray-600">
             <Link href={route('home')} className="hover:text-indigo-600">
-              Home
+              Accueil
             </Link>
             <span className="mx-2">/</span>
             <Link href={route('cart.index')} className="hover:text-indigo-600">
-              Shopping Cart
+              Panier
             </Link>
             <span className="mx-2">/</span>
             <Link href={route('checkout')} className="hover:text-indigo-600">
-              Checkout
+              Vérifier
             </Link>
             <span className="mx-2">/</span>
-            <span className="text-gray-800">Payment</span>
+            <span className="text-gray-800">Paiement</span>
           </div>
         </div>
       </div>
       {/* Main Content */}
       <div className="container mx-auto px-4 py-8">
-        <h1 className="mb-6 text-2xl font-bold">Payment Method</h1>
+        <h1 className="mb-6 text-2xl font-bold">Mode de paiement</h1>
         {/* Billing Information Summary */}
         <div className="mb-6 rounded-lg bg-gray-50 p-4">
-          <h3 className="mb-3 text-lg font-semibold">Billing Information</h3>
+          <h3 className="mb-3 text-lg font-semibold">Informations de facturation</h3>
           <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
             <div>
-              <span className="text-sm font-medium text-gray-600">Name:</span>
+              <span className="text-sm font-medium text-gray-600">Nom :</span>
               <span className="ml-2 text-sm">
                 {billing.first_name} {billing.last_name}
               </span>
             </div>
             <div>
-              <span className="text-sm font-medium text-gray-600">Email:</span>
+              <span className="text-sm font-medium text-gray-600">Email :</span>
               <span className="ml-2 text-sm">{billing.email}</span>
             </div>
             <div>
-              <span className="text-sm font-medium text-gray-600">Phone:</span>
+              <span className="text-sm font-medium text-gray-600">Téléphone :</span>
               <span className="ml-2 text-sm">{billing.phone}</span>
             </div>
             <div>
-              <span className="text-sm font-medium text-gray-600">Address:</span>
+              <span className="text-sm font-medium text-gray-600">Adresse :</span>
               <span className="ml-2 text-sm">{billing.address}</span>
             </div>
             <div>
-              <span className="text-sm font-medium text-gray-600">City:</span>
+              <span className="text-sm font-medium text-gray-600">Ville :</span>
               <span className="ml-2 text-sm">
                 {billing.city}, {billing.state} {billing.zip}
               </span>
             </div>
             <div>
-              <span className="text-sm font-medium text-gray-600">Country:</span>
+              <span className="text-sm font-medium text-gray-600">Pays :</span>
               <span className="ml-2 text-sm">{billing.country}</span>
             </div>
           </div>
@@ -130,7 +130,7 @@ export default function Payment({
               href={route('checkout')}
               className="text-sm text-indigo-600 hover:text-indigo-800"
             >
-              Edit billing information
+              Modifier les informations de facturation
             </Link>
           </div>
         </div>
@@ -139,7 +139,7 @@ export default function Payment({
           <div className="lg:w-2/3">
             <div className="mb-6 overflow-hidden rounded-lg bg-white shadow-sm">
               <div className="p-6">
-                <h2 className="mb-4 text-lg font-semibold">Select Payment Method</h2>
+                <h2 className="mb-4 text-lg font-semibold">Sélectionnez le mode de paiement</h2>
                 <form onSubmit={handleSubmit}>
                   <div className="mb-6 space-y-4">
                     {/* Credit Card */}
@@ -154,7 +154,7 @@ export default function Payment({
                           className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
                         />
                         <span className="ml-3 text-sm font-medium text-gray-900">
-                          Credit / Debit Card
+                          Carte de crédit / débit
                         </span>
                       </label>
                       {data.payment_method === 'card' && (
@@ -163,7 +163,7 @@ export default function Payment({
                           <div className="mb-4 grid grid-cols-1 gap-4 md:grid-cols-2">
                             <div>
                               <label className="mb-1 block text-sm font-medium text-gray-700">
-                                Name on Card
+                                Nom sur la carte
                               </label>
                               <input
                                 type="text"
@@ -173,7 +173,7 @@ export default function Payment({
                             </div>
                             <div>
                               <label className="mb-1 block text-sm font-medium text-gray-700">
-                                Card Number
+                                Numéro de carte
                               </label>
                               <input
                                 type="text"
@@ -185,7 +185,7 @@ export default function Payment({
                           <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
                             <div>
                               <label className="mb-1 block text-sm font-medium text-gray-700">
-                                Month
+                                Mois
                               </label>
                               <select
                                 className="w-full rounded-md border border-gray-300 px-3 py-2"
@@ -201,7 +201,7 @@ export default function Payment({
                             </div>
                             <div>
                               <label className="mb-1 block text-sm font-medium text-gray-700">
-                                Year
+                                Année
                               </label>
                               <select
                                 className="w-full rounded-md border border-gray-300 px-3 py-2"
@@ -245,7 +245,7 @@ export default function Payment({
                       {data.payment_method === 'paypal' && (
                         <div className="border-t bg-gray-50 p-4">
                           <p className="text-sm text-gray-600">
-                            You will be redirected to PayPal to complete your payment.
+                            Vous serez redirigé vers PayPal pour finaliser votre paiement.
                           </p>
                         </div>
                       )}
@@ -266,7 +266,7 @@ export default function Payment({
                       {data.payment_method === 'apple-pay' && (
                         <div className="border-t bg-gray-50 p-4">
                           <p className="text-sm text-gray-600">
-                            You will be redirected to Apple Pay to complete your payment.
+                            Vous serez redirigé vers Apple Pay pour finaliser votre paiement.
                           </p>
                         </div>
                       )}
@@ -283,13 +283,13 @@ export default function Payment({
                           className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
                         />
                         <span className="ml-3 text-sm font-medium text-gray-900">
-                          Cash on Delivery
+                          Paiement à la livraison
                         </span>
                       </label>
                       {data.payment_method === 'cod' && (
                         <div className="border-t bg-gray-50 p-4">
                           <p className="text-sm text-gray-600">
-                            You will pay with cash upon delivery.
+                            Vous paierez en espèces à la livraison.
                           </p>
                         </div>
                       )}
@@ -305,13 +305,13 @@ export default function Payment({
                         required
                       />
                       <span className="ml-2 text-sm text-gray-600">
-                        I agree to the{' '}
+                        J'accepte{' '}
                         <a href="#" className="text-indigo-600 hover:text-indigo-800">
-                          Terms & Conditions
+                          Conditions générales
                         </a>{' '}
-                        and{' '}
+                        et{' '}
                         <a href="#" className="text-indigo-600 hover:text-indigo-800">
-                          Privacy Policy
+                          Politique de confidentialité
                         </a>
                       </span>
                     </label>
@@ -331,7 +331,7 @@ export default function Payment({
           <div className="lg:w-1/3">
             <div className="sticky top-6 overflow-hidden rounded-lg bg-white shadow-sm">
               <div className="p-6">
-                <h2 className="mb-4 text-lg font-semibold">Order Summary</h2>
+                <h2 className="mb-4 text-lg font-semibold">Résumé de la commande</h2>
 
                 <div className="mb-6 space-y-4">
                   {cartItems.map((item) => (
@@ -365,11 +365,11 @@ export default function Payment({
 
                 <div className="space-y-3 border-t pt-4">
                   <div className="flex justify-between text-sm">
-                    <span className="text-gray-600">Subtotal</span>
+                    <span className="text-gray-600">Sous total</span>
                     <span className="font-medium">{formatPrice(subtotal)}</span>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span className="text-gray-600">Shipping</span>
+                    <span className="text-gray-600">Livraison</span>
                     <span className="font-medium">{formatPrice(shipping)}</span>
                   </div>
                   <div className="flex justify-between text-sm">

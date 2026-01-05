@@ -25,45 +25,45 @@ import AppLogo from './app-logo'
 
 const mainNavItems: NavItem[] = [
   {
-    title: 'Dashboard',
+    title: 'Tableau de bord',
     href: '/dashboard',
     icon: LayoutGrid,
   },
   {
-    title: 'Orders',
+    title: 'Commandes',
     href: '/admin/orders',
     icon: ShoppingBag,
   },
   {
-    title: 'Brands',
+    title: 'Marques',
     href: '/admin/brands',
     icon: TagIcon,
   },
 
   {
-    title: 'Categories',
+    title: 'Catégories',
     href: '/admin/categories',
     icon: TagIcon,
   },
 
   {
-    title: 'Products',
+    title: 'Produits',
     href: '/admin/products',
     icon: Diamond,
   },
 
   {
-    title: 'Users',
+    title: 'Utilisateurs',
     href: '/admin/users',
     icon: Users,
   },
   {
-    title: 'Admin',
+    title: 'Administrateurs',
     href: '/admin/admins',
     icon: User,
   },
   {
-    title: 'Posts',
+    title: 'Articles',
     href: '/admin/posts',
     icon: User,
   },

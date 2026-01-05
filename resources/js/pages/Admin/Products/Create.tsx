@@ -72,8 +72,8 @@ export default function Create({ categories, brands }: Props) {
                                     <Diamond className="text-primary dark:text-primary-light" size={24} />
                                 </div>
                                 <div>
-                                    <h1 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Create Product</h1>
-                                    <p className="mt-1 text-sm text-gray-500 dark:text-gray-300">Add new product to your store</p>
+                                    <h1 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Créer un produit</h1>
+                                    <p className="mt-1 text-sm text-gray-500 dark:text-gray-300">Ajoutez un nouveau produit à votre boutique</p>
                                 </div>
                             </div>
 
@@ -84,7 +84,7 @@ export default function Create({ categories, brands }: Props) {
                                     className="flex items-center gap-2 text-gray-700 transition-all hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
                                 >
                                     <ArrowLeft size={16} />
-                                    Back
+                                    Retour
                                 </Button>
                             </Link>
                         </div>
@@ -97,7 +97,7 @@ export default function Create({ categories, brands }: Props) {
                                 <div className="space-y-2">
                                     <Label htmlFor="name" className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-200">
                                         <File size={14} className="text-primary dark:text-primary-light" />
-                                        Name
+                                        Nom
                                     </Label>
 
                                     <div className="group relative">
@@ -106,7 +106,7 @@ export default function Create({ categories, brands }: Props) {
                                             value={data.name}
                                             onChange={(e) => setData('name', e.target.value)}
                                             className="focus:border-primary focus:ring-primary/20 dark:focus:border-primary-light dark:focus:ring-primary-light/20 h-12 w-full rounded-lg border border-gray-200 bg-white/80 text-base text-gray-900 shadow-sm backdrop-blur-sm transition-all group-hover:border-gray-300 focus:ring-2 dark:border-gray-600 dark:bg-gray-800/80 dark:text-gray-100 dark:group-hover:border-gray-500"
-                                            placeholder="Enter product name"
+                                            placeholder="Saisissez le nom du produit"
                                         />
                                     </div>
 
@@ -126,12 +126,12 @@ export default function Create({ categories, brands }: Props) {
                                             className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-200"
                                         >
                                             <List size={14} className="text-primary dark:text-primary-light" />
-                                            Category
+                                            Categorie
                                         </Label>
 
                                         <Select value={data.category_id} onValueChange={(value) => setData('category_id', value)}>
                                             <SelectTrigger className="h-12 w-full dark:border-gray-600 dark:bg-gray-800/80">
-                                                <SelectValue placeholder="Select category" />
+                                                <SelectValue placeholder="Sélectionner une catégorie" />
                                             </SelectTrigger>
                                             <SelectContent>
                                                 {categories.map((category) => (
@@ -156,12 +156,12 @@ export default function Create({ categories, brands }: Props) {
                                             className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-200"
                                         >
                                             <TagIcon size={14} className="text-primary dark:text-primary-light" />
-                                            Brand
+                                            Marque
                                         </Label>
 
                                         <Select value={data.brand_id} onValueChange={(value) => setData('brand_id', value)}>
                                             <SelectTrigger className="h-12 w-full dark:border-gray-600 dark:bg-gray-800/80">
-                                                <SelectValue placeholder="Select brand" />
+                                                <SelectValue placeholder="Sélectionner la marque" />
                                             </SelectTrigger>
                                             <SelectContent>
                                                 {brands.map((brand) => (
@@ -189,7 +189,7 @@ export default function Create({ categories, brands }: Props) {
                                             className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-200"
                                         >
                                             <TagIcon size={14} className="text-primary dark:text-primary-light" />
-                                            Price
+                                            Prix
                                         </Label>
 
                                         <Input
@@ -216,7 +216,7 @@ export default function Create({ categories, brands }: Props) {
                                             className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-200"
                                         >
                                             <TagIcon size={14} className="text-primary dark:text-primary-light" />
-                                            Quantity
+                                            Quantité
                                         </Label>
 
                                         <Input
@@ -224,7 +224,7 @@ export default function Create({ categories, brands }: Props) {
                                             value={data.quantity}
                                             onChange={(e) => setData('quantity', e.target.value)}
                                             className="focus:border-primary focus:ring-primary/20 dark:focus:border-primary-light dark:focus:ring-primary-light/20 h-12 w-full rounded-lg border border-gray-200 bg-white/80 text-base text-gray-900 shadow-sm backdrop-blur-sm transition-all group-hover:border-gray-300 focus:ring-2 dark:border-gray-600 dark:bg-gray-800/80 dark:text-gray-100 dark:group-hover:border-gray-500"
-                                            placeholder="Available quantity"
+                                            placeholder="Quantité disponible"
                                         />
 
                                         {errors.quantity && (
@@ -241,12 +241,12 @@ export default function Create({ categories, brands }: Props) {
                                             className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-200"
                                         >
                                             <TagIcon size={14} className="text-primary dark:text-primary-light" />
-                                            Status
+                                            Statut
                                         </Label>
 
                                         <Select value={data.status} onValueChange={(value) => setData('status', value)}>
                                             <SelectTrigger className="h-12 w-full dark:border-gray-600 dark:bg-gray-800/80">
-                                                <SelectValue placeholder="Select status" />
+                                                <SelectValue placeholder="Sélectionner le statut" />
                                             </SelectTrigger>
                                             <SelectContent>
                                                 {statusOptions.map((option) => (
@@ -273,7 +273,7 @@ export default function Create({ categories, brands }: Props) {
                                         className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-200"
                                     >
                                         <TagIcon size={14} className="text-primary dark:text-primary-light" />
-                                        Discount
+                                        Rabais
                                     </Label>
 
                                     <Input
@@ -307,7 +307,7 @@ export default function Create({ categories, brands }: Props) {
                                             value={data.sku}
                                             onChange={(e) => setData('sku', e.target.value)}
                                             className="focus:border-primary focus:ring-primary/20 dark:focus:border-primary-light dark:focus:ring-primary-light/20 h-12 w-full rounded-lg border border-gray-200 bg-white/80 text-base text-gray-900 shadow-sm backdrop-blur-sm transition-all group-hover:border-gray-300 focus:ring-2 dark:border-gray-600 dark:bg-gray-800/80 dark:text-gray-100 dark:group-hover:border-gray-500"
-                                            placeholder="Enter SKU"
+                                            placeholder="Entrer SKU"
                                         />
 
                                         {errors.sku && (
@@ -324,7 +324,7 @@ export default function Create({ categories, brands }: Props) {
                                             className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-200"
                                         >
                                             <TagIcon size={14} className="text-primary dark:text-primary-light" />
-                                            Barcode
+                                            Code-barres
                                         </Label>
 
                                         <Input
@@ -332,7 +332,7 @@ export default function Create({ categories, brands }: Props) {
                                             value={data.barcode}
                                             onChange={(e) => setData('barcode', e.target.value)}
                                             className="focus:border-primary focus:ring-primary/20 dark:focus:border-primary-light dark:focus:ring-primary-light/20 h-12 w-full rounded-lg border border-gray-200 bg-white/80 text-base text-gray-900 shadow-sm backdrop-blur-sm transition-all group-hover:border-gray-300 focus:ring-2 dark:border-gray-600 dark:bg-gray-800/80 dark:text-gray-100 dark:group-hover:border-gray-500"
-                                            placeholder="Enter barcode"
+                                            placeholder="Saisir le code-barres"
                                         />
 
                                         {errors.barcode && (
@@ -360,7 +360,7 @@ export default function Create({ categories, brands }: Props) {
                                             value={data.description}
                                             config={{
                                                 readonly: false,
-                                                placeholder: 'Enter product description...',
+                                                placeholder: 'Saisissez la description du produit...',
                                                 height: 400,
                                                 toolbarButtonSize: 'medium',
                                                 theme: 'default',
@@ -415,7 +415,7 @@ export default function Create({ categories, brands }: Props) {
                                 <div className="pt-4">
                                     <Button type="submit" className="w-full" disabled={processing}>
                                         <Save size={16} className="mr-2" />
-                                        {processing ? 'Saving...' : 'Save Product'}
+                                        {processing ? 'En cours...' : 'Enregistrer le produit'}
                                     </Button>
                                 </div>
                             </div>
