@@ -16,7 +16,7 @@ export default function AppareilsCuisson() {
     return (
         <div className="container py-4">
             <div className='card shadow-lg p-4 w-full rounded-md bg-white'>
-                <h2 className="text-[20px] font-bold text-gray-800 border-b-4 border-[#FFC533] w-full mb-2">Appareils de cuisson</h2>
+                <h2 className="text-[20px] font-bold text-gray-800 border-b-4 border-[#FFC533] w-full mb-2">APPAREILS DE CUISSON</h2>
 
                 <div className="swiper brand-slider">
                     <div className="swiper-wrapper items-center">

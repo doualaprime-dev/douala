@@ -23,7 +23,7 @@ export default function Home() {
             <BestSeller />
             <SpecialOffer />
             <Brand />
-            <Deals />
+            {/* <Deals /> */}
             <Congelateurs />
             <Refrigerateurs />
             <Cuisinieres />

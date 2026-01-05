@@ -66,7 +66,7 @@ class ProductController extends Controller
 
     public function store(ProductStoreRequest $request): RedirectResponse
     {
-        $data = $request->only('name', 'description', 'status', 'brand_id', 'category_id', 'price', 'quantity', 'barcode', 'sku');
+        $data = $request->only('name', 'description', 'status', 'brand_id', 'category_id', 'price', 'discount', 'quantity', 'barcode', 'sku');
         $product = Product::create($data);
         return redirect()->route('admin.products.edit', $product->id)->with('success', 'Product created successfully.');
     }

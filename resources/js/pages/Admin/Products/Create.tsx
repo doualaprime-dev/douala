@@ -280,7 +280,7 @@ export default function Create({ categories, brands }: Props) {
                                         id="discount"
                                         type="number"
                                         step="0.01"
-                                        value={data.price}
+                                        value={data.discount}
                                         onChange={(e) => setData('discount', e.target.value)}
                                         className="focus:border-primary focus:ring-primary/20 dark:focus:border-primary-light dark:focus:ring-primary-light/20 h-12 w-full rounded-lg border border-gray-200 bg-white/80 text-base text-gray-900 shadow-sm backdrop-blur-sm transition-all group-hover:border-gray-300 focus:ring-2 dark:border-gray-600 dark:bg-gray-800/80 dark:text-gray-100 dark:group-hover:border-gray-500"
                                         placeholder="0.00"
