@@ -142,7 +142,7 @@ class HomeController extends Controller
 
     public function byCategory(Category $category)
     {
-        $products = ProductListResource::collection(Product::where('products.category_id', '=', $category->id)->limit(10)->orderBy('sales', 'desc')->get())->resolve();
+        $products = ProductListResource::collection(Product::where('products.category_id', '=', $category->id)->limit(25)->orderBy('sales', 'desc')->get())->resolve();
 
         return Inertia::render('Ecommerce/Products', [
             'products' => $products,
@@ -164,7 +164,7 @@ class HomeController extends Controller
             );
         }
 
-        $products = $products->latest()->paginate(12)->withQueryString();
+        $products = $products->latest()->paginate(25)->withQueryString();
 
         $resultSearch = ProductListResource::collection($products)->resolve();
 

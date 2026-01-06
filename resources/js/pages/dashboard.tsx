@@ -11,6 +11,7 @@ interface Props {
         totalProducts: number;
         totalCategories: number;
         totalBrands: number;
+        totalContacts: number;
     }
 }
 
@@ -25,6 +26,7 @@ export default function Dashboard({ stats = {
     totalProducts: 0,
     totalCategories: 0,
     totalBrands: 0,
+    totalContacts: 0,
 } }: Props) {
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
@@ -34,7 +36,7 @@ export default function Dashboard({ stats = {
                 <div className='flex justify-between items-center'>
                     <div>
                         <h1 className='text-3xl font-bold tracking-tight'>Tableau de bord</h1>
-                        <p className='text-muted-foreground mt-1'>Bienvenue ! Voici un aperçu.</p>
+                        <p className='text-muted-foreground mt-1'>Bienvenue ! Voici un aperçu.</p>
                     </div>
                 </div>
 
@@ -42,7 +44,7 @@ export default function Dashboard({ stats = {
                     <Card className='bg-gradient-to-br from-blue-500/10 to-blue-600/10 border-blue-500/20'>
                         <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
                             <CardTitle className='text-sm font-medium text-blue-500'>
-                                Total Produits
+                                Produits
                             </CardTitle>
                             <List className='h-4 w-4 text-blue-500' />
                         </CardHeader>
@@ -59,7 +61,7 @@ export default function Dashboard({ stats = {
                     <Card className='bg-gradient-to-br from-green-500/10 to-green-600/10 border-green-500/20'>
                         <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
                             <CardTitle className='text-sm font-medium text-green-500'>
-                                Total des catégories
+                                Catégories
                             </CardTitle>
                             <CheckCircle className='h-4 w-4 text-green-500' />
                         </CardHeader>
@@ -68,7 +70,7 @@ export default function Dashboard({ stats = {
                                 {stats.totalCategories}
                             </div>
                             <p className='text-xs text-muted-foreground'>
-                                Vos listes de catégories
+                                listes de vos catégories
                             </p>
                         </CardContent>
                     </Card>
@@ -76,13 +78,13 @@ export default function Dashboard({ stats = {
                     <Card className='bg-gradient-to-br from-yellow-500/10 to-yellow-600/10 border-yellow-500/20'>
                         <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
                             <CardTitle className='text-sm font-medium text-yellow-500'>
-                                Total Marques
+                                Marques
                             </CardTitle>
                             <Clock className='h-4 w-4 text-yellow-500' />
                         </CardHeader>
                         <CardContent>
                             <div className='text-2xl font-bold text-yellow-500'>
-                                {stats.totalCategories}
+                                {stats.totalBrands}
                             </div>
                             <p className='text-xs text-muted-foreground'>
                                 Listes de vos marques
@@ -93,16 +95,16 @@ export default function Dashboard({ stats = {
                     <Card className='bg-gradient-to-br from-purple-500/10 to-purple-600/10 border-purple-500/20'>
                         <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
                             <CardTitle className='text-sm font-medium text-purple-500'>
-                                Total Products
+                                Contacts
                             </CardTitle>
                             <AlertCircle className='h-4 w-4 text-purple-500' />
                         </CardHeader>
                         <CardContent>
                             <div className='text-2xl font-bold text-purple-500'>
-                                {stats.totalProducts}
+                                {stats.totalContacts}
                             </div>
                             <p className='text-xs text-muted-foreground'>
-                                Your products lists
+                                Listes de vos contacts
                             </p>
                         </CardContent>
                     </Card>
