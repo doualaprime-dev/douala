@@ -32,6 +32,7 @@ class ProductStoreRequest extends FormRequest
             'quantity' => 'required|integer|min:0',
             'barcode' => 'nullable|string|max:255',
             'sku' => 'nullable|string|max:255',
+            'percent' => 'required|numeric|min:0',
         ];
     }
 }

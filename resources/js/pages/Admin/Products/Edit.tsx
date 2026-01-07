@@ -29,6 +29,7 @@ interface Product {
     description: string;
     price: number;
     discount: number;
+    percent: number;
     quantity: number;
     status: string;
     sku: string;
@@ -66,6 +67,7 @@ export default function Edit({ product, categories, brands }: Props) {
         description: product.description,
         price: product.price,
         discount: product.discount,
+        percent: product.percent,
         quantity: product.quantity,
         status: product.status,
         sku: product.sku,
@@ -298,6 +300,31 @@ export default function Edit({ product, categories, brands }: Props) {
                                 <div className="mt-2 flex items-center gap-2 rounded-md bg-red-50 p-2 text-sm text-red-500 dark:bg-red-900/20 dark:text-red-400">
                                     <AlertCircle size={14} />
                                     <span>{errors.discount}</span>
+                                </div>
+                            )}
+                        </div>
+
+                        {/* Percent */}
+                        <div className="space-y-2">
+                            <Label htmlFor="percent" className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-200">
+                                <TagIcon size={14} className="text-primary dark:text-primary-light" />
+                                Pourcentage
+                            </Label>
+
+                            <Input
+                                id="percent"
+                                type="number"
+                                step="0.01"
+                                value={data.percent}
+                                onChange={(e) => setData('percent', e.target.value)}
+                                className="focus:border-primary focus:ring-primary/20 dark:focus:border-primary-light dark:focus:ring-primary-light/20 h-12 w-full rounded-lg border border-gray-200 bg-white/80 text-base text-gray-900 shadow-sm backdrop-blur-sm transition-all group-hover:border-gray-300 focus:ring-2 dark:border-gray-600 dark:bg-gray-800/80 dark:text-gray-100 dark:group-hover:border-gray-500"
+                                placeholder="0.00"
+                            />
+
+                            {errors.percent && (
+                                <div className="mt-2 flex items-center gap-2 rounded-md bg-red-50 p-2 text-sm text-red-500 dark:bg-red-900/20 dark:text-red-400">
+                                    <AlertCircle size={14} />
+                                    <span>{errors.percent}</span>
                                 </div>
                             )}
                         </div>

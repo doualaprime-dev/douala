@@ -17,7 +17,7 @@ export default function Footer() {
                         </p>
                         <div className="flex space-x-4">
                             <Link
-                                href="#"
+                                href="https://www.facebook.com/doualaprime"
                                 className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-700 transition-colors hover:bg-indigo-600"
                             >
                                 <Facebook className="h-5 w-5 text-white" />

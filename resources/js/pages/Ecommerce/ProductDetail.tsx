@@ -18,8 +18,6 @@ import {
 } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
 
-import DOMPurify from 'dompurify';
-
 interface VariationOption {
   id: number
   name: string
@@ -47,6 +45,7 @@ interface ProductDetailProps {
     slug: string
     description?: string
     price: string
+    discount: string
     quantity: number | null
     image: string
     images: string[]
@@ -166,6 +165,7 @@ const ProductDetail = ({ product, variationOptions, relatedProducts }: ProductDe
     if (!product.variations?.length || !Object.keys(selectedOptions).length) {
       return {
         price: product.price,
+        discount: product.discount,
         quantity: product.quantity,
         variation: null,
       }
@@ -198,6 +198,7 @@ const ProductDetail = ({ product, variationOptions, relatedProducts }: ProductDe
 
     return {
       price: matchingVariation?.price || product.price,
+      discount: product.discount,
       quantity:
         matchingVariation?.quantity === null
           ? Number.MAX_VALUE
@@ -244,6 +245,7 @@ const ProductDetail = ({ product, variationOptions, relatedProducts }: ProductDe
         option_ids: getOptionIdsMap(selectedOptions),
         quantity: quantity,
         price: parseFloat(computedProduct.price.toString()),
+        discount: parseFloat(computedProduct.discount.toString()),
       })
     }
   }, [selectedOptions, quantity, computedProduct.price, isInitialized])
@@ -367,7 +369,7 @@ const ProductDetail = ({ product, variationOptions, relatedProducts }: ProductDe
                 <h1 className="mb-2 text-2xl font-bold text-gray-800">{product.name}</h1>
 
                 {/* Rating */}
-                <div className="mb-4 flex items-center">
+                {/* <div className="mb-4 flex items-center">
                   <div className="flex text-yellow-400">
                     {[...Array(5)].map((_, index) => {
                       const rating = product.rating
@@ -382,16 +384,23 @@ const ProductDetail = ({ product, variationOptions, relatedProducts }: ProductDe
                   <span className="ml-2 text-gray-600">
                     ({product.rating} - {product.reviews_count} Avis)
                   </span>
-                </div>
+                </div> */}
 
                 {/* Price and Stock Status */}
                 <div className="mb-4 flex items-center">
                   <span className="text-3xl font-bold text-indigo-600">
-                    {computedProduct.price} XAF
+                    {computedProduct.price} FCFA
                   </span>
                   {computedProduct.variation && (
                     <span className="ml-2 text-sm text-gray-500">(Variante sélectionnée)</span>
                   )}
+                </div>
+
+                {/* Discount */}
+                <div className="mb-4 flex items-center">
+                  <span className="text-3xl font-bold text-gray-400 line-through">
+                    {computedProduct.discount} FCFA
+                  </span>
                 </div>
 
                 <div className="mb-4 flex items-center text-sm text-gray-500">
@@ -497,7 +506,7 @@ const ProductDetail = ({ product, variationOptions, relatedProducts }: ProductDe
                   </div>
                   <div className="mb-2 flex items-center sm:mr-6 sm:mb-0">
                     <RefreshCw className="mr-2 text-indigo-500" size={16} />
-                    <span>Politique de retour de 30 jours</span>
+                    <span>Livraison rapide et gratuite</span>
                   </div>
                   <div className="flex items-center">
                     <Lock className="mr-2 text-indigo-500" size={16} />
@@ -509,7 +518,7 @@ const ProductDetail = ({ product, variationOptions, relatedProducts }: ProductDe
                 <div className="mt-4 flex items-center">
                   <span className="mr-2 text-gray-600">Partager :</span>
                   <div className="flex space-x-2">
-                    <a href="#" className="text-gray-500 hover:text-blue-600">
+                    <a href="https://www.facebook.com/doualaprime" className="text-gray-500 hover:text-blue-600">
                       <Facebook size={16} />
                     </a>
                     <a href="#" className="text-gray-500 hover:text-blue-400">

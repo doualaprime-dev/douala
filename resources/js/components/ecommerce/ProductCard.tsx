@@ -29,11 +29,11 @@ const ProductCard = (product: ProductListItem) => {
     <div className="group overflow-hidden rounded-lg bg-white shadow-sm">
       <div className="relative">
         <img src={product.image} alt="Product" className="h-64 w-full object-cover" />
-        {/* {product.isDiscount && (
+        {product.isDiscount && (
           <div className="absolute top-0 right-0 m-2 rounded-md bg-red-500 px-2 py-1 text-sm text-white">
-            -{product.percent}%
+            -{product.percent}FCFA
           </div>
-        )} */}
+        )}
         <div className="bg-opacity-20 absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 transition-opacity group-hover:opacity-100">
           <button
             onClick={addToCart}
@@ -48,8 +48,8 @@ const ProductCard = (product: ProductListItem) => {
         <h3 className="text-xs font-medium">{product.name}</h3>
         <div className="flex items-center justify-between">
           <div>
-            <span className="font-bold text-[#1B3B6C] text-xs">{product.price} XAF</span>
-            {product.isDiscount && <span className="ml-2 text-gray-400 text-xs line-through">{product.discount} XAF</span>}
+            <span className="font-extrabold text-[#1B3B6C] text-lg">{product.price} FCFA</span>
+            {product.isDiscount && <span className="ml-2 text-gray-400 text-sm line-through">{product.discount} FCFA</span>}
           </div>
         </div>
       </div>

@@ -23,7 +23,7 @@ class ProductListResource extends JsonResource
             'image' => $this->getFirstImageUrl('images', 'small'),
             'isDiscount' => true,
             'discount' => $this->discount,
-            'percent' => 25,
+            'percent' => $this->percent,
         ];
     }
 }
