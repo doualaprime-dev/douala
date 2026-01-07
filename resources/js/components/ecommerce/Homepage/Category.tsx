@@ -8,9 +8,10 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import { Link } from 'lucide-react';
 
-export default function Brand() {
-    const { brands } = usePage().props as any;
+export default function Category() {
+    const { categories } = usePage().props as any;
     return (
         <div className="container py-4">
             <div className='card shadow-lg p-4 mx-auto rounded-md bg-white'>
@@ -39,11 +40,11 @@ export default function Brand() {
                             }}
                             className="productSlider"
                         >
-                            {brands.map((brand: any) => (
-                                <SwiperSlide key={brand.id} className="">
-                                    <div className="flex h-32 items-center justify-center rounded-lg bg-gray-50 p-6">
-                                        <img src={brand.image} alt={brand.name} className="max-h-16" />
-                                    </div>
+                            {categories.map((category: any) => (
+                                <SwiperSlide key={category.id} className="">
+                                    <a href={`/category/${category.slug}`} className="flex items-center hover:bg-gray-100">
+                                        <h3 className="text-lg font-medium text-[#1B3B6C]">{category.name}</h3>
+                                    </a>
                                 </SwiperSlide>
                             ))}
                         </Swiper>

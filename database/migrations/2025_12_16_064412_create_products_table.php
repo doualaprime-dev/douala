@@ -21,7 +21,7 @@ return new class extends Migration
             $table->foreignId('brand_id')->nullable()->constrained()->cascadeOnDelete();
             $table->string('sku', 2000)->nullable();
             $table->string('barcode', 2000)->nullable();
-            $table->decimal('price', 20, 2)->default(0);
+            $table->integer('price')->default(0);
             $table->string('status')->index();
             $table->string('quantity')->nullable();
             $table->timestamps();

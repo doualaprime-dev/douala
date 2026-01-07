@@ -11,8 +11,8 @@ export default function Infos() {
                     </div>
 
                     <div className='info flex flex-col gap-0'>
-                        <h3 className='text-[16px] font-[600]'>Livraison à domicile</h3>
-                        <p className='text-[14px] font-[400]'>À partir de 2000 XAF</p>
+                        <h3 className='text-[16px] font-[600]'>Livraison Rapide</h3>
+                        <p className='text-[14px] font-[600] text-[#1B3B6C]'>Et Gratuite</p>
                     </div>
                 </div>
 
@@ -22,8 +22,8 @@ export default function Infos() {
                     </div>
 
                     <div className='info flex flex-col gap-0'>
-                        <h3 className='text-[16px] font-[600]'>Garantie de remboursement</h3>
-                        <p className='text-[14px] font-[400]'>Garantie sous 06 mois</p>
+                        <h3 className='text-[14px] font-[600]'>Promotion et meilleures offres</h3>
+                        <p className='text-[14px] font-[600] text-[#1B3B6C]'>Aux Prix Imbattables</p>
                     </div>
                 </div>
 
@@ -33,8 +33,8 @@ export default function Infos() {
                     </div>
 
                     <div className='info flex flex-col gap-0'>
-                        <h3 className='text-[16px] font-[600]'>Offres et réductions</h3>
-                        <p className='text-[14px] font-[400]'>Retours acceptés sous 7 jours</p>
+                        <h3 className='text-[14px] font-[600]'>Garantie jusqu'à 06 mois</h3>
+                        <p className='text-[14px] font-[600] text-[#1B3B6C]'>Fiabilité Et Durabilité</p>
                     </div>
                 </div>
 
@@ -44,8 +44,8 @@ export default function Infos() {
                     </div>
 
                     <div className='info flex flex-col gap-0'>
-                        <h3 className='text-[16px] font-[600]'>Assistance 24h/24 et 7j/7</h3>
-                        <p className='text-[14px] font-[400]'>Assistance à tout moment</p>
+                        <h3 className='text-[14px] font-[600]'>Assistance 24h/24 et 7j/7</h3>
+                        <p className='text-[14px] font-[600] text-[#1B3B6C]'>SAV De Qualité</p>
                     </div>
                 </div>
             </div>

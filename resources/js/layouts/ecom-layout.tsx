@@ -8,15 +8,15 @@ interface EcommerceLayoutProps {
     title?: string;
 }
 
-export default function EcomLayout({ children, title = 'R-Mart' }: EcommerceLayoutProps) {
+export default function EcomLayout({ children, title = 'Douala-Prime' }: EcommerceLayoutProps) {
     return (
         <>
             <Head>
                 <title>{title}</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <meta name="description" content="R-Mart - Your one-stop online shopping destination" />
-                <meta name="keywords" content="ecommerce, online shopping, electronics, fashion, groceries" />
-                <meta name="author" content="R-Mart Team" />
+                <meta name="description" content="Douala-Prime - Votre destination shopping en ligne unique" />
+                <meta name="keywords" content="commerce électronique, achats en ligne, électro-ménager" />
+                <meta name="author" content="Douala-Prime Team" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <div className="min-h-screen bg-gray-100">

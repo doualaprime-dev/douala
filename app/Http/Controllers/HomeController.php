@@ -33,10 +33,16 @@ class HomeController extends Controller
                         ->get()
         )->resolve();
 
+        $categories = Category::query()->select('id', 'name', 'slug', 'image')->whereIn('name', ['Congélateur Coffre', 'Réfrigérateur Combiné', 'Cuisinière Automatique', 'Semi-Automatique', 'Split Climatiseur', 'Micro-Ondes Et Fours', 'Téléviseurs Smart', 'Home Cinéma'])->get()->map(function ($category) {
+            $category->image = asset('storage/' . $category->image);
+            return $category;
+        });
+
         $brands = Brand::query()->select('id', 'name', 'slug', 'image')->get()->map(function ($brand) {
             $brand->image = asset('storage/' . $brand->image);
             return $brand;
         });
+
 
         $posts = Post::with('author')->latest()->get();
 
@@ -109,6 +115,7 @@ class HomeController extends Controller
             'bestSellingProducts' => $bestSellingProducts,
             'specialOffers' => $specialOffers,
             'brands' => $brands,
+            'categories' => $categories,
             'posts' => $posts,
             'congelateurs' => $congelateurs,
             'refrigerateurs' => $refrigerateurs,

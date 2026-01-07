@@ -29,30 +29,27 @@ const ProductCard = (product: ProductListItem) => {
     <div className="group overflow-hidden rounded-lg bg-white shadow-sm">
       <div className="relative">
         <img src={product.image} alt="Product" className="h-64 w-full object-cover" />
-        {product.isDiscount && (
+        {/* {product.isDiscount && (
           <div className="absolute top-0 right-0 m-2 rounded-md bg-red-500 px-2 py-1 text-sm text-white">
             -{product.percent}%
           </div>
-        )}
+        )} */}
         <div className="bg-opacity-20 absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 transition-opacity group-hover:opacity-100">
           <button
             onClick={addToCart}
             disabled={form.processing}
-            className="mx-2 rounded-full bg-white p-3 text-gray-800 transition hover:bg-indigo-600 hover:text-white"
+            className="mx-2 rounded-full bg-white p-3 text-gray-800 transition hover:bg-[#FFC533] hover:text-white"
           >
             <ShoppingBag className="h-5 w-5" />
           </button>
-          <button className="mx-2 rounded-full bg-white p-3 text-gray-800 transition hover:bg-indigo-600 hover:text-white">
-            <Heart className="h-5 w-5" />
-          </button>
         </div>
       </div>
-      <div className="p-4 cursor-pointer" onClick={() => handleDetail(product.slug)}>
-        <h3 className="mb-2 text-lg font-medium">{product.name}</h3>
+      <div className="p-2 cursor-pointer" onClick={() => handleDetail(product.slug)}>
+        <h3 className="text-xs font-medium">{product.name}</h3>
         <div className="flex items-center justify-between">
           <div>
-            <span className="font-bold text-indigo-600">{product.price} XAF</span>
-            {product.isDiscount && <span className="ml-2 text-gray-400 line-through">{product.discount} XAF</span>}
+            <span className="font-bold text-[#1B3B6C] text-xs">{product.price} XAF</span>
+            {product.isDiscount && <span className="ml-2 text-gray-400 text-xs line-through">{product.discount} XAF</span>}
           </div>
         </div>
       </div>
