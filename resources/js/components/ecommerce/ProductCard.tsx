@@ -30,7 +30,7 @@ const ProductCard = (product: ProductListItem) => {
       <div className="relative">
         <img src={product.image} alt="Product" className="h-64 w-full object-cover" />
         {product.isDiscount && (
-          <div className="absolute top-0 right-0 m-2 rounded-md bg-red-500 px-2 py-1 text-sm text-white">
+          <div className="absolute top-0 right-0 m-2 rounded-md bg-[#FFC533] px-2 py-1 text-sm text-white">
             -{product.percent}FCFA
           </div>
         )}
