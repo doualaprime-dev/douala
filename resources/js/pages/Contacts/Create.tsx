@@ -72,6 +72,7 @@ export default function Create({} : CreateProps) {
                                                 id='message'
                                                 value={data.message}
                                                 onChange={e => setData('message', e.target.value)}
+                                                rows={50}
                                             />
                                             {errors.message && <p className='text-red-500 text-sm'>{errors.message}</p>}
                                         </div>

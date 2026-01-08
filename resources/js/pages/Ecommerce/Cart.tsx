@@ -176,7 +176,7 @@ const Cart = ({ cartItems, cartCount }: CartProps) => {
                             </div>
                           )}
                           <div className="mt-2 text-lg font-semibold text-indigo-600">
-                            ${item.price}
+                            {item.price} F CFA
                           </div>
                         </div>
                         <div className="ml-4 flex items-center space-x-2">
@@ -198,7 +198,7 @@ const Cart = ({ cartItems, cartCount }: CartProps) => {
                         </div>
                         <div className="ml-4 text-right">
                           <div className="text-lg font-semibold text-gray-800">
-                            ${(item.price * item.quantity).toFixed(2)}
+                            {(item.price * item.quantity)} F CFA
                           </div>
                           <button
                             onClick={() => removeItem(item)}
@@ -222,7 +222,7 @@ const Cart = ({ cartItems, cartCount }: CartProps) => {
               <div className="space-y-3">
                 <div className="flex justify-between">
                   <span className="text-gray-600">Sous-total</span>
-                  <span className="font-medium">${subtotal.toFixed(2)}</span>
+                  <span className="font-medium">{subtotal} F CFA</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Livraison</span>
@@ -231,7 +231,7 @@ const Cart = ({ cartItems, cartCount }: CartProps) => {
                 <div className="border-t pt-3">
                   <div className="flex justify-between">
                     <span className="text-lg font-semibold text-gray-800">Total</span>
-                    <span className="text-lg font-semibold text-gray-800">${total.toFixed(2)}</span>
+                    <span className="text-lg font-semibold text-gray-800">{total} F CFA</span>
                   </div>
                 </div>
               </div>

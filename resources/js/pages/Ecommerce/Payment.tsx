@@ -321,7 +321,7 @@ export default function Payment({
                     disabled={processing}
                     className="w-full rounded-md bg-indigo-600 py-3 text-white hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-50"
                   >
-                    {processing ? 'Processing...' : `Pay Now ${formatPrice(totalPrice)}`}
+                    {processing ? 'Traitement...' : `Payer maintenant ${formatPrice(totalPrice)}`}
                   </button>
                 </form>
               </div>
