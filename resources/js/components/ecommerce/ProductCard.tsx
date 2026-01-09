@@ -30,8 +30,8 @@ const ProductCard = (product: ProductListItem) => {
       <div className="relative">
         <img src={product.image} alt="Product" className="h-64 w-full object-cover" />
         {product.isDiscount && (
-          <div className="absolute top-0 right-0 m-2 rounded-md bg-[#FFC533] px-2 py-1 text-sm text-white">
-            -{product.percent}FCFA
+          <div className="absolute top-0 right-0 m-2 rounded-md bg-red-500 px-2 py-1 text-sm text-white">
+            -{product.percent}%
           </div>
         )}
         <div className="bg-opacity-20 absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 transition-opacity group-hover:opacity-100">
