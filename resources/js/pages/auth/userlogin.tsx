@@ -38,7 +38,7 @@ export default function CustomerLogin() {
                                             id="login-email"
                                             value={data.email}
                                             onChange={(e) => setData('email', e.target.value)}
-                                            className="w-full rounded-md border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                                            className="w-full rounded-md border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-[#FFC533] focus:outline-none"
                                             placeholder="your@email.com"
                                             required
                                         />
@@ -49,7 +49,7 @@ export default function CustomerLogin() {
                                             <label htmlFor="login-password" className="mb-2 block text-sm font-medium text-gray-700">
                                                 Mot de passe
                                             </label>
-                                            <Link href="/forgot-password" className="text-sm text-indigo-600 hover:text-indigo-800">
+                                            <Link href="/forgot-password" className="text-sm text-[#FFC533] hover:text-[#FFC533]">
                                                 Mot de passe oublié ?
                                             </Link>
                                         </div>
@@ -77,7 +77,7 @@ export default function CustomerLogin() {
                                         <input
                                             type="checkbox"
                                             id="remember-me"
-                                            className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                                            className="h-4 w-4 rounded border-gray-300 text-[#FFC533] focus:ring-[#FFC533]"
                                         />
                                         <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-700">
                                             Souviens-toi de moi
@@ -86,7 +86,7 @@ export default function CustomerLogin() {
                                     <button
                                         type="submit"
                                         disabled={processing}
-                                        className="w-full rounded-md bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
+                                        className="w-full rounded-md bg-[#FFC533] px-4 py-2 text-white hover:bg-[#FFC533] focus:ring-2 focus:ring-[#FFC533] focus:ring-offset-2 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
                                     >
                                         {processing ? 'Connexion...' : 'Se connecter'}
                                     </button>
@@ -100,7 +100,7 @@ export default function CustomerLogin() {
                                             <div className="mt-6 text-center">
                                                 <p className="text-sm text-gray-600">
                                                     Vous n'avez pas de compte ?{' '}
-                                                    <a href={route('register')} className="font-medium text-indigo-600 hover:text-indigo-500">
+                                                    <a href={route('register')} className="font-medium text-[#FFC533] hover:text-[#FFC533]">
                                                         S'inscrire
                                                     </a>
                                                 </p>
@@ -119,32 +119,32 @@ export default function CustomerLogin() {
                     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
                         {/* Benefit 1 */}
                         <div className="rounded-lg border border-gray-100 bg-white p-6 shadow-sm">
-                            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-indigo-100">
-                                <i className="fas fa-truck text-xl text-indigo-600"></i>
+                            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-yellow-50">
+                                <i className="fas fa-truck text-xl text-[#FFC533]"></i>
                             </div>
                             <h3 className="mb-2 text-lg font-medium">Paiement plus rapide</h3>
                             <p className="text-gray-600">Enregistrez vos informations de livraison et de paiement pour un passage en caisse plus rapide lors de vos prochaines commandes.</p>
                         </div>
                         {/* Benefit 2 */}
                         <div className="rounded-lg border border-gray-100 bg-white p-6 shadow-sm">
-                            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-indigo-100">
-                                <i className="fas fa-history text-xl text-indigo-600"></i>
+                            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-yellow-50">
+                                <i className="fas fa-history text-xl text-[#FFC533]"></i>
                             </div>
                             <h3 className="mb-2 text-lg font-medium">Historique des commandes</h3>
                             <p className="text-gray-600">Suivez et consultez facilement toutes vos commandes passées et actuelles au même endroit.</p>
                         </div>
                         {/* Benefit 3 */}
                         <div className="rounded-lg border border-gray-100 bg-white p-6 shadow-sm">
-                            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-indigo-100">
-                                <i className="fas fa-heart text-xl text-indigo-600"></i>
+                            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-yellow-50">
+                                <i className="fas fa-heart text-xl text-[#FFC533]"></i>
                             </div>
                             <h3 className="mb-2 text-lg font-medium">Liste de souhaits</h3>
                             <p className="text-gray-600">Enregistrez les produits dans votre liste de souhaits pour plus tard et soyez informé des offres spéciales.</p>
                         </div>
                         {/* Benefit 4 */}
                         <div className="rounded-lg border border-gray-100 bg-white p-6 shadow-sm">
-                            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-indigo-100">
-                                <i className="fas fa-tag text-xl text-indigo-600"></i>
+                            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-yellow-50">
+                                <i className="fas fa-tag text-xl text-[#FFC533]"></i>
                             </div>
                             <h3 className="mb-2 text-lg font-medium">Offres exclusives</h3>
                             <p className="text-gray-600">Bénéficiez de réductions réservées aux membres et soyez parmi les premiers informés des nouvelles promotions..</p>

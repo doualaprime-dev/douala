@@ -35,7 +35,7 @@ export default function OrdersIndex() {
                                 <td className="px-6 py-4">
                                     <Link
                                         href={`/user/orders/${order.id}`}
-                                        className="text-indigo-600 hover:text-indigo-900"
+                                        className="text-[#FFC533] hover:text-[#FFC533]"
                                     >
                                         Voir
                                     </Link>

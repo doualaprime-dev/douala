@@ -270,7 +270,7 @@ export default function Show() {
                                                 {item.product ? (
                                                     <Link
                                                         href={`/product/${item.product.slug}`}
-                                                        className="text-indigo-600 hover:text-indigo-800"
+                                                        className="text-[#FFC533] hover:text-[#FFC533]"
                                                     >
                                                         {item.product_name}
                                                     </Link>
@@ -297,20 +297,20 @@ export default function Show() {
                     <h3 className="mb-4 text-lg font-semibold">Résumé de la commande</h3>
                     <div className="space-y-2 text-sm">
                         <div className="flex justify-between">
-                            <span>Total</span>
-                            <span>${order.Subtotal}</span>
+                            <span>Sous - Total</span>
+                            <span>{order.Subtotal} F CFA</span>
                         </div>
                         <div className="flex justify-between">
                             <span>Tax</span>
-                            <span>${order.tax_amount}</span>
+                            <span>{order.tax_amount} F CFA</span>
                         </div>
                         <div className="flex justify-between">
                             <span>Expédition</span>
-                            <span>${order.shipping_amount}</span>
+                            <span>{order.shipping_amount} F CFA</span>
                         </div>
                         <div className="flex justify-between">
                             <span>Rabais</span>
-                            <span>${order.discount_amount}</span>
+                            <span>{order.discount_amount} F CFA</span>
                         </div>
                     </div>
                 </div>

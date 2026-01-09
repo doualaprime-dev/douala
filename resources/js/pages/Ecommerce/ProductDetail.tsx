@@ -308,11 +308,11 @@ const ProductDetail = ({ product, variationOptions, relatedProducts }: ProductDe
       <div className="bg-gray-100 py-3">
         <div className="container mx-auto px-4">
           <div className="flex items-center text-sm text-gray-600">
-            <Link href="/" className="hover:text-indigo-600">
+            <Link href="/" className="hover:text-[#FFC533]">
               ACCUEIL
             </Link>
             <span className="mx-2">/</span>
-            <Link href="/products" className="hover:text-indigo-600">
+            <Link href="/products" className="hover:text-[#FFC533]">
               PRODUIT
             </Link>
             <span className="mx-2">/</span>
@@ -349,7 +349,7 @@ const ProductDetail = ({ product, variationOptions, relatedProducts }: ProductDe
                     key={index}
                     onClick={() => setActiveImage(index)}
                     className={`overflow-hidden rounded-md border-2 ${
-                      activeImage === index ? 'border-indigo-600' : 'border-transparent'
+                      activeImage === index ? 'border-[#FFC533]' : 'border-transparent'
                     }`}
                   >
                     <img
@@ -388,8 +388,8 @@ const ProductDetail = ({ product, variationOptions, relatedProducts }: ProductDe
 
                 {/* Price and Stock Status */}
                 <div className="mb-4 flex items-center">
-                  <span className="text-3xl font-bold text-indigo-600">
-                    {computedProduct.price} FCFA
+                  <span className="text-3xl font-bold text-[#FFC533]">
+                    {computedProduct.price} F CFA
                   </span>
                   {computedProduct.variation && (
                     <span className="ml-2 text-sm text-gray-500">(Variante sélectionnée)</span>
@@ -399,7 +399,7 @@ const ProductDetail = ({ product, variationOptions, relatedProducts }: ProductDe
                 {/* Discount */}
                 <div className="mb-4 flex items-center">
                   <span className="text-3xl font-bold text-gray-400 line-through">
-                    {computedProduct.discount} FCFA
+                    {computedProduct.discount} F CFA
                   </span>
                 </div>
 
@@ -434,7 +434,7 @@ const ProductDetail = ({ product, variationOptions, relatedProducts }: ProductDe
                           onClick={() => handleOptionSelect(type.id, option)}
                           className={`rounded-md border px-4 py-2 transition-colors ${
                             isSelected
-                              ? 'border-indigo-600 bg-indigo-50 text-indigo-600'
+                              ? 'border-[#FFC533] bg-indigo-50 text-[#FFC533]'
                               : 'border-gray-300 text-gray-600 hover:border-gray-400'
                           }`}
                         >
@@ -452,7 +452,7 @@ const ProductDetail = ({ product, variationOptions, relatedProducts }: ProductDe
                 <div className="flex w-32 items-center rounded-md border">
                   <button
                     onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-                    className="px-3 py-1 text-gray-600 hover:text-indigo-600"
+                    className="px-3 py-1 text-gray-600 hover:text-[#FFC533]"
                   >
                     <Minus size={16} />
                   </button>
@@ -465,7 +465,7 @@ const ProductDetail = ({ product, variationOptions, relatedProducts }: ProductDe
                   />
                   <button
                     onClick={() => setQuantity((q) => q + 1)}
-                    className="px-3 py-1 text-gray-600 hover:text-indigo-600"
+                    className="px-3 py-1 text-gray-600 hover:text-[#FFC533]"
                   >
                     <Plus size={16} />
                   </button>
@@ -479,7 +479,7 @@ const ProductDetail = ({ product, variationOptions, relatedProducts }: ProductDe
                   disabled={
                     !computedProduct.quantity || computedProduct.quantity === 0 || form.processing
                   }
-                  className="flex flex-1 items-center justify-center rounded-md bg-indigo-600 px-6 py-3 text-white hover:bg-indigo-700 disabled:cursor-not-allowed disabled:bg-gray-400"
+                  className="flex flex-1 items-center justify-center rounded-md bg-[#FFC533] px-6 py-3 text-white hover:bg-[#FFC533] disabled:cursor-not-allowed disabled:bg-gray-400"
                 >
                   <ShoppingCart className="mr-2" size={20} /> Ajouter au panier
                 </button>
@@ -501,15 +501,15 @@ const ProductDetail = ({ product, variationOptions, relatedProducts }: ProductDe
               <div className="border-t pt-4">
                 <div className="flex flex-col text-sm text-gray-600 sm:flex-row sm:items-center">
                   <div className="mb-2 flex items-center sm:mr-6 sm:mb-0">
-                    <Shield className="mr-2 text-indigo-500" size={16} />
+                    <Shield className="mr-2 text-[#FFC533]" size={16} />
                     <span>Garantie de 06 mois</span>
                   </div>
                   <div className="mb-2 flex items-center sm:mr-6 sm:mb-0">
-                    <RefreshCw className="mr-2 text-indigo-500" size={16} />
+                    <RefreshCw className="mr-2 text-[#FFC533]" size={16} />
                     <span>Livraison rapide et gratuite</span>
                   </div>
                   <div className="flex items-center">
-                    <Lock className="mr-2 text-indigo-500" size={16} />
+                    <Lock className="mr-2 text-[#FFC533]" size={16} />
                     <span>Paiement sécurisé</span>
                   </div>
                 </div>
@@ -518,13 +518,13 @@ const ProductDetail = ({ product, variationOptions, relatedProducts }: ProductDe
                 <div className="mt-4 flex items-center">
                   <span className="mr-2 text-gray-600">Partager :</span>
                   <div className="flex space-x-2">
-                    <a href="https://www.facebook.com/doualaprime" className="text-gray-500 hover:text-blue-600">
+                    <a href="https://www.facebook.com/doualaprime" className="text-gray-500 hover:text-[#FFC533]">
                       <Facebook size={16} />
                     </a>
-                    <a href="#" className="text-gray-500 hover:text-blue-400">
+                    <a href="#" className="text-gray-500 hover:text-[#FFC533]">
                       <Twitter size={16} />
                     </a>
-                    <a href="#" className="text-gray-500 hover:text-pink-600">
+                    <a href="#" className="text-gray-500 hover:text-[#FFC533]">
                       <Instagram size={16} />
                     </a>
                   </div>
@@ -542,7 +542,7 @@ const ProductDetail = ({ product, variationOptions, relatedProducts }: ProductDe
                 onClick={() => setActiveTab('description')}
                 className={`px-6 py-4 text-sm font-medium focus:outline-none ${
                   activeTab === 'description'
-                    ? 'border-b-2 border-indigo-600 text-indigo-600'
+                    ? 'border-b-2 border-[#FFC533] text-[#FFC533]'
                     : 'text-gray-500 hover:text-gray-700'
                 }`}
               >
@@ -552,7 +552,7 @@ const ProductDetail = ({ product, variationOptions, relatedProducts }: ProductDe
                 onClick={() => setActiveTab('specs')}
                 className={`px-6 py-4 text-sm font-medium focus:outline-none ${
                   activeTab === 'specs'
-                    ? 'border-b-2 border-indigo-600 text-indigo-600'
+                    ? 'border-b-2 border-[#FFC533] text-[#FFC533]'
                     : 'text-gray-500 hover:text-gray-700'
                 }`}
               >
@@ -562,7 +562,7 @@ const ProductDetail = ({ product, variationOptions, relatedProducts }: ProductDe
                 onClick={() => setActiveTab('reviews')}
                 className={`px-6 py-4 text-sm font-medium focus:outline-none ${
                   activeTab === 'reviews'
-                    ? 'border-b-2 border-indigo-600 text-indigo-600'
+                    ? 'border-b-2 border-[#FFC533] text-[#FFC533]'
                     : 'text-gray-500 hover:text-gray-700'
                 }`}
               >

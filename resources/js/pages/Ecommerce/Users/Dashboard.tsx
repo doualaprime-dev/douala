@@ -25,8 +25,8 @@ export default function Dashboard({ dashboardData }: { dashboardData: any }) {
                     <h2 className='text-lg font-semibold'>Tableau de bord</h2>
                     <p className='mt-1 text-gray-600'>
                         Salut {dashboardData.user?.name} (pas {dashboardData.user?.name}?
-                            <a href="#" className='text-indigo-600 hover:text-indigo-800'>
-                                Déconnexion
+                            <a href="#" className='text-[#FFC533] hover:text-[#FFC533]'>
+                                {" "} Déconnexion
                             </a>
                         )
                     </p>
@@ -35,16 +35,16 @@ export default function Dashboard({ dashboardData }: { dashboardData: any }) {
                 <div className='p-6'>
                     <p className='mb-4'>
                         Depuis le tableau de bord de votre compte, vous pouvez consulter votre
-                        <Link href="/user/orders" className='text-indigo-600 hover:text-indigo-800'>
-                            commandes récentes
+                        <Link href="/user/orders" className='text-[#FFC533] hover:text-[#FFC533]'>
+                            {" "} commandes récentes
                         </Link>
                         , gérez votre
-                        <Link href="/user/orders" className='text-indigo-600 hover:text-indigo-800'>
-                            adresses de livraison et de facturation
+                        <Link href="/user/orders" className='text-[#FFC533] hover:text-[#FFC533]'>
+                            {" "} adresses de livraison et de facturation
                         </Link>
                         , et
-                        <Link href="/user/orders" className='text-indigo-600 hover:text-indigo-800'>
-                            modifier votre mot de passe et les détails de votre compte
+                        <Link href="/user/orders" className='text-[#FFC533] hover:text-[#FFC533]'>
+                            {" "} modifier votre mot de passe et les détails de votre compte
                         </Link>
                         ,
                     </p>
@@ -55,7 +55,7 @@ export default function Dashboard({ dashboardData }: { dashboardData: any }) {
                             <div className='border-b bg-gray-50 p-5'>
                                 <div className='flex items-center justify-between'>
                                     <h3 className='font-medium'>Commandes</h3>
-                                    <span className='rounded-full bg-indigo-100 px-2.5 py-0.5 text-xs font-medium text-indigo-800'>
+                                    <span className='rounded-full bg-yellow-50 px-2.5 py-0.5 text-xs font-medium text-[#FFC533]'>
                                         {dashboardData.orderCount}
                                     </span>
                                 </div>
@@ -66,7 +66,7 @@ export default function Dashboard({ dashboardData }: { dashboardData: any }) {
                                 </p>
                                 <Link
                                     href="/user/orders"
-                                    className='flex items-center text-sm font-medium text-indigo-600 hover:text-indigo-800'
+                                    className='flex items-center text-sm font-medium text-[#FFC533] hover:text-[#FFC533]'
                                 >
                                     Afficher les commandes
                                     <ArrowRight className='ml-2 h-4 w-4' />
@@ -78,7 +78,7 @@ export default function Dashboard({ dashboardData }: { dashboardData: any }) {
                             <div className='border-b bg-gray-50 p-5'>
                                 <div className='flex items-center justify-between'>
                                     <h3 className='font-medium'>Liste de souhaits</h3>
-                                    <span className='rounded-full bg-indigo-100 px-2.5 py-0.5 text-xs font-medium text-indigo-800'>
+                                    <span className='rounded-full bg-yellow-50 px-2.5 py-0.5 text-xs font-medium text-[#FFC533]'>
                                         {dashboardData.wishlistCount}
                                     </span>
                                 </div>
@@ -89,7 +89,7 @@ export default function Dashboard({ dashboardData }: { dashboardData: any }) {
                                 </p>
                                 <Link
                                     href="/user/wishlist"
-                                    className='flex items-center text-sm font-medium text-indigo-600 hover:text-indigo-800'
+                                    className='flex items-center text-sm font-medium text-[#FFC533] hover:text-[#FFC533]'
                                 >
                                     Voir la liste de souhaits
                                     <ArrowRight className='ml-2 h-4 w-4' />
@@ -101,7 +101,7 @@ export default function Dashboard({ dashboardData }: { dashboardData: any }) {
                             <div className='border-b bg-gray-50 p-5'>
                                 <div className='flex items-center justify-between'>
                                     <h3 className='font-medium'>Adresses</h3>
-                                    <i className='fas fa-map-marker-alt text-indigo-600'></i>
+                                    <i className='fas fa-map-marker-alt text-[#FFC533]'></i>
                                 </div>
                             </div>
                             <div className='p-5'>
@@ -110,7 +110,7 @@ export default function Dashboard({ dashboardData }: { dashboardData: any }) {
                                 </p>
                                 <Link
                                     href="/user/addresses"
-                                    className='flex items-center text-sm font-medium text-indigo-600 hover:text-indigo-800'
+                                    className='flex items-center text-sm font-medium text-[#FFC533] hover:text-[#FFC533]'
                                 >
                                     Afficher les adresses
                                     <ArrowRight className='ml-2 h-4 w-4' />
@@ -170,7 +170,7 @@ export default function Dashboard({ dashboardData }: { dashboardData: any }) {
                                     ) : (
                                         dashboardData.recentOrders.map((order) => (
                                             <tr key={order.id}>
-                                                <td className='px-4 py-4 text-sm font-medium whitespace-nowrap text-indigo-600'>
+                                                <td className='px-4 py-4 text-sm font-medium whitespace-nowrap text-[#FFC533]'>
                                                     {order.order_number}
                                                 </td>
                                                 <td className='px-4 py-4 text-sm whitespace-nowrap text-gray-500'>
@@ -191,7 +191,7 @@ export default function Dashboard({ dashboardData }: { dashboardData: any }) {
                                                 <td className='px-4 py-4 text-sm whitespace-nowrap text-gray-500'>
                                                     <Link
                                                         href={`/user/orders/${order.id}`}
-                                                        className='text-indigo-600 hover:text-indigo-900'
+                                                        className='text-[#FFC533] hover:text-[#FFC533]'
                                                     >
                                                         Voir
                                                     </Link>
@@ -206,7 +206,7 @@ export default function Dashboard({ dashboardData }: { dashboardData: any }) {
                         <div className='border-t p-4'>
                             <Link
                                 href="/user/orders"
-                                className='flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-800'
+                                className='flex items-center justify-center text-sm font-medium text-[#FFC533] hover:text-[#FFC533]'
                             >
                                 Afficher toutes les commandes
                                 <ArrowRight className='ml-2 h-4 w-4' />
@@ -228,7 +228,7 @@ export default function Dashboard({ dashboardData }: { dashboardData: any }) {
                                     <p className='text-gray-800'>{dashboardData.userAddress.phone}</p>
                                     <Link
                                         href="/user/profile/edit"
-                                        className='mt-2 inline-block text-sm text-indigo-600 hover:text-indigo-800'
+                                        className='mt-2 inline-block text-sm text-[#FFC533] hover:text-[#FFC533]'
                                     >
                                         Modifier
                                     </Link>
@@ -239,7 +239,7 @@ export default function Dashboard({ dashboardData }: { dashboardData: any }) {
                                     <p className='text-gray-800'>{dashboardData.userAddress.Address || 'N/A'}</p>
                                     <Link
                                         href="/user/addresses"
-                                        className='mt-2 inline-block text-sm text-indigo-600 hover:text-indigo-800'
+                                        className='mt-2 inline-block text-sm text-[#FFC533] hover:text-[#FFC533]'
                                     >
                                         Modifier
                                     </Link>
@@ -249,7 +249,7 @@ export default function Dashboard({ dashboardData }: { dashboardData: any }) {
                             <div className='mt-6'>
                                 <h3 className='mb-2 text-sm font-medium text-gray-500'>NEWSLETTERS</h3>
                                 <p className='text-gray-800'>Vous êtes actuellement abonné(e) à notre newsletter.</p>
-                                <a href="#" className='mt-2 inline-block text-sm text-indigo-600 hover:text-indigo-800'>
+                                <a href="#" className='mt-2 inline-block text-sm text-[#FFC533] hover:text-[#FFC533]'>
                                     Se désabonner
                                 </a>
                             </div>

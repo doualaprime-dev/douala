@@ -28,8 +28,8 @@ export default function UserSideBar() {
         <div className='sticky top-6 overflow-hidden rounded-lg bg-white shadow-sm'>
             <div className='border-b p-6'>
                 <div className='flex items-center'>
-                    <div className='flex h-12 w-12 items-center justify-center rounded-full bg-indigo-100'>
-                        <span className='text-xl font-bold text-indigo-600'>{user?.name?.charAt(0) || 'u'}</span>
+                    <div className='flex h-12 w-12 items-center justify-center rounded-full bg-yellow-50'>
+                        <span className='text-xl font-bold text-[#FFC533]'>{user?.name?.charAt(0) || 'u'}</span>
                     </div>
                     <div className='ml-4'>
                         <h2 className='font-medium'>{user?.name || 'User'}</h2>
@@ -44,7 +44,7 @@ export default function UserSideBar() {
                         key={item.href}
                         href={item.href}
                         className={`flex items-center rounded-md px-4 py-3 ${
-                            item.active ? 'bg-indigo-50 text-indigo-600' : 'text-gray-700 hover:bg-gray-50 hover:text-indigo-600'
+                            item.active ? 'bg-yellow-50 text-[#FFC533]' : 'text-gray-700 hover:bg-gray-50 hover:text-[#FFC533]'
                         }`}
                     >
                         <item.icon className="mr-3 h-5 w-5" />

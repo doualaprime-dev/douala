@@ -159,7 +159,7 @@ export default function AccountDetail({ user, success, errors }: AccountDetailPr
                                     onClick={() => setActiveTab(tab.id)}
                                     className={`flex items-center space-x-2 border-b-2 px-1 py-2 text-sm font-medium transition-colors ${
                                         activeTab === tab.id
-                                            ? 'border-indigo-500 text-indigo-600'
+                                            ? 'border-[#FFC533] text-[#FFC533]'
                                             : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
                                     }`}
                                 >
@@ -206,7 +206,7 @@ export default function AccountDetail({ user, success, errors }: AccountDetailPr
                                                 </div>
                                                 <Label
                                                     htmlFor='avatar-upload'
-                                                    className='absolute -right-1 -bottom-1 flex h-6 w-6 cursor-pointer items-center justify-center rounded-full bg-indigo-600 text-white hover:bg-indigo-700'
+                                                    className='absolute -right-1 -bottom-1 flex h-6 w-6 cursor-pointer items-center justify-center rounded-full bg-[#FFC533] text-white hover:bg-[#FFC533]'
                                                 >
                                                     <Camera className='h-3 w-3' />
                                                     <input

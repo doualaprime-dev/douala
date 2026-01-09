@@ -96,7 +96,7 @@ const Cart = ({ cartItems, cartCount }: CartProps) => {
             </p>
             <Link
               href="/"
-              className="inline-flex items-center rounded-md bg-indigo-600 px-6 py-3 text-white hover:bg-indigo-700"
+              className="inline-flex items-center rounded-md bg-[#FFC533] px-6 py-3 text-white hover:bg-[#FFC533]"
             >
               <ArrowLeft className="mr-2 h-5 w-5" />
               Continuer vos achats
@@ -175,7 +175,7 @@ const Cart = ({ cartItems, cartCount }: CartProps) => {
                               ))}
                             </div>
                           )}
-                          <div className="mt-2 text-lg font-semibold text-indigo-600">
+                          <div className="mt-2 text-lg font-semibold text-[#FFC533]">
                             {item.price} F CFA
                           </div>
                         </div>
@@ -237,7 +237,7 @@ const Cart = ({ cartItems, cartCount }: CartProps) => {
               </div>
               <button
                 onClick={handleCheckout}
-                className="mt-6 w-full rounded-md bg-indigo-600 px-4 py-3 text-white hover:bg-indigo-700"
+                className="mt-6 w-full rounded-md bg-[#FFC533] px-4 py-3 text-white hover:bg-[#FFC533]"
               >
                 Passer à la caisse
               </button>

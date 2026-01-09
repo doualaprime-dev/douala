@@ -73,15 +73,15 @@ export default function Payment({
       <div className="bg-gray-100 py-3">
         <div className="container mx-auto px-4">
           <div className="flex items-center text-sm text-gray-600">
-            <Link href={route('home')} className="hover:text-indigo-600">
+            <Link href={route('home')} className="hover:text-[#FFC533]">
               Accueil
             </Link>
             <span className="mx-2">/</span>
-            <Link href={route('cart.index')} className="hover:text-indigo-600">
+            <Link href={route('cart.index')} className="hover:text-[#FFC533]">
               Panier
             </Link>
             <span className="mx-2">/</span>
-            <Link href={route('checkout')} className="hover:text-indigo-600">
+            <Link href={route('checkout')} className="hover:text-[#FFC533]">
               Vérifier
             </Link>
             <span className="mx-2">/</span>
@@ -128,7 +128,7 @@ export default function Payment({
           <div className="mt-3">
             <Link
               href={route('checkout')}
-              className="text-sm text-indigo-600 hover:text-indigo-800"
+              className="text-sm text-[#FFC533] hover:text-[#FFC533]"
             >
               Modifier les informations de facturation
             </Link>
@@ -151,7 +151,7 @@ export default function Payment({
                           value="card"
                           checked={data.payment_method === 'card'}
                           onChange={(e) => setData('payment_method', e.target.value)}
-                          className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          className="h-4 w-4 border-gray-300 text-[#FFC533] focus:ring-[#FFC533]"
                         />
                         <span className="ml-3 text-sm font-medium text-gray-900">
                           Carte de crédit / débit
@@ -238,7 +238,7 @@ export default function Payment({
                           value="paypal"
                           checked={data.payment_method === 'paypal'}
                           onChange={(e) => setData('payment_method', e.target.value)}
-                          className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          className="h-4 w-4 border-gray-300 text-[#FFC533] focus:ring-[#FFC533]"
                         />
                         <span className="ml-3 text-sm font-medium text-gray-900">PayPal</span>
                       </label>
@@ -259,7 +259,7 @@ export default function Payment({
                           value="apple-pay"
                           checked={data.payment_method === 'apple-pay'}
                           onChange={(e) => setData('payment_method', e.target.value)}
-                          className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          className="h-4 w-4 border-gray-300 text-[#FFC533] focus:ring-[#FFC533]"
                         />
                         <span className="ml-3 text-sm font-medium text-gray-900">Apple Pay</span>
                       </label>
@@ -280,7 +280,7 @@ export default function Payment({
                           value="cod"
                           checked={data.payment_method === 'cod'}
                           onChange={(e) => setData('payment_method', e.target.value)}
-                          className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          className="h-4 w-4 border-gray-300 text-[#FFC533] focus:ring-[#FFC533]"
                         />
                         <span className="ml-3 text-sm font-medium text-gray-900">
                           Paiement à la livraison
@@ -301,16 +301,16 @@ export default function Payment({
                         type="checkbox"
                         checked={data.agree}
                         onChange={(e) => setData('agree', e.target.checked)}
-                        className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                        className="h-4 w-4 rounded border-gray-300 text-[#FFC533] focus:ring-[#FFC533]"
                         required
                       />
                       <span className="ml-2 text-sm text-gray-600">
                         J'accepte{' '}
-                        <a href="#" className="text-indigo-600 hover:text-indigo-800">
+                        <a href="#" className="text-[#FFC533] hover:text-[#FFC533]">
                           Conditions générales
                         </a>{' '}
                         et{' '}
-                        <a href="#" className="text-indigo-600 hover:text-indigo-800">
+                        <a href="#" className="text-[#FFC533] hover:text-[#FFC533]">
                           Politique de confidentialité
                         </a>
                       </span>
@@ -319,7 +319,7 @@ export default function Payment({
                   <button
                     type="submit"
                     disabled={processing}
-                    className="w-full rounded-md bg-indigo-600 py-3 text-white hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-50"
+                    className="w-full rounded-md bg-[#FFC533] py-3 text-white hover:bg-[#FFC533] disabled:cursor-not-allowed disabled:opacity-50"
                   >
                     {processing ? 'Traitement...' : `Payer maintenant ${formatPrice(totalPrice)}`}
                   </button>
@@ -378,7 +378,7 @@ export default function Payment({
                   </div>
                   <div className="flex justify-between border-t pt-3 text-sm">
                     <span className="font-semibold">Total</span>
-                    <span className="text-lg font-bold text-indigo-600">
+                    <span className="text-lg font-bold text-[#FFC533]">
                       {formatPrice(totalPrice)}
                     </span>
                   </div>

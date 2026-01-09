@@ -164,11 +164,11 @@ export default function Checkout({
       <div className="bg-gray-100 py-3">
         <div className="container mx-auto px-4">
           <div className="flex items-center text-sm text-gray-600">
-            <Link href={route('home')} className="hover:text-indigo-600">
+            <Link href={route('home')} className="hover:text-[#FFC533]">
               Accueil
             </Link>
             <span className="mx-2">/</span>
-            <Link href={route('cart.index')} className="hover:text-indigo-600">
+            <Link href={route('cart.index')} className="hover:text-[#FFC533]">
               Panier
             </Link>
             <span className="mx-2">/</span>
@@ -186,16 +186,16 @@ export default function Checkout({
           <div className="w-full max-w-3xl">
             <div className="flex items-center justify-between">
               <div className="flex flex-col items-center">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-600">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#FFC533]">
                   <svg className="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
                   </svg>
                 </div>
                 <span className="mt-2 text-sm font-medium">Chariot</span>
               </div>
-              <div className="mx-2 h-1 flex-1 bg-indigo-600"></div>
+              <div className="mx-2 h-1 flex-1 bg-[#FFC533]"></div>
               <div className="flex flex-col items-center">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-600">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#FFC533]">
                   <svg className="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path
                       fillRule="evenodd"
@@ -253,7 +253,7 @@ export default function Checkout({
                         id="first_name"
                         value={data.first_name}
                         onChange={(e) => setData('first_name', e.target.value)}
-                        className={`w-full rounded-md border px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none ${
+                        className={`w-full rounded-md border px-3 py-2 focus:ring-2 focus:ring-[#FFC533] focus:outline-none ${
                           errors.first_name ? 'border-red-500' : 'border-gray-300'
                         }`}
                         required
@@ -274,7 +274,7 @@ export default function Checkout({
                         id="last_name"
                         value={data.last_name}
                         onChange={(e) => setData('last_name', e.target.value)}
-                        className={`w-full rounded-md border px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none ${
+                        className={`w-full rounded-md border px-3 py-2 focus:ring-2 focus:ring-[#FFC533] focus:outline-none ${
                           errors.last_name ? 'border-red-500' : 'border-gray-300'
                         }`}
                         required
@@ -295,7 +295,7 @@ export default function Checkout({
                         id="email"
                         value={data.email}
                         onChange={(e) => setData('email', e.target.value)}
-                        className={`w-full rounded-md border px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none ${
+                        className={`w-full rounded-md border px-3 py-2 focus:ring-2 focus:ring-[#FFC533] focus:outline-none ${
                           errors.email ? 'border-red-500' : 'border-gray-300'
                         }`}
                         required
@@ -314,7 +314,7 @@ export default function Checkout({
                         id="phone"
                         value={data.phone}
                         onChange={(e) => setData('phone', e.target.value)}
-                        className={`w-full rounded-md border px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none ${
+                        className={`w-full rounded-md border px-3 py-2 focus:ring-2 focus:ring-[#FFC533] focus:outline-none ${
                           errors.phone ? 'border-red-500' : 'border-gray-300'
                         }`}
                         required
@@ -335,7 +335,7 @@ export default function Checkout({
                       id="address"
                       value={data.address}
                       onChange={(e) => setData('address', e.target.value)}
-                      className={`w-full rounded-md border px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none ${
+                      className={`w-full rounded-md border px-3 py-2 focus:ring-2 focus:ring-[#FFC533] focus:outline-none ${
                         errors.address ? 'border-red-500' : 'border-gray-300'
                       }`}
                       required
@@ -358,7 +358,7 @@ export default function Checkout({
                         id="city"
                         value={data.city}
                         onChange={(e) => setData('city', e.target.value)}
-                        className={`w-full rounded-md border px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none ${
+                        className={`w-full rounded-md border px-3 py-2 focus:ring-2 focus:ring-[#FFC533] focus:outline-none ${
                           errors.city ? 'border-red-500' : 'border-gray-300'
                         }`}
                         required
@@ -377,7 +377,7 @@ export default function Checkout({
                         id="state"
                         value={data.state}
                         onChange={(e) => setData('state', e.target.value)}
-                        className={`w-full rounded-md border px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none ${
+                        className={`w-full rounded-md border px-3 py-2 focus:ring-2 focus:ring-[#FFC533] focus:outline-none ${
                           errors.state ? 'border-red-500' : 'border-gray-300'
                         }`}
                         required
@@ -393,7 +393,7 @@ export default function Checkout({
                         id="zip"
                         value={data.zip}
                         onChange={(e) => setData('zip', e.target.value)}
-                        className={`w-full rounded-md border px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none ${
+                        className={`w-full rounded-md border px-3 py-2 focus:ring-2 focus:ring-[#FFC533] focus:outline-none ${
                           errors.zip ? 'border-red-500' : 'border-gray-300'
                         }`}
                         required
@@ -413,7 +413,7 @@ export default function Checkout({
                       id="country"
                       value={data.country}
                       onChange={(e) => setData('country', e.target.value)}
-                      className={`w-full rounded-md border px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none ${
+                      className={`w-full rounded-md border px-3 py-2 focus:ring-2 focus:ring-[#FFC533] focus:outline-none ${
                         errors.country ? 'border-red-500' : 'border-gray-300'
                       }`}
                       required
@@ -439,7 +439,7 @@ export default function Checkout({
                         type="checkbox"
                         checked={sameAsBilling}
                         onChange={(e) => setSameAsBilling(e.target.checked)}
-                        className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                        className="h-4 w-4 rounded border-gray-300 text-[#FFC533] focus:ring-[#FFC533]"
                       />
                       <span className="ml-2 text-sm text-gray-600">
                         Adresse de livraison identique à l'adresse de facturation
@@ -464,7 +464,7 @@ export default function Checkout({
                             id="shipping_first_name"
                             value={data.shipping_first_name}
                             onChange={(e) => setData('shipping_first_name', e.target.value)}
-                            className="w-full rounded-md border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                            className="w-full rounded-md border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-[#FFC533] focus:outline-none"
                           />
                         </div>
                         <div>
@@ -479,7 +479,7 @@ export default function Checkout({
                             id="shipping_last_name"
                             value={data.shipping_last_name}
                             onChange={(e) => setData('shipping_last_name', e.target.value)}
-                            className="w-full rounded-md border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                            className="w-full rounded-md border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-[#FFC533] focus:outline-none"
                           />
                         </div>
                       </div>
@@ -495,7 +495,7 @@ export default function Checkout({
                           id="shipping_address"
                           value={data.shipping_address}
                           onChange={(e) => setData('shipping_address', e.target.value)}
-                          className="w-full rounded-md border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                          className="w-full rounded-md border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-[#FFC533] focus:outline-none"
                         />
                       </div>
                       <div className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -511,7 +511,7 @@ export default function Checkout({
                             id="shipping_city"
                             value={data.shipping_city}
                             onChange={(e) => setData('shipping_city', e.target.value)}
-                            className="w-full rounded-md border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                            className="w-full rounded-md border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-[#FFC533] focus:outline-none"
                           />
                         </div>
                         <div>
@@ -526,7 +526,7 @@ export default function Checkout({
                             id="shipping_state"
                             value={data.shipping_state}
                             onChange={(e) => setData('shipping_state', e.target.value)}
-                            className="w-full rounded-md border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                            className="w-full rounded-md border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-[#FFC533] focus:outline-none"
                           />
                         </div>
                         <div>
@@ -541,7 +541,7 @@ export default function Checkout({
                             id="shipping_zip"
                             value={data.shipping_zip}
                             onChange={(e) => setData('shipping_zip', e.target.value)}
-                            className="w-full rounded-md border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                            className="w-full rounded-md border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-[#FFC533] focus:outline-none"
                           />
                         </div>
                       </div>
@@ -556,7 +556,7 @@ export default function Checkout({
                           id="shipping_country"
                           value={data.shipping_country}
                           onChange={(e) => setData('shipping_country', e.target.value)}
-                          className="w-full rounded-md border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                          className="w-full rounded-md border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-[#FFC533] focus:outline-none"
                         >
                             <option value="">Sélectionnez un pays</option>
                             <option value="US">Cameroun</option>
@@ -581,14 +581,14 @@ export default function Checkout({
                       value={data.notes}
                       onChange={(e) => setData('notes', e.target.value)}
                       rows={3}
-                      className="w-full rounded-md border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                      className="w-full rounded-md border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-[#FFC533] focus:outline-none"
                     ></textarea>
                   </div>
 
                   <button
                     type="submit"
                     disabled={processing}
-                    className="w-full rounded-md bg-indigo-600 py-3 text-white hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-50"
+                    className="w-full rounded-md bg-[#FFC533] py-3 text-white hover:bg-[#FFC533] disabled:cursor-not-allowed disabled:opacity-50"
                   >
                     {processing ? 'Traitement...' : 'Procéder au paiement'}
                   </button>
@@ -648,7 +648,7 @@ export default function Checkout({
                   </div>
                   <div className="flex justify-between border-t pt-3 text-sm">
                     <span className="font-semibold">Total</span>
-                    <span className="text-lg font-bold text-indigo-600">
+                    <span className="text-lg font-bold text-[#FFC533]">
                       {formatPrice(totalPrice)}
                     </span>
                   </div>

@@ -18,25 +18,25 @@ export default function Footer() {
                         <div className="flex space-x-4">
                             <Link
                                 href="https://www.facebook.com/doualaprime"
-                                className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-700 transition-colors hover:bg-indigo-600"
+                                className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-700 transition-colors hover:bg-[#FFC533]"
                             >
                                 <Facebook className="h-5 w-5 text-white" />
                             </Link>
                             <Link
                                 href="#"
-                                className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-700 transition-colors hover:bg-indigo-600"
+                                className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-700 transition-colors hover:bg-[#FFC533]"
                             >
                                 <Twitter className="h-5 w-5 text-white" />
                             </Link>
                             <Link
                                 href="#"
-                                className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-700 transition-colors hover:bg-indigo-600"
+                                className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-700 transition-colors hover:bg-[#FFC533]"
                             >
                                 <Instagram className="h-5 w-5 text-white" />
                             </Link>
                             <Link
                                 href="#"
-                                className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-700 transition-colors hover:bg-indigo-600"
+                                className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-700 transition-colors hover:bg-[#FFC533]"
                             >
                                 <Youtube className="h-5 w-5 text-white" />
                             </Link>
@@ -112,7 +112,7 @@ export default function Footer() {
                         <h3 className="mb-4 text-lg font-semibold">Contactez-nous</h3>
                         <ul className="space-y-3">
                             <li className="flex items-start">
-                                <MapPin className="mt-1 mr-3 h-5 w-5 text-indigo-500" />
+                                <MapPin className="mt-1 mr-3 h-5 w-5 text-[#FFC533]" />
                                 <span className="text-gray-400">
                                     Deido Grand Moulin
                                     <br />
@@ -120,7 +120,7 @@ export default function Footer() {
                                 </span>
                             </li>
                             <li className="flex items-center">
-                                <Phone className="mr-3 h-5 w-5 text-indigo-500" />
+                                <Phone className="mr-3 h-5 w-5 text-[#FFC533]" />
                                 <span className="text-gray-400">
                                     +237 670 85 72 04
                                     <br />
@@ -128,11 +128,11 @@ export default function Footer() {
                                 </span>
                             </li>
                             <li className="flex items-center">
-                                <Mail className="mr-3 h-5 w-5 text-indigo-500" />
+                                <Mail className="mr-3 h-5 w-5 text-[#FFC533]" />
                                 <span className="text-gray-400">doualaprime@commande.com</span>
                             </li>
                             <li className="flex items-center">
-                                <Clock className="mr-3 h-5 w-5 text-indigo-500" />
+                                <Clock className="mr-3 h-5 w-5 text-[#FFC533]" />
                                 <span className="text-gray-400">Lundi - Samedi : 8H - 18H</span>
                             </li>
                         </ul>

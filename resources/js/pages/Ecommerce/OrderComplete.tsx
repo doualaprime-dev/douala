@@ -57,11 +57,11 @@ export default function OrderComplete({ order }: OrderCompleteProps) {
       <div className="bg-gray-100 py-3">
         <div className="container mx-auto px-4">
           <div className="flex items-center text-sm text-gray-600">
-            <Link href={route('home')} className="hover:text-indigo-600">
+            <Link href={route('home')} className="hover:text-[#FFC533]">
               Accueil
             </Link>
             <span className="mx-2">/</span>
-            <Link href={route('cart.index')} className="hover:text-indigo-600">
+            <Link href={route('cart.index')} className="hover:text-[#FFC533]">
               Panier
             </Link>
             <span className="mx-2">/</span>
@@ -162,7 +162,7 @@ export default function OrderComplete({ order }: OrderCompleteProps) {
             <div className="border-t bg-gray-50 p-6">
               <div className="flex justify-between text-lg font-semibold">
                 <span>Total</span>
-                <span className="text-indigo-600">{formatPrice(order.total_price)}</span>
+                <span className="text-[#FFC533]">{formatPrice(order.total_price)}</span>
               </div>
             </div>
           </div>
@@ -201,7 +201,7 @@ export default function OrderComplete({ order }: OrderCompleteProps) {
           <div className="text-center">
             <Link
               href={route('home')}
-              className="inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white hover:bg-indigo-700"
+              className="inline-flex items-center rounded-md border border-transparent bg-[#FFC533] px-6 py-3 text-base font-medium text-white hover:bg-indigo-700"
             >
               Continuer vos achats
             </Link>
