@@ -150,9 +150,9 @@ export default function Checkout({
   }
 
   const formatPrice = (price: number) => {
-    return new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat('fr-FR', {
       style: 'currency',
-      currency: 'USD',
+      currency: 'XAF',
     }).format(price)
   }
 

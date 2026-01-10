@@ -19,7 +19,7 @@ class UserController extends Controller
 
         // Get user's orders
         $recentOrders = Order::where("user_id", $user->id)
-            ->with(['orderItem.product'])
+            ->with(['orderItems.product'])
             ->orderBy("created_at","desc")
             ->limit(5)
             ->get()
