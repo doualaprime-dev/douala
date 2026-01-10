@@ -1,7 +1,7 @@
 import UserLayout from "@/layouts/user-layout";
 import { Link, usePage } from "@inertiajs/react";
 
-export default function OrdersIndex() {
+export default function Index() {
     const { orders } = usePage().props as any
 
     return (

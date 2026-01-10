@@ -2,7 +2,7 @@ import UserLayout from '@/layouts/user-layout';
 import { Link } from '@inertiajs/react';
 import { ArrowRight } from 'lucide-react';
 
-export default function Dashboard({ dashboardData }: { dashboardData: any }) {
+export default function Dashboard({ user, dashboardData }: { user: any , dashboardData: any }) {
     const getStatusBadgeClass = (status: string) => {
         switch (status) {
             case 'completed':
@@ -24,11 +24,7 @@ export default function Dashboard({ dashboardData }: { dashboardData: any }) {
                 <div className='border-b p-6'>
                     <h2 className='text-lg font-semibold'>Tableau de bord</h2>
                     <p className='mt-1 text-gray-600'>
-                        Salut {dashboardData.user?.name} (pas {dashboardData.user?.name}?
-                            <a href="#" className='text-[#FFC533] hover:text-[#FFC533]'>
-                                {" "} Déconnexion
-                            </a>
-                        )
+                        Salut {user?.name}
                     </p>
                 </div>
 

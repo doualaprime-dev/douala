@@ -103,8 +103,8 @@ class UserController extends Controller
             ->with(['orderItems.product'])
             ->findOrFail( $id );
 
-        return Inertia::render('Ecommerce/Users/Orders/show', [
-            'orders' => [
+        return Inertia::render('Ecommerce/Users/Orders/Show', [
+            'order' => [
                 'id' => $order->id,
                 'order_number' => $order->order_number,
                 'status' => $order->status,
