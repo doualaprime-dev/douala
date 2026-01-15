@@ -119,7 +119,7 @@ export default function DataTable({
 
         if (column.type === 'badge') {
             return (
-                <span className="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-300">
+                <span className="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-[#FFC533] dark:bg-[#FFC533] dark:text-blue-300">
                     {value}
                 </span>
             );
@@ -179,7 +179,7 @@ export default function DataTable({
                 {canViewResource && (
                     <button
                         onClick={() => router.visit(route(viewRoute, item.id))}
-                        className="rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-600 hover:bg-blue-100 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none dark:bg-blue-900 dark:text-blue-300 dark:hover:bg-blue-800"
+                        className="rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-[#FFC533] hover:bg-blue-100 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none dark:bg-[#FFC533] dark:text-blue-300 dark:hover:bg-[#FFC533]"
                     >
                         Voir
                     </button>
@@ -187,7 +187,7 @@ export default function DataTable({
                 {canEditResource && (
                     <button
                         onClick={() => router.visit(route(editRoute, item.id))}
-                        className="rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-600 hover:bg-blue-100 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none dark:bg-blue-900 dark:text-blue-300 dark:hover:bg-blue-800"
+                        className="rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-[#FFC533] hover:bg-blue-100 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none dark:bg-[#FFC533] dark:text-blue-300 dark:hover:bg-[#FFC533]"
                     >
                         Modifier
                     </button>
@@ -225,13 +225,13 @@ export default function DataTable({
             <div className="px-6 py-4">
                 <div className="mb-6 flex flex-col space-y-4 sm:flex-row sm:items-center sm:justify-between sm:space-y-0">
                     <div className="flex items-center">
-                        {Icon && <Icon className="mr-3 h-6 w-6 text-blue-600 dark:text-blue-400" />}
+                        {Icon && <Icon className="mr-3 h-6 w-6 text-[#FFC533] dark:text-[#FFC533]" />}
                         <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-200">{resourceName}</h2>
                     </div>
                     {canCreateResource && (
                         <a
                             href={route(createRoute)}
-                            className="inline-flex items-center rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none dark:bg-blue-700 dark:hover:bg-blue-800"
+                            className="inline-flex items-center rounded-md bg-[#FFC533] px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-[#FFC533] focus:ring-2 focus:ring-[#FFC533] focus:ring-offset-2 focus:outline-none dark:bg-[#FFC533] dark:hover:bg-[#FFC533]"
                         >
                             Ajouter {singularName}
                         </a>
@@ -243,14 +243,14 @@ export default function DataTable({
                         <input
                             type="text"
                             placeholder={`Rechercher ...`}
-                            className="w-full rounded-lg border border-gray-300 bg-white py-2 pr-4 pl-10 text-gray-700 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
+                            className="w-full rounded-lg border border-gray-300 bg-white py-2 pr-4 pl-10 text-gray-700 focus:border-[#FFC533] focus:ring-2 focus:ring-[#FFC533] focus:outline-none dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
                             value={search}
                             onChange={(e) => setSearch(e.target.value)}
                         />
                         <Search className="absolute top-2.5 left-3 h-4 w-4 text-gray-400 dark:text-gray-500" />
                         <button
                             type="submit"
-                            className="ml-2 rounded-lg bg-blue-600 px-4 py-2 text-white transition-colors hover:bg-blue-700 focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:outline-none dark:bg-blue-700 dark:hover:bg-blue-800"
+                            className="ml-2 rounded-lg bg-[#FFC533] px-4 py-2 text-white transition-colors hover:bg-[#FFC533] focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:outline-none dark:bg-[#FFC533] dark:hover:bg-[#FFC533]"
                         >
                             Rechercher
                         </button>
@@ -262,7 +262,7 @@ export default function DataTable({
                         </label>
                         <select
                             id="perPage"
-                            className="rounded-lg border border-gray-300 bg-white py-2 pr-8 pl-3 text-gray-700 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
+                            className="rounded-lg border border-gray-300 bg-white py-2 pr-8 pl-3 text-gray-700 focus:border-[#FFC533] focus:ring-2 focus:ring-blue-200 focus:outline-none dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
                             value={perPage}
                             onChange={handlePerPageChange}
                         >
@@ -291,9 +291,9 @@ export default function DataTable({
                                                 <span className="ml-2">
                                                     {sort === column.key ? (
                                                         direction === 'asc' ? (
-                                                            <ArrowUp className="h-4 w-4 text-blue-500 dark:text-blue-400" />
+                                                            <ArrowUp className="h-4 w-4 text-[#FFC533] dark:text-[#FFC533]" />
                                                         ) : (
-                                                            <ArrowDown className="h-4 w-4 text-blue-500 dark:text-blue-400" />
+                                                            <ArrowDown className="h-4 w-4 text-[#FFC533] dark:text-[#FFC533]" />
                                                         )
                                                     ) : (
                                                         <span className="opacity-0 group-hover:opacity-50">
@@ -379,7 +379,7 @@ export default function DataTable({
                                         key={index}
                                         className={`relative inline-flex items-center rounded-md px-4 py-2 text-sm font-medium ${
                                             link.active
-                                                ? 'bg-blue-600 text-white dark:bg-blue-700'
+                                                ? 'bg-[#FFC533] text-white dark:bg-[#FFC533]'
                                                 : 'border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700'
                                         }`}
                                         onClick={() => router.visit(link.url)}
