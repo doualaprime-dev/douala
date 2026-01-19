@@ -12,7 +12,7 @@ export default function Promo() {
                 </div>
                 <div className='box'>
                     <div className='image overflow-hidden rounded-md'>
-                        <img src="./images/appareils_menage.jpg" alt="Banner" className="h-full w-full object-cover" />
+                        <img src="./images/appareils_menager.png" alt="Banner" className="h-full w-full object-cover" />
                     </div>
                 </div>
                 <div className='box'>
