@@ -29,7 +29,7 @@ export default function BannerAndSlider() {
                     >
                         <SwiperSlide>
                             <div className="relative h-96">
-                                <img src="./images/banner-1.jpg" alt="Banner" className="h-full w-full object-cover" />
+                                <img src="./images/banner-1.png" alt="Banner" className="h-full w-full" />
                                 {/* <div className="bg-opacity-40 absolute inset-0 flex flex-col justify-center px-12">
                                     <h2 className="mb-4 text-4xl font-bold text-white">Summer Collection</h2>
                                     <p className="mb-6 text-lg text-white">Up to 50% off on selected items</p>
@@ -44,7 +44,7 @@ export default function BannerAndSlider() {
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="relative h-96">
-                                <img src="./images/banner-2.jpg" alt="Banner" className="h-full w-full object-cover" />
+                                <img src="./images/banner-2.png" alt="Banner" className="h-full w-full" />
                                 {/* <div className="bg-opacity-40 absolute inset-0 flex flex-col justify-center px-12">
                                     <h2 className="mb-4 text-4xl font-bold text-white">New Arrivals</h2>
                                     <p className="mb-6 text-lg text-white">Check out our latest products</p>
@@ -59,7 +59,7 @@ export default function BannerAndSlider() {
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="relative h-96">
-                                <img src="./images/banner-3.png" alt="Banner" className="h-full w-full object-cover" />
+                                <img src="./images/banner-3.png" alt="Banner" className="h-full w-full" />
                                 {/* <div className="bg-opacity-40 absolute inset-0 flex flex-col justify-center px-12">
                                     <h2 className="mb-4 text-4xl font-bold text-white">New Arrivals</h2>
                                     <p className="mb-6 text-lg text-white">Check out our latest products</p>
@@ -74,7 +74,7 @@ export default function BannerAndSlider() {
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="relative h-96">
-                                <img src="./images/banner-4.jpeg" alt="Banner" className="h-full w-full object-cover" />
+                                <img src="./images/banner-4.png" alt="Banner" className="h-full w-full" />
                                 {/* <div className="bg-opacity-40 absolute inset-0 flex flex-col justify-center px-12">
                                     <h2 className="mb-4 text-4xl font-bold text-white">New Arrivals</h2>
                                     <p className="mb-6 text-lg text-white">Check out our latest products</p>
@@ -94,14 +94,14 @@ export default function BannerAndSlider() {
                 <div className="w-full px-4 lg:w-1/4">
                     <div className="relative mb-4 overflow-hidden rounded-lg bg-white shadow-sm">
                         <div className="absolute top-0 right-0 rounded-bl-lg bg-red-500 px-3 py-1 text-white">-30%</div>
-                        <img src="./images/banner-4.jpg" alt="Promo" className="h-46 w-full object-cover" />
+                        <img src="./images/banner-4.jpg" alt="Promo" className="h-46 w-full" />
                         {/* <div className="bg-opacity-40 absolute inset-0 flex flex-col justify-center px-12">
                             <h3 className="mb-4 text-xl font-bold text-white">Summer Collection</h3>
                             <p className="mb-6 text-lg text-white">Up to 50% off on selected items</p>
                         </div> */}
                     </div>
                     <div className="relative overflow-hidden rounded-lg bg-white shadow-sm">
-                        <img src="./images/banner-5.jpg" alt="Promo" className="h-46 w-full object-cover" />
+                        <img src="./images/banner-5.jpg" alt="Promo" className="h-46 w-full" />
                         <div className="absolute top-0 right-0 rounded-bl-lg bg-green-500 px-3 py-1 text-white">New</div>
                         {/* <div className="bg-opacity-40 absolute inset-0 flex flex-col justify-center px-12">
                             <h3 className="mb-4 text-xl font-bold text-white">Summer Collection</h3>

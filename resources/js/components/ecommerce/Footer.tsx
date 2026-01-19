@@ -1,5 +1,6 @@
 import { Link } from '@inertiajs/react';
 import { Clock, Facebook, Instagram, Mail, MapPin, Phone, Twitter, Youtube } from 'lucide-react';
+import { FloatingWhatsApp } from 'react-floating-whatsapp'
 
 export default function Footer() {
     return (
@@ -151,6 +152,42 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
+
+            <FloatingWhatsApp
+                phoneNumber='+237670857204'
+                accountName='Douala-Prime'
+                statusMessage='Réponse généralement en moins de 30 minutes'
+                placeholder='Saisissez votre message ici...'
+                avatar='/images/logo_zoom.png'
+                chatMessage="Bonjour ! 🤝 Comment pouvons-nous vous aider ?"
+                messageDelay={3}
+                darkMode={true}
+                allowClickAway={true}
+                allowEsc={true}
+                chatboxHeight={400}
+                notification={true}
+                notificationDelay={10}
+                notificationSound={true}
+                notificationLoop={3}
+                style={{
+                    position: "fixed",
+                    bottom: "20px",
+                    right: "20px",
+                    zIndex: 1000,
+                }}
+                buttonStyle={{
+                    backgroundColor: "#25D366",
+                    color: "white",
+                }}
+                chatboxStyle={{
+                    backgroundColor: "#F0F0F0",
+                }}
+                // onClick={() => console.log("WhatsApp button clicked!")}
+                // onSubmit={(event, inputValue) =>
+                //     console.log("User submitted", inputValue)
+                // }
+                // onClose={() => console.log("Chat box closed")}
+            />
         </footer>
     );
 }

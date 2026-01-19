@@ -2,7 +2,6 @@ import AudioHifi from '@/components/ecommerce/Homepage/AudioHifi';
 import BannerAndSlider from '@/components/ecommerce/Homepage/BannerAndSlider';
 import BestSeller from '@/components/ecommerce/Homepage/BestSeller';
 import BlenderHachoir from '@/components/ecommerce/Homepage/BlenderHachoir';
-import Blog from '@/components/ecommerce/Homepage/Blog';
 import Brand from '@/components/ecommerce/Homepage/Brand';
 import Category from '@/components/ecommerce/Homepage/Category';
 import Climatiseurs from '@/components/ecommerce/Homepage/Climatiseurs';
@@ -15,6 +14,7 @@ import Promo from '@/components/ecommerce/Homepage/Promo';
 import Refrigerateurs from '@/components/ecommerce/Homepage/Refrigerateurs';
 import SpecialOffer from '@/components/ecommerce/Homepage/SpecialOffer';
 import Televiseurs from '@/components/ecommerce/Homepage/Televiseurs';
+import Wathsapp from '@/components/ecommerce/Homepage/Wathsapp';
 import EcomLayout from '@/layouts/ecom-layout';
 
 export default function Home() {
