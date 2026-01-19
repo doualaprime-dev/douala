@@ -14,7 +14,6 @@ import Promo from '@/components/ecommerce/Homepage/Promo';
 import Refrigerateurs from '@/components/ecommerce/Homepage/Refrigerateurs';
 import SpecialOffer from '@/components/ecommerce/Homepage/SpecialOffer';
 import Televiseurs from '@/components/ecommerce/Homepage/Televiseurs';
-import Wathsapp from '@/components/ecommerce/Homepage/Wathsapp';
 import EcomLayout from '@/layouts/ecom-layout';
 
 export default function Home() {

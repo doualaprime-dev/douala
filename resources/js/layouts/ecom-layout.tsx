@@ -2,6 +2,7 @@ import Footer from '@/components/ecommerce/Footer';
 import Header from '@/components/ecommerce/Header';
 import { Head } from '@inertiajs/react';
 import "../../css/ecommerce.css"; // Ensure you have the correct path to your CSS file
+import Wathsapp from '@/components/ecommerce/Wathsapp';
 
 interface EcommerceLayoutProps {
     children: React.ReactNode;
@@ -24,6 +25,8 @@ export default function EcomLayout({ children, title = 'Douala-Prime' }: Ecommer
                 <main>{children}</main>
                 <Footer />
             </div>
+
+            <Wathsapp />
         </>
     );
 }
